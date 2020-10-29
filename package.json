@@ -8,8 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "9.5.3",
+    "next": "^9.5.5",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-single-page-navigation": "^1.0.1",
+    "tailwindcss": "^1.9.6"
   }
 }
