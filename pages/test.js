@@ -1,96 +1,20 @@
 import Head from "next/head";
-import Header from "@/components/Header";
-import Services from "@/components/Services";
-import Team from "@/components/Team";
-import Products from "@/components/Products";
-import Contact from "@/components/Contact";
-import ScrollNavigation from "react-single-page-navigation";
+import Service from "components/Service";
 
 export default function Test() {
-  const elements = {
-    EL1: {},
-    EL2: {},
-    EL3: {},
-    EL4: {},
-  };
-  const goEL1 = () => {
-    goTo("EL1");
-  };
-  const goEL2 = () => {
-    goTo("EL2");
-  };
-  const goEL3 = () => {
-    goTo("EL3");
-  };
-  const goEL4 = () => {
-    goTo("EL4");
-  };
-  const styles = {
-    menuLink: {
-      // cursor: "pointer",
-      // padding: "5px 0",
-      // transition: "all .2s ease-out",
-    },
-    menuLinkActive: {
-      // cursor: "pointer",
-      // fontWeight: "bold",
-      // padding: "5px 20px",
-      // transition: "all .2s ease-out",
-    },
-    section: {
-      width: "100%",
-      height: "70vh",
-    },
-  };
   return (
     <div>
-      <Head>
-        <title>Tete-a-Tete Salon</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <ScrollNavigation
-        elements={elements}
-        //  shouldEnableHistory={true}
-        //  shouldModifyUrl={true}
-      >
-        {({ refs, activeElement, goTo }) => (
-          <div>
-            <Header
-              el1={() => goTo("EL1")}
-              el2={() => goTo("EL2")}
-              el3={() => goTo("EL3")}
-              el4={() => goTo("EL4")}
-            />
-
-            <div className="content mx-auto">
-              <div
-                ref={refs.EL1}
-                style={{ ...styles.section, background: "#62B6CB" }}
-              >
-                <Services />
-              </div>
-              <div
-                ref={refs.EL2}
-                style={{ ...styles.section, background: "#1B4965" }}
-              >
-                <Team />
-              </div>
-              <div
-                ref={refs.EL3}
-                style={{ ...styles.section, background: "#62B6CB" }}
-              >
-                <Products />
-              </div>
-              <div
-                ref={refs.EL4}
-                style={{ ...styles.section, background: "#1B4965" }}
-              >
-                <Contact />
-              </div>
-            </div>
-          </div>
-        )}
-      </ScrollNavigation>
+      <div className="container mx-auto ">
+        <h1 className="font-bold text-center text-color text-2xl py-5">
+          Our services
+        </h1>
+        <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
+          <Service service={"Hair care"} background={"haircare"} />
+          <Service service={"Skin care"} background={"skincare"} />
+          <Service service={"Nails"} background={"nails"} />
+          <Service service={"Waxing"} background={"waxing"} />
+        </div>
+      </div>
     </div>
   );
 }

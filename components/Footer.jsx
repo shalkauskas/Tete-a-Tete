@@ -1,13 +1,23 @@
 export default function Footer() {
+  const year = new Date().getFullYear();
   return (
     <footer>
-      <a
-        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by <img src="/vercel.svg" alt="Vercel Logo" className="" />
-      </a>
+      <div className="container mx-auto text-center">
+        <p className="pt-16 w-1/2 mx-auto text-center">
+          © 2009-{year} Tête-à-Tête Salon. All rights reserved.
+          <br />
+          617.559.0660 | 765 Beacon St. Newton Centre, MA 02459
+        </p>
+      </div>
+      <style jsx>{`
+        footer {
+          height: 154px;
+          background: rgba(96, 90, 90, 0.89);
+          color: white;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+      `}</style>
     </footer>
   );
 }

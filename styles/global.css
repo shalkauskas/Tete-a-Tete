@@ -2,24 +2,10 @@ html, body {
  padding: 0;
  margin: 0;
  font-family: 'Lato', sans-serif;
+ font-size: 18px;
+ color: #4C4949;
      }
-
-.navbar-bg {
-     background-color:  #706D6C;
+.text-color {
+     color: #895B4A;
 }
-.font-logo {
-     font-family: 'News Cycle', sans-serif; 
-}
-.logo {
-width: 238px;
-height: 145px;
-}
-.nav-full {
-     height: 137px;
-}
-.nav-small {
-     height: 70px;
-}
-
-
   

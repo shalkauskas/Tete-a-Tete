@@ -1,7 +1,10 @@
+import Phone from "components/Phone";
+import CovidPolicy from "components/CovidPolicy";
 export default function Header(props) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
-    <div className="sticky top-0">
+    <div className="sticky z-40 top-0">
+      <Phone />
       <nav
         className={`relative flex flex-wrap items-center justify-between ${props.headerHeight} px-2 navbar-expand-lg navbar-bg`}
       >
@@ -67,6 +70,25 @@ export default function Header(props) {
           </div>
         </div>
       </nav>
+      <CovidPolicy />
+      <style jsx>{`
+        .navbar-bg {
+          background-color: #706d6c;
+        }
+        .font-logo {
+          font-family: "News Cycle", sans-serif;
+        }
+        .logo {
+          width: 238px;
+          height: 145px;
+        }
+        .nav-full {
+          height: 137px;
+        }
+        .nav-small {
+          height: 70px;
+        }
+      `}</style>
     </div>
   );
 }
