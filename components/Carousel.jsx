@@ -1,25 +1,8 @@
+import { useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
 export default function WelcomeCarousel() {
-  const getConfigurableProps = () => ({
-    showArrows: boolean("showArrows", true, tooglesGroupId),
-    showStatus: boolean("showStatus", true, tooglesGroupId),
-    showIndicators: boolean("showIndicators", true, tooglesGroupId),
-    infiniteLoop: boolean("infiniteLoop", true, tooglesGroupId),
-    showThumbs: boolean("showThumbs", true, tooglesGroupId),
-    useKeyboardArrows: boolean("useKeyboardArrows", true, tooglesGroupId),
-    autoPlay: boolean("autoPlay", true, tooglesGroupId),
-    stopOnHover: boolean("stopOnHover", true, tooglesGroupId),
-    swipeable: boolean("swipeable", true, tooglesGroupId),
-    dynamicHeight: boolean("dynamicHeight", true, tooglesGroupId),
-    emulateTouch: boolean("emulateTouch", true, tooglesGroupId),
-    thumbWidth: number("thumbWidth", 100, {}, valuesGroupId),
-    selectedItem: number("selectedItem", 0, {}, valuesGroupId),
-    interval: number("interval", 3000, {}, valuesGroupId),
-    transitionTime: number("transitionTime", 150, {}, valuesGroupId),
-    swipeScrollTolerance: number("swipeScrollTolerance", 5, {}, valuesGroupId),
-  });
   const createCarouselItemImage = (index, options = {}) => (
     <div key={index} style={{ width: "max-content" }}>
       <img
@@ -30,8 +13,30 @@ export default function WelcomeCarousel() {
   );
 
   const baseChildren = <div>{[5, 3, 1, 7].map(createCarouselItemImage)}</div>;
+
+  // handle media query
+  const [isMobile, setIsMobile] = useState(false);
+  function mqChange(mq) {
+    setIsMobile(mq.matches);
+  }
+  useEffect(() => {
+    const mq = window.matchMedia("screen and (max-width: 600px)");
+    mq.addListener(mqChange);
+    mqChange(mq);
+
+    return () => {
+      mq.removeListener(mqChange);
+    };
+  }, []);
+  const mobileSize = () => {
+    if (isMobile == true) {
+      return 80;
+    } else {
+      return 40;
+    }
+  };
   return (
-    <div className="container mx-auto my-6">
+    <div className="container mx-auto mb-6 mt-64">
       <Carousel
         showThumbs={false}
         infiniteLoop={true}
@@ -40,9 +45,8 @@ export default function WelcomeCarousel() {
         showStatus={false}
         swipeable={true}
         centerMode={true}
-        centerSlidePercentage={40}
+        centerSlidePercentage={mobileSize()}
         interval={3000}
-        width="1318px"
       >
         {baseChildren.props.children}
       </Carousel>

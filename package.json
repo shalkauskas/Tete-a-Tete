@@ -8,7 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "^9.5.5",
+    "@react-google-maps/api": "^1.13.0",
+    "lodash": "^4.17.20",
+    "next": "^10.0.2",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "react": "16.13.1",

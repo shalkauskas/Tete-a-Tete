@@ -8,7 +8,6 @@ import Products from "@/components/Products";
 import Contact from "@/components/Contact";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
-import { useState } from "react";
 
 export default function Home() {
   const elements = {
@@ -17,35 +16,16 @@ export default function Home() {
     Products: {},
     Contact: {},
   };
-  // Resize navbar on scroll //
-  const [header, setHeader] = useState("nav-full");
-  const [logo, setLogo] = useState("inline-block");
-  const [textLogo, setTextLogo] = useState("hidden");
-  React.useEffect(() => {
-    window.addEventListener("scroll", resizeHeaderOnScroll);
-  });
-  function resizeHeaderOnScroll() {
-    const distanceY = window.pageYOffset || document.documentElement.scrollTop,
-      shrinkOn = 200;
 
-    if (distanceY > shrinkOn) {
-      // setLogo("hidden");
-      // setHeader("nav-small");
-      // setTextLogo("inline-block");
-    } else {
-      // setLogo("inline-block");
-      // setHeader("nav-full");
-      // setTextLogo("hidden");
-    }
-  }
   return (
-    <div className="">
+    <div className="overflow-y-hidden">
       <Head>
         <title>Tete-a-Tete Salon</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300;0,700;1,400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
           rel="stylesheet"
-        ></link>
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap"
           rel="stylesheet"
@@ -64,16 +44,14 @@ export default function Home() {
               el2={() => goTo("Team")}
               el3={() => goTo("Products")}
               el4={() => goTo("Contact")}
-              headerHeight={header}
-              logo={logo}
-              textLogo={textLogo}
             />
             <WelcomeCarousel />
             <div className="content mx-auto">
               <div ref={refs.Services}>
                 <Services />
               </div>
-              <div ref={refs.Team}>
+              <span ref={refs.Team}></span>
+              <div>
                 <Team />
               </div>
               <div ref={refs.Products}>

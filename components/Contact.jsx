@@ -1,12 +1,13 @@
 import SectionTitle from "components/SectionTitle";
+import Map from "components/GoogleMap";
 export default function Contact() {
   return (
     <div className="container mx-auto">
       <SectionTitle title={"Contact"} />
       {/* contact section grid*/}
-      <div className="pt-6 grid grid-row-2 grid-flow-row gap-4 sm:grid-flow-row md:grid-flow-col-dense lg:grid-flow-col-dense xl:grid-flow-col">
+      <div className="pt-6 grid grid-row-2 grid-flow-row gap-4 sm:grid-flow-row md:grid-flow-col-row lg:grid-flow-col-dense xl:grid-flow-col md:justify-items-center">
         {/* left side info grid */}
-        <div className="text-left w-3/4 grid grid-row-2 grid-flow-row gap-4">
+        <div className="text-left w-3/4 md:w-full lg:w-full xl:w-full sm:w-3/4 grid grid-row-2 grid-flow-row gap-4">
           {/* location */}
           <div className="grid grid-flow-col grid-cols-5">
             <img
@@ -50,18 +51,16 @@ export default function Contact() {
           {/* hours */}
           <div className="grid grid-flow-col grid-cols-5">
             <span></span>
-            <div className="col-span-4">
-              <p className="leading-relaxed">
-                <b>Hours of Operation:</b>
-                <p className="pt-3">
-                  Monday: 9am - 5pm <br />
-                  Tuesday: 8am ‑ 8pm <br />
-                  Wednesday: 8am ‑ 5pm <br />
-                  Thursday: 8am ‑ 8pm <br />
-                  Friday: 8am ‑ 5pm <br />
-                  Saturday: 8am ‑ 5pm <br />
-                  Sunday: Closed
-                </p>
+            <div className="col-span-4 leading-relaxed">
+              <p className="font-bold">Hours of Operation:</p>
+              <p className="pt-3">
+                Monday: 9am - 5pm <br />
+                Tuesday: 8am ‑ 8pm <br />
+                Wednesday: 8am ‑ 5pm <br />
+                Thursday: 8am ‑ 8pm <br />
+                Friday: 8am ‑ 5pm <br />
+                Saturday: 8am ‑ 5pm <br />
+                Sunday: Closed
               </p>
             </div>
           </div>
@@ -72,22 +71,39 @@ export default function Contact() {
               alt="Google rating"
               className="w-48 mx-auto mr-16 inline"
             />
-            <img
-              src="instagram-contact.png"
-              alt="Instagram"
-              className="w-10 mx-auto inline mr-5 my-auto"
-            />
-            <img
-              src="facebook.png"
-              alt="Facebook"
-              className="w-10 mx-auto inline my-auto"
-            />
+            <a
+              href="https://www.instagram.com/teteateteccg/"
+              className="contents"
+            >
+              <img
+                src="instagram-contact.png"
+                alt="Instagram"
+                className="w-10 mx-auto inline mr-5 my-auto"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/TeteATeteSalon"
+              className="contents"
+            >
+              <img
+                src="facebook.png"
+                alt="Facebook"
+                className="w-10 mx-auto inline my-auto"
+              />
+            </a>
           </div>
         </div>
         {/* map */}
         <div className="">
-          <img src="map.png" alt="map" className="" />
-          <button>Get directions</button>
+          <Map />
+          <a
+            className="contents"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.google.com/maps/dir//Tete+A+Tete+Salon,+Beacon+Street,+Newton,+MA/@42.3306046,-71.2623209,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x89e37882776a3071:0xb80e093582119c54!2m2!1d-71.192109!2d42.330626?hl=en"
+          >
+            <button className="float-right">Get directions</button>
+          </a>
         </div>
       </div>
       <style jsx>{`
@@ -99,7 +115,6 @@ export default function Contact() {
           font-weight: bold;
           font-size: 16px;
           margin-top: 50px;
-          float: right;
         }
       `}</style>
     </div>
