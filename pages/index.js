@@ -34,6 +34,7 @@ export default function Home() {
 
       <ScrollNavigation
         elements={elements}
+        offset={-120}
         //  shouldEnableHistory={true}
         //  shouldModifyUrl={true}
       >
@@ -50,8 +51,7 @@ export default function Home() {
               <div ref={refs.Services}>
                 <Services />
               </div>
-              <span ref={refs.Team}></span>
-              <div>
+              <div ref={refs.Team}>
                 <Team />
               </div>
               <div ref={refs.Products}>

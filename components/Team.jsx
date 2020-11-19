@@ -54,7 +54,7 @@ export default function Team() {
   const mobileSize = () => (isMobile ? false : true);
   const mobileWidth = () => (isMobile ? "250px" : "823px");
   return (
-    <div className="container my-20 mx-auto">
+    <div className="container mx-auto">
       <SectionTitle title={"Meet our team"} />
       <div className="flex flex-wrap flex-row justify-center gap-20 relative">
         <p className="w-3/4 header-color sm:w-3/4 md:w-2/4 lg:w-2/4 xl:w-1/4">
