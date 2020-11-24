@@ -7,6 +7,7 @@ import Team from "@/components/Team";
 import Products from "@/components/Products";
 import Contact from "@/components/Contact";
 import ContactForm from "@/components/ContactForm";
+import Giftcard from "@/components/Giftcard";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -18,7 +19,7 @@ export default function Home() {
   };
 
   return (
-    <div className="overflow-y-hidden">
+    <div className="overflow-y-hidden relative pb-40">
       <Head>
         <title>Tete-a-Tete Salon</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -65,6 +66,7 @@ export default function Home() {
         )}
       </ScrollNavigation>
       <ContactForm />
+      <Giftcard />
       <Footer />
     </div>
   );

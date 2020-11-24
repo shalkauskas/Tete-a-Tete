@@ -14,6 +14,9 @@ export default function Footer() {
           height: 154px;
           background: rgba(96, 90, 90, 0.89);
           color: white;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
             Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
         }

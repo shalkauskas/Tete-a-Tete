@@ -5,6 +5,12 @@ module.exports = {
       auto: "auto",
       "1/2": "50%",
     },
+    maxWidth: {
+      "1/4": "25%",
+      "1/2": "50%",
+      "3/4": "75%",
+      90: "90%",
+    },
     purge: ["./pages/**/*.js", "./components/**/*.js"],
   },
 };

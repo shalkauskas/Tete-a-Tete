@@ -2,7 +2,7 @@ import SectionTitle from "components/SectionTitle";
 import Map from "components/GoogleMap";
 export default function Contact() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto contact">
       <SectionTitle title={"Contact"} />
       {/* contact section grid*/}
       <div className="pt-6 grid grid-row-2 grid-flow-row gap-4 sm:grid-flow-row md:grid-flow-col-row lg:grid-flow-col-dense xl:grid-flow-col md:justify-items-center">
@@ -94,15 +94,16 @@ export default function Contact() {
           </div>
         </div>
         {/* map */}
-        <div className="">
+        <div className="max-w-sm sm:max-w-3/4 md:max-w-full mx-auto">
           <Map />
+
           <a
             className="contents"
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.google.com/maps/dir//Tete+A+Tete+Salon,+Beacon+Street,+Newton,+MA/@42.3306046,-71.2623209,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x89e37882776a3071:0xb80e093582119c54!2m2!1d-71.192109!2d42.330626?hl=en"
           >
-            <button className="float-right">Get directions</button>
+            <button className="float-right shadow-lg">Get directions</button>
           </a>
         </div>
       </div>
@@ -115,6 +116,16 @@ export default function Contact() {
           font-weight: bold;
           font-size: 16px;
           margin-top: 50px;
+        }
+        @media screen and (max-width: 1400px) {
+          .contact {
+            max-width: 90%;
+          }
+        }
+        @media screen and (max-width: 1024px) {
+          .contact {
+            max-width: 86%;
+          }
         }
       `}</style>
     </div>

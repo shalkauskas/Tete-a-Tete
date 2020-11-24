@@ -50,6 +50,18 @@ export default function WelcomeCarousel() {
       >
         {baseChildren.props.children}
       </Carousel>
+      <style jsx>{`
+        @media screen and (max-width: 1400px) {
+          div {
+            max-width: 90%;
+          }
+        }
+        @media screen and (max-width: 1024px) {
+          div {
+            max-width: 86%;
+          }
+        }
+      `}</style>
     </div>
   );
 }

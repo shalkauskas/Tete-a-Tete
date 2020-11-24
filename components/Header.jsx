@@ -13,9 +13,7 @@ export default function Header(props) {
     setShowMiniNav(currentScrollTop > 100);
   });
   const header = showMiniNav ? "nav-small" : "nav-full";
-  const logo = showMiniNav
-    ? "w-0 transition-all duration-500 ease-in-out"
-    : "logo";
+  const logo = showMiniNav ? "w-0 transition-all duration-500 ease" : "logo";
   const textLogo = showMiniNav
     ? "font-logo"
     : "hidden transition-all duration-300 ease-in-out";
@@ -103,7 +101,7 @@ export default function Header(props) {
         .logo {
           width: 238px;
           height: 145px;
-          transition: all 0.5s;
+          transition: all 0.5s ease;
         }
         .nav-full {
           height: 137px;

@@ -3,7 +3,7 @@ export default function Products() {
   const [brand, setBrandOpen] = React.useState(false);
   const [green, setGreenOpen] = React.useState(false);
   return (
-    <div className="container mx-auto max-w-screen-xl">
+    <div className="container mx-auto max-w-screen-xl products">
       <SectionTitle title={"High-quality products"} />
       {/* wraper */}
       <div className="flex flex-wrap flex-row">
@@ -33,7 +33,11 @@ export default function Products() {
               (brand ? "block sm:block" : "hidden sm:hidden")
             }
           >
-            <img src="top-brands.png" alt="Top brands" className="w-full" />
+            <img
+              src="top-brands.png"
+              alt="Top brands"
+              className="w-3/4 md:w-full mx-auto mb-6"
+            />
           </div>
           <hr className="block sm:block md:hidden lg:hidden" />
         </div>
@@ -67,7 +71,7 @@ export default function Products() {
             <img
               src="green-choices.png"
               alt="Green choices"
-              className="w-full"
+              className="w-3/4 md:w-full mx-auto"
             />
           </div>
         </div>
@@ -77,6 +81,16 @@ export default function Products() {
           font-size: 24px;
           line-height: 29px;
           color: #4d4949;
+        }
+        @media screen and (max-width: 1400px) {
+          .products {
+            max-width: 90%;
+          }
+        }
+        @media screen and (max-width: 1024px) {
+          .products {
+            max-width: 86%;
+          }
         }
       `}</style>
     </div>

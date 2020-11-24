@@ -1,57 +1,63 @@
 import SectionTitle from "components/SectionTitle";
 export default function ContactForm() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto max-w-sm">
       <SectionTitle title={"Get in touch"} />
       <div className="mx-auto block text-center">
         <form
           action="sumbit"
-          className="mx-auto inline-block text-left"
+          className="mx-auto inline-block text-left w-full"
           autoComplete="on"
         >
           <label htmlFor="name">Name*</label>
           <br />
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Joe Doe"
-            size="50"
-            required
-          />
-          <br />
+          <div className="w-full">
+            <input
+              className="w-full"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Joe Doe"
+              required
+            />
+          </div>
+
           <label htmlFor="email">Email address*</label>
           <br />
-          <input
-            type="text"
-            id="email"
-            name="email"
-            placeholder="example@smth.com"
-            size="50"
-            required
-          />
-          <br />
+          <div className="w-full">
+            <input
+              className="w-full"
+              type="text"
+              id="email"
+              name="email"
+              placeholder="example@smth.com"
+              required
+            />
+          </div>
           <label htmlFor="phone">Phone number</label>
           <br />
-          <input
-            type="text"
-            id="phone"
-            placeholder="***-***-****"
-            name="phone"
-            size="50"
-          />
-          <br />
+          <div className="w-full">
+            <input
+              className="w-full"
+              type="text"
+              id="phone"
+              placeholder="***-***-****"
+              name="phone"
+            />
+          </div>
           <label htmlFor="message">Message*</label>
           <br />
-          <textarea
-            type="text"
-            id="message"
-            name="message"
-            required
-            rows="4"
-            cols="50"
-            style={{ paddingBottom: "150px" }}
-          />
+          <div className="w-full">
+            <textarea
+              className="w-full"
+              type="text"
+              id="message"
+              name="message"
+              required
+              rows="4"
+              style={{ paddingBottom: "150px" }}
+            />
+          </div>
           <button type="submit" className="block mx-auto">
             Send
           </button>
