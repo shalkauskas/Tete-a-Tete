@@ -2,7 +2,7 @@ import Head from "next/head";
 import ScrollNavigation from "react-single-page-navigation";
 import Header from "@/components/Header";
 import WelcomeCarousel from "@/components/Carousel";
-import Services from "@/components/Services";
+import Services from "@/components/ServiceMenu";
 import Team from "@/components/Team";
 import Products from "@/components/Products";
 import Contact from "@/components/Contact";

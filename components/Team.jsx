@@ -43,7 +43,7 @@ export default function Team() {
     mq.matches ? setCurrentSlide(0) : setCurrentSlide(1);
   }
   useEffect(() => {
-    const mq = window.matchMedia("screen and (max-width: 768px)");
+    const mq = window.matchMedia("screen and (max-width: 960px)");
     mq.addListener(mqChange);
     mqChange(mq);
 
@@ -56,8 +56,8 @@ export default function Team() {
   return (
     <div className="container mx-auto">
       <SectionTitle title={"Meet our team"} />
-      <div className="flex flex-wrap flex-row justify-center gap-20 relative">
-        <p className="w-3/4 header-color sm:w-3/4 md:w-2/4 lg:w-2/4 xl:w-1/4">
+      <div className="flex flex-wrap flex-row justify-center relative team mx-auto">
+        <p className="w-3/4 header-color sm:w-3/4 md:w-2/4 lg:w-2/4 xl:w-1/4 mb-6">
           We've been serving the Newton area since 1999 and have a pristine
           reputation for our highly trained stylists who continually upgrade
           their skills. By using the very best products on the market and
@@ -66,73 +66,52 @@ export default function Team() {
           here to maintain your look or receive a beauty transformation, you can
           do it all Tête-à-Tête.
         </p>
-        <div>
-          <img onClick={prev} className="arrow left" src="left.png"></img>
-          <img onClick={next} className="arrow right" src="right.png"></img>
-          <Carousel
-            showThumbs={false}
-            showArrows={false}
-            infiniteLoop={false}
-            showIndicators={false}
-            autoPlay={false}
-            showStatus={false}
-            swipeable={true}
-            centerMode={mobileSize()}
-            centerSlidePercentage={33}
-            width={mobileWidth()}
-            selectedItem={currentSlide}
-          >
-            {mapMembers}
-          </Carousel>
+        <div className="flex mx-auto ml-auto">
+          {/* <img onClick={prev} className="arrow left" src="left.png"></img>
+          <img onClick={next} className="arrow right" src="right.png"></img> */}
+          <div className="inline-block my-auto min-w-content">
+            <img
+              onClick={prev}
+              className="w-5 cursor-pointer mr-2 inline-block"
+              src="left.png"
+            ></img>
+          </div>
+          <div className="inline-block">
+            <Carousel
+              showThumbs={false}
+              showArrows={false}
+              infiniteLoop={false}
+              showIndicators={false}
+              autoPlay={false}
+              showStatus={false}
+              swipeable={true}
+              centerMode={mobileSize()}
+              centerSlidePercentage={33}
+              width={mobileWidth()}
+              selectedItem={currentSlide}
+            >
+              {mapMembers}
+            </Carousel>
+          </div>
+
+          <div className="inline-block my-auto min-w-content">
+            <img
+              onClick={next}
+              className="w-5 cursor-pointer ml-2 inline-block"
+              src="right.png"
+            ></img>
+          </div>
         </div>
       </div>
       <style jsx>{`
-        .arrow {
-          position: absolute;
-          z-index: 2;
-          top: calc(50% - 15px);
-          width: 26px;
-          height: 30px;
-          cursor: pointer;
+        @media screen and (max-width: 1400px) {
+          .team {
+            max-width: 90%;
+          }
         }
-        .right {
-          right: 0;
+        .min-w-content {
+          min-width: fit-content;
         }
-        .left {
-          left: 32%;
-        }
-        @media screen and (max-width: 1280px) {
-          .arrow {
-            top: 65%;
-          }
-          .left {
-            left: 4%;
-          }
-          .right {
-            right: 5%;
-          }
-          @media screen and (max-width: 1024px) {
-            .arrow {
-              top: 68%;
-            }
-            .left {
-              left: -52px;
-            }
-            .right {
-              left: 795px;
-            }
-          }
-          @media screen and (max-width: 768px) {
-            .arrow {
-              top: 55%;
-            }
-            .left {
-              left: 20%;
-            }
-            .right {
-              left: 79%;
-            }
-          }
       `}</style>
     </div>
   );

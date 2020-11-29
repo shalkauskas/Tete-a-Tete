@@ -1,7 +1,7 @@
 const servicesHaircare = [
   [
     {
-      id: 0,
+      title: "Haircuts & styling",
       image: "haircuts.png",
     },
     {
@@ -36,9 +36,7 @@ const servicesHaircare = [
     },
   ],
   [
-    {
-      image: "haircolor.png",
-    },
+    { title: "Hair color", image: "haircolor.png" },
     {
       id: 20,
       service: "Color application & Gloss",
@@ -66,9 +64,7 @@ const servicesHaircare = [
     },
   ],
   [
-    {
-      image: "treatments.png",
-    },
+    { title: "Straightening & treatments", image: "treatments.png" },
     {
       id: 30,
       service: "Keratin hair straightening",
@@ -96,9 +92,7 @@ const servicesHaircare = [
     },
   ],
   [
-    {
-      image: "extensions.png",
-    },
+    { title: "Extensions & hairdreams", image: "extensions.png" },
     {
       id: 40,
       service: "Half extensions",

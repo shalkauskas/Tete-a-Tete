@@ -9,10 +9,12 @@ export default function Buttons() {
           Buy a gift card
         </button>
       </a>
+      <a href="/">
+        <button className="shadow-lg border ml-24" style={{ color: "#895b4a" }}>
+          See other services
+        </button>
+      </a>
 
-      <button className="shadow-lg border ml-24" style={{ color: "#895b4a" }}>
-        See other services
-      </button>
       <style jsx>{`
         button {
           border-color: #895b4a;
@@ -21,6 +23,7 @@ export default function Buttons() {
           font-weight: bold;
           font-size: 16px;
           margin-top: 50px;
+          outline: none;
         }
       `}</style>
     </div>

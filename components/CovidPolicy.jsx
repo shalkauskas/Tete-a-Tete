@@ -18,7 +18,7 @@ export default function CovidPolicy() {
       </div>
       {/* Policy modal */}
       <div
-        className={`${openPolicy} absolute w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 z-50`}
+        className={`${openPolicy} absolute w-3/4 md:w-1/2 lg:w-1/2 xl:w-1/3 z-50`}
       >
         <img src="covid-policy.png" className=" mx-auto mt-16" />
         <span

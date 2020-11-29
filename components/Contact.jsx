@@ -94,9 +94,8 @@ export default function Contact() {
           </div>
         </div>
         {/* map */}
-        <div className="max-w-sm sm:max-w-3/4 md:max-w-full mx-auto">
+        <div className="w-3/4 sm:max-w-3/4 md:w-full sm:mx-auto">
           <Map />
-
           <a
             className="contents"
             target="_blank"

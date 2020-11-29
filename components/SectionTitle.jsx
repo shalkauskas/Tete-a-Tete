@@ -4,6 +4,7 @@ export default function SectionTitle(props) {
       <h1 className="font-bold text-center text-color text-2xl pt-16 my-10">
         {props.title}
       </h1>
+      {/* conditional rendering of "Back to services button" */}
       <a
         style={{ fontSize: "16px" }}
         className={`text-color font-light italic text underline inline-block absolute bottom-0 ${

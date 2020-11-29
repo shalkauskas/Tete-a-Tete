@@ -1,7 +1,7 @@
 export default function HandyInfo() {
   return (
     <div
-      className="w-1/4 ml-auto"
+      className="w-1/4 ml-auto slide-query"
       style={{ background: "#F1E9E8", height: "500px" }}
     >
       <div className="max-w-90 mx-auto">
@@ -77,6 +77,12 @@ export default function HandyInfo() {
         p {
           font-size: 15px;
           color: black;
+        }
+        @media (max-width: 1428px) {
+          .slide-query {
+            margin-right: auto;
+            width: auto;
+          }
         }
       `}</style>
     </div>
