@@ -2,7 +2,7 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import Giftcard from "@/components/Giftcard";
 import Footer from "@/components/Footer";
-
+import Link from "next/link";
 export default function Layout({ children, title }) {
   return (
     <div className="overflow-y-hidden relative pb-40">
@@ -18,12 +18,7 @@ export default function Layout({ children, title }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Header
-        el1={() => goTo("Services")}
-        el2={() => goTo("Team")}
-        el3={() => goTo("Products")}
-        el4={() => goTo("Contact")}
-      />
+      <Header />
       <Giftcard />
       {children}
       <Footer />

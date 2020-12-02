@@ -1,5 +1,4 @@
 import Head from "next/head";
-import ScrollNavigation from "react-single-page-navigation";
 import Header from "@/components/Header";
 import WelcomeCarousel from "@/components/Carousel";
 import Services from "@/components/ServiceMenu";
@@ -8,16 +7,10 @@ import Products from "@/components/Products";
 import Contact from "@/components/Contact";
 import ContactForm from "@/components/ContactForm";
 import Giftcard from "@/components/Giftcard";
+import ScrollButton from "@/components/ScrollButton";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  const elements = {
-    Services: {},
-    Team: {},
-    Products: {},
-    Contact: {},
-  };
-
   return (
     <div className="overflow-y-hidden relative pb-40">
       <Head>
@@ -32,41 +25,15 @@ export default function Home() {
           rel="stylesheet"
         ></link>
       </Head>
-
-      <ScrollNavigation
-        elements={elements}
-        offset={-120}
-        //  shouldEnableHistory={true}
-        //  shouldModifyUrl={true}
-      >
-        {({ refs, activeElement, goTo }) => (
-          <div>
-            <Header
-              el1={() => goTo("Services")}
-              el2={() => goTo("Team")}
-              el3={() => goTo("Products")}
-              el4={() => goTo("Contact")}
-            />
-            <WelcomeCarousel />
-            <div className="content mx-auto">
-              <div ref={refs.Services}>
-                <Services />
-              </div>
-              <div ref={refs.Team}>
-                <Team />
-              </div>
-              <div ref={refs.Products}>
-                <Products />
-              </div>
-              <div ref={refs.Contact}>
-                <Contact />
-              </div>
-            </div>
-          </div>
-        )}
-      </ScrollNavigation>
+      <Header />
+      <WelcomeCarousel />
+      <Services />
+      <Team />
+      <Products />
+      <Contact />
       <ContactForm />
       <Giftcard />
+      <ScrollButton />
       <Footer />
     </div>
   );

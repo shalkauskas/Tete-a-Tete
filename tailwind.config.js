@@ -10,6 +10,7 @@ module.exports = {
       "1/2": "50%",
       "3/4": "75%",
       90: "90%",
+      full: "100%",
     },
     purge: ["./pages/**/*.js", "./components/**/*.js"],
   },

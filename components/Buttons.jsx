@@ -3,14 +3,14 @@ export default function Buttons() {
     <div className="mb-24">
       <a href="https://swipeit.com/product/1218/tete-a-tete">
         <button
-          className="shadow-lg text-white"
+          className="shadow-lg text-white py-2 px-6"
           style={{ backgroundColor: "#895b4a", marginLeft: "20rem" }}
         >
           Buy a gift card
         </button>
       </a>
       <a href="/">
-        <button className="shadow-lg border ml-24" style={{ color: "#895b4a" }}>
+        <button className="border ml-24 py-2 px-3" style={{ color: "#895b4a" }}>
           See other services
         </button>
       </a>
@@ -19,7 +19,6 @@ export default function Buttons() {
         button {
           border-color: #895b4a;
           border-radius: 15px;
-          padding: 10px 40px;
           font-weight: bold;
           font-size: 16px;
           margin-top: 50px;

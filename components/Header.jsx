@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import Phone from "components/Phone";
 import CovidPolicy from "components/CovidPolicy";
 import useDocumentScrollThrottled from "components/useDocumentScrollThrottled";
-export default function Header(props) {
+import { useRouter } from "next/router";
+export default function Header() {
+  const router = useRouter();
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   // Resize navbar on scroll //
@@ -56,7 +58,17 @@ export default function Header(props) {
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="nav-item">
                 <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
-                  <span onClick={props.el1} className="ml-2">
+                  <span
+                    onClick={() =>
+                      router.push("/", "/services").then(() =>
+                        window.scrollTo({
+                          top: 600,
+                          behavior: "smooth",
+                        })
+                      )
+                    }
+                    className="ml-2"
+                  >
                     Services
                   </span>
                 </a>
@@ -64,7 +76,17 @@ export default function Header(props) {
               <hr />
               <li className="nav-item">
                 <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
-                  <span onClick={props.el2} className="ml-2">
+                  <span
+                    onClick={() =>
+                      router.push("/", "/team").then(() =>
+                        window.scrollTo({
+                          top: 1650,
+                          behavior: "smooth",
+                        })
+                      )
+                    }
+                    className="ml-2"
+                  >
                     Team
                   </span>
                 </a>
@@ -72,7 +94,17 @@ export default function Header(props) {
               <hr />
               <li className="nav-item">
                 <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
-                  <span onClick={props.el3} className="ml-2">
+                  <span
+                    onClick={() =>
+                      router.push("/", "/products").then(() =>
+                        window.scrollTo({
+                          top: 2350,
+                          behavior: "smooth",
+                        })
+                      )
+                    }
+                    className="ml-2"
+                  >
                     Products
                   </span>
                 </a>
@@ -80,7 +112,17 @@ export default function Header(props) {
               <hr />
               <li className="nav-item">
                 <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
-                  <span onClick={props.el4} className="ml-2">
+                  <span
+                    onClick={() =>
+                      router.push("/", "/contact").then(() =>
+                        window.scrollTo({
+                          top: 3150,
+                          behavior: "smooth",
+                        })
+                      )
+                    }
+                    className="ml-2"
+                  >
                     Contact
                   </span>
                 </a>

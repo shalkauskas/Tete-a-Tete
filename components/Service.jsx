@@ -50,9 +50,7 @@ export default function Service(props) {
         <div className="flex flex-wrap flex-row">
           <div className="ml-auto pr-12 slide-query">
             <div className="flex">
-              <div
-                className={`${renderNav} "inline-block my-auto min-w-content"`}
-              >
+              <div className={`${renderNav} inline-block my-auto min-content`}>
                 <img
                   onClick={prev}
                   className="w-5 cursor-pointer mr-2 inline-block"
@@ -74,9 +72,7 @@ export default function Service(props) {
                   {mapServices}
                 </Carousel>
               </div>
-              <div
-                className={`${renderNav} "inline-block my-auto min-w-content"`}
-              >
+              <div className={`${renderNav} inline-block my-auto min-content`}>
                 <img
                   onClick={next}
                   className="w-5 cursor-pointer ml-2 inline-block"
@@ -90,6 +86,9 @@ export default function Service(props) {
         </div>
       </div>
       <style jsx>{`
+        .min-content {
+          width: max-content;
+        }
         @media (max-width: 1428px) {
           .slide-query {
             margin-right: auto;
@@ -101,9 +100,6 @@ export default function Service(props) {
             margin-left: auto;
             width: 100%;
           }
-        }
-        .min-w-content {
-          min-width: fit-content;
         }
       `}</style>
     </div>

@@ -16,7 +16,6 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-responsive-carousel": "^3.2.10",
-    "react-single-page-navigation": "^1.0.1",
     "tailwindcss": "^1.9.6"
   }
 }
