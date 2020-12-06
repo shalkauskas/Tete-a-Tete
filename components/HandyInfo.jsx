@@ -78,7 +78,7 @@ export default function HandyInfo() {
           font-size: 15px;
           color: black;
         }
-        @media (max-width: 1428px) {
+        @media (max-width: 1521px) {
           .slide-query {
             margin-right: auto;
             width: auto;

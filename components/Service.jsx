@@ -4,41 +4,55 @@ import { Carousel } from "react-responsive-carousel";
 import ServicesMap from "@/components/ServicesMap";
 import HandyInfo from "@/components/HandyInfo";
 import Buttons from "@/components/Buttons";
+import NavMap from "@/components/ServicesNavMap";
 
 export default function Service(props) {
-  const renderNav = props.service.length <= 1 ? "hidden" : "block";
+  // responsive carousel
+  const [isMobile, setIsMobile] = React.useState(false);
+  function mqChange(mq) {
+    setIsMobile(mq.matches);
+  }
+  React.useEffect(() => {
+    const mq = window.matchMedia("screen and (max-width: 1080px)");
+    mq.addListener(mqChange);
+    mqChange(mq);
+
+    return () => {
+      mq.removeListener(mqChange);
+    };
+  }, []);
+
   // carousel controls
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const changeSlide = (index) => {
     setCurrentSlide(index);
   };
-  const next = () =>
-    currentSlide <= props.service.length - 2
-      ? setCurrentSlide(currentSlide + 1)
-      : setCurrentSlide(0);
-  const prev = () =>
-    currentSlide == 0
-      ? setCurrentSlide(props.service.length - 1)
-      : setCurrentSlide(currentSlide - 1);
+  const next = () => setCurrentSlide(currentSlide + 1);
+
+  const prev = () => setCurrentSlide(currentSlide - 1);
+  // mapping nav buttons
+  const renderNav = props.service.length <= 1 || isMobile ? "hidden" : "block";
+  const mapNavButtons = props.service.map((item, index) => (
+    <NavMap
+      key={index}
+      title={item[0].title}
+      currentSlide={currentSlide}
+      index={index}
+      clickHandle={() => changeSlide(index)}
+      isMobile={isMobile}
+    />
+  ));
+
   // mapping service info to slides
   const mapServices = props.service.map((item, index) => (
     <ServicesMap
       key={index}
       list={item}
       showSkinCare={props.title === "Skin care" ? true : false}
+      showMobile={isMobile ? true : false}
+      mapNav={mapNavButtons}
+      renderNav={props.service.length <= 1 ? "hidden" : "block"}
     />
-  ));
-  // mapping nav buttons
-  const mapNavButtons = props.service.map((item, index) => (
-    <button
-      key={index}
-      className={`ml-8 text-black focus:outline-none ${
-        currentSlide === index ? "font-bold underline" : ""
-      }`}
-      onClick={() => changeSlide(index)}
-    >
-      {item[0].title}
-    </button>
   ));
   return (
     <div>
@@ -48,16 +62,18 @@ export default function Service(props) {
           {mapNavButtons}
         </div>
         <div className="flex flex-wrap flex-row">
-          <div className="ml-auto pr-12 slide-query">
+          <div className="ml-auto md:pr-12 slide-query">
             <div className="flex">
               <div className={`${renderNav} inline-block my-auto min-content`}>
                 <img
                   onClick={prev}
-                  className="w-5 cursor-pointer mr-2 inline-block"
+                  className={`w-5 cursor-pointer mr-2 ${
+                    currentSlide == 0 ? "invisible" : "inline-block"
+                  }`}
                   src="left.png"
                 ></img>
               </div>
-              <div className="inline-block">
+              <div className="inline-block mx-auto">
                 <Carousel
                   showThumbs={false}
                   infiniteLoop={false}
@@ -66,8 +82,10 @@ export default function Service(props) {
                   autoPlay={false}
                   showStatus={false}
                   swipeable={true}
-                  width="900px"
+                  width={isMobile ? "450px" : "900px"}
                   selectedItem={currentSlide}
+                  axis={isMobile ? "vertical" : "horizontal"}
+                  transitionTime={isMobile ? 1 : 300}
                 >
                   {mapServices}
                 </Carousel>
@@ -75,7 +93,11 @@ export default function Service(props) {
               <div className={`${renderNav} inline-block my-auto min-content`}>
                 <img
                   onClick={next}
-                  className="w-5 cursor-pointer ml-2 inline-block"
+                  className={`w-5 cursor-pointer ml-2 ${
+                    currentSlide == props.service.length - 1
+                      ? "invisible"
+                      : "inline-block"
+                  }`}
                   src="right.png"
                 ></img>
               </div>
@@ -89,7 +111,7 @@ export default function Service(props) {
         .min-content {
           width: max-content;
         }
-        @media (max-width: 1428px) {
+        @media (max-width: 1521px) {
           .slide-query {
             margin-right: auto;
           }

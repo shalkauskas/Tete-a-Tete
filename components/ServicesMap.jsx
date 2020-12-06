@@ -28,35 +28,69 @@ export default function ServicesMap(props) {
   ));
   const skinCareLogo = (
     <div
-      className={`${
+      className={`${props.showMobile ? "flex" : ""} ${
         props.showSkinCare ? "block" : "hidden"
-      } max-w-90 mx-auto text-left`}
+      } max-w-90 mx-auto text-left justify-evenly`}
     >
-      <p className="mb-3">We Use The Rezâge Skin Care Line</p>
+      <p className="mb-3 mt-auto">We Use The Rezâge Skin Care Line</p>
       <img src="rezage-logo.png" style={{ width: "60px" }} />
     </div>
   );
+  function height() {
+    if (props.showMobile && props.showSkinCare == true) {
+      return 900;
+    }
+    if (props.showMobile == true && props.showSkinCare == false) {
+      return 800;
+    }
+    if (props.showMobile == false && props.showSkinCare == true) {
+      return 679;
+    } else {
+      return 500;
+    }
+  }
   return (
     <div
-      className="flex"
+      className={`flex ${props.showMobile ? "flex-col" : ""}`}
       style={{
-        height: props.showSkinCare ? 679 : 500,
+        height: height(),
         background: "#EDE6DD",
       }}
     >
       {/* image */}
       <div style={{ width: "max-content" }}>
-        <img style={{ width: "611px" }} src={list[0].image} />
+        <img
+          className={`${props.showMobile ? "float-left" : ""}`}
+          style={{ width: props.showMobile ? "179px" : "611px" }}
+          src={list[0].image}
+        />
+        <div
+          className={`${props.renderNav} inline-block mt-3 w-60 pr-3`}
+          style={{ textAlign: props.showMobile ? "-webkit-right" : "" }}
+        >
+          {props.showMobile ? props.mapNav : null}
+        </div>
       </div>
+
       {/* description */}
-      <div className="w-full my-auto">
+      <div className={`w-full ${props.showMobile ? "my-8" : "my-auto"}`}>
         {mapServices}
         {skinCareLogo}
-        <p className="font-bold text-black pt-6">
+        <p
+          className={`${
+            props.showMobile ? "bottom" : ""
+          } font-bold text-black pt-6`}
+        >
           Refer a friend and get $15 gift certificate!
         </p>
       </div>
-      <style jsx>{``}</style>
+      <style jsx>{`
+        .bottom {
+          position: absolute;
+          bottom: 20px;
+          left: 13%;
+        }
+      `}</style>
     </div>
   );
 }
