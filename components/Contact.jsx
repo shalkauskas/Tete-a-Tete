@@ -2,12 +2,12 @@ import SectionTitle from "components/SectionTitle";
 import Map from "components/GoogleMap";
 export default function Contact() {
   return (
-    <div className="container mx-auto contact">
+    <div className="container mx-auto">
       <SectionTitle title={"Contact"} />
       {/* contact section grid*/}
       <div className="pt-6 grid grid-row-2 grid-flow-row gap-4 sm:grid-flow-row md:grid-flow-col-row lg:grid-flow-col-dense xl:grid-flow-col md:justify-items-center">
         {/* left side info grid */}
-        <div className="text-left w-3/4 md:w-full lg:w-full xl:w-full sm:w-3/4 grid grid-row-2 grid-flow-row gap-4">
+        <div className="map text-left w-screen md:w-full lg:w-full xl:w-full sm:w-3/4 grid grid-row-2 grid-flow-row gap-4">
           {/* location */}
           <div className="grid grid-flow-col grid-cols-5">
             <img
@@ -78,7 +78,7 @@ export default function Contact() {
               <img
                 src="instagram-contact.png"
                 alt="Instagram"
-                className="w-10 mx-auto inline mr-5 my-auto"
+                className="w-10 mx-auto inline mr-5 my-auto hover:opacity-75"
               />
             </a>
             <a
@@ -88,13 +88,13 @@ export default function Contact() {
               <img
                 src="facebook.png"
                 alt="Facebook"
-                className="w-10 mx-auto inline my-auto"
+                className="w-10 mx-auto inline my-auto mr-2 hover:opacity-75"
               />
             </a>
           </div>
         </div>
         {/* map */}
-        <div className="w-3/4 md:w-full md:max-w-full sm:max-w-3/4 sm:mx-auto">
+        <div className="w-screen md:w-full map md:max-w-full sm:max-w-3/4 sm:mx-auto">
           <Map />
           <a
             className="contents"
@@ -102,7 +102,9 @@ export default function Contact() {
             rel="noopener noreferrer"
             href="https://www.google.com/maps/dir//Tete+A+Tete+Salon,+Beacon+Street,+Newton,+MA/@42.3306046,-71.2623209,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x89e37882776a3071:0xb80e093582119c54!2m2!1d-71.192109!2d42.330626?hl=en"
           >
-            <button className="float-right shadow-lg">Get directions</button>
+            <button className="float-right shadow-lg mr-3 hover:opacity-75">
+              Get directions
+            </button>
           </a>
         </div>
       </div>
@@ -116,14 +118,12 @@ export default function Contact() {
           font-size: 16px;
           margin-top: 50px;
         }
-        @media screen and (max-width: 1400px) {
-          .contact {
-            max-width: 90%;
+        @media screen and (max-width: 500px) {
+          .map {
+            width: 100vw;
           }
-        }
-        @media screen and (max-width: 1024px) {
           .contact {
-            max-width: 86%;
+            max-width: 100%;
           }
         }
       `}</style>

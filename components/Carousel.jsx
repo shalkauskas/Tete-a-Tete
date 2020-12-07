@@ -58,7 +58,7 @@ export default function WelcomeCarousel() {
         }
         @media screen and (max-width: 1024px) {
           div {
-            max-width: 86%;
+            max-width: 100%;
           }
         }
       `}</style>

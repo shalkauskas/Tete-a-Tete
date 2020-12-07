@@ -3,6 +3,7 @@ import Phone from "components/Phone";
 import CovidPolicy from "components/CovidPolicy";
 import useDocumentScrollThrottled from "components/useDocumentScrollThrottled";
 import { useRouter } from "next/router";
+import Link from "next/link";
 export default function Header() {
   const router = useRouter();
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -30,14 +31,16 @@ export default function Header() {
           <div
             className={`${dropdown} w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start`}
           >
-            <a href="/">
-              <img src="/logo.png" alt="Logo" className={`${logo}`} />
-              <span
-                className={`${textLogo} font-logo uppercase text-4xl xl:leading-4 lg:leading-4 md:leading-normal leading-relaxed inline-block mr-4 py-3 whitespace-no-wrap text-white`}
-              >
-                Tête-à-Tête
-              </span>
-            </a>
+            <Link href="/" passHref>
+              <a>
+                <img src="/logo.png" alt="Logo" className={`${logo}`} />
+                <span
+                  className={`${textLogo} font-logo uppercase text-4xl xl:leading-4 lg:leading-4 md:leading-normal leading-relaxed inline-block mr-4 py-3 whitespace-no-wrap text-white`}
+                >
+                  Tête-à-Tête
+                </span>
+              </a>
+            </Link>
             <button
               className={`text-white cursor-pointer text-xl leading-none px-3 pt-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none`}
               type="button"
@@ -156,7 +159,7 @@ export default function Header() {
         #example-navbar-danger {
           background-color: #716c6c;
         }
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 1023px) {
           #example-navbar-danger {
             padding: 30px 0;
             position: absolute;

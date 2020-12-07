@@ -24,6 +24,14 @@ export default function ServiceMenuItem(props) {
           height: 404px;
           background-size: cover;
         }
+        @media screen and (max-width: 550px) {
+          .service-box {
+            width: 100vw;
+          }
+          .background-box {
+            left: 120px;
+          }
+        }
       `}</style>
     </div>
   );

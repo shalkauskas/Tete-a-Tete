@@ -5,7 +5,7 @@ export default function Buttons(props) {
     <div className="mb-12">
       <a href="https://swipeit.com/product/1218/tete-a-tete">
         <button
-          className="shadow-lg text-white py-2 px-6 ml-80"
+          className="shadow-lg text-white py-2 px-6 ml-80 hover:opacity-75"
           style={{ backgroundColor: "#895b4a" }}
         >
           Buy a gift card
@@ -22,7 +22,9 @@ export default function Buttons(props) {
         }
       >
         <button
-          className={`border ${props.mobile ? "ml-10" : "ml-24"} py-2 px-3`}
+          className={`border ${
+            props.mobile ? "ml-10" : "ml-24"
+          } py-2 px-3 hover:opacity-75`}
           style={{ color: "#895b4a" }}
         >
           See other services
