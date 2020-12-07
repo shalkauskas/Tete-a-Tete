@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
-export default function Buttons() {
+export default function Buttons(props) {
   const router = useRouter();
   return (
-    <div className="mb-24">
+    <div className="mb-12">
       <a href="https://swipeit.com/product/1218/tete-a-tete">
         <button
           className="shadow-lg text-white py-2 px-6 ml-80"
@@ -21,7 +21,10 @@ export default function Buttons() {
           )
         }
       >
-        <button className="border ml-24 py-2 px-3" style={{ color: "#895b4a" }}>
+        <button
+          className={`border ${props.mobile ? "ml-10" : "ml-24"} py-2 px-3`}
+          style={{ color: "#895b4a" }}
+        >
           See other services
         </button>
       </a>

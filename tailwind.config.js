@@ -14,9 +14,4 @@ module.exports = {
     },
     purge: ["./pages/**/*.js", "./components/**/*.js"],
   },
-  experimental: {
-    additionalBreakpoint: true,
-    extendedFontSizeScale: true,
-    extendedSpacingScale: true,
-  },
 };

@@ -4,6 +4,7 @@ import { Carousel } from "react-responsive-carousel";
 import ServicesMap from "@/components/ServicesMap";
 import HandyInfo from "@/components/HandyInfo";
 import Buttons from "@/components/Buttons";
+import Refferal from "@/components/Refferal";
 import NavMap from "@/components/ServicesNavMap";
 
 export default function Service(props) {
@@ -56,7 +57,7 @@ export default function Service(props) {
   ));
   return (
     <div>
-      <div className="pt-32 mx-auto max-w-90">
+      <div className="pt-32 mx-auto sm:max-w-90">
         <SectionTitle title={props.title} showLink={true} />
         <div className={`${renderNav} mb-12 xl:ml-32 lg:ml-24 buttons`}>
           {mapNavButtons}
@@ -73,7 +74,7 @@ export default function Service(props) {
                   src="left.png"
                 ></img>
               </div>
-              <div className="inline-block mx-auto">
+              <div className="inline-block sm:mx-auto">
                 <Carousel
                   showThumbs={false}
                   infiniteLoop={false}
@@ -81,11 +82,11 @@ export default function Service(props) {
                   showIndicators={false}
                   autoPlay={false}
                   showStatus={false}
-                  swipeable={true}
-                  width={isMobile ? "450px" : "900px"}
+                  swipeable={isMobile ? false : true}
+                  width={isMobile ? "23rem" : "900px"}
                   selectedItem={currentSlide}
-                  axis={isMobile ? "vertical" : "horizontal"}
                   transitionTime={isMobile ? 1 : 300}
+                  dynamicHeight={true}
                 >
                   {mapServices}
                 </Carousel>
@@ -102,7 +103,7 @@ export default function Service(props) {
                 ></img>
               </div>
             </div>
-            <Buttons />
+            {isMobile ? <Refferal mobile={isMobile} /> : <Buttons />}
           </div>
           <HandyInfo />
         </div>

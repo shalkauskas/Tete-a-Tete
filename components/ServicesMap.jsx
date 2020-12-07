@@ -1,3 +1,5 @@
+import Buttons from "@/components/Buttons";
+import Refferal from "@/components/Refferal";
 export default function ServicesMap(props) {
   // mapping slide content
   const list = props.list;
@@ -9,7 +11,7 @@ export default function ServicesMap(props) {
       } mb-4`}
     >
       <p
-        style={{ fontSize: "16px" }}
+        style={{ fontSize: "16px", textAlign: "left" }}
         className={`text-black ${
           props.showSkinCare ? "" : "col-start-1 col-end-5"
         } mr-auto`}
@@ -36,24 +38,10 @@ export default function ServicesMap(props) {
       <img src="rezage-logo.png" style={{ width: "60px" }} />
     </div>
   );
-  function height() {
-    if (props.showMobile && props.showSkinCare == true) {
-      return 900;
-    }
-    if (props.showMobile == true && props.showSkinCare == false) {
-      return 800;
-    }
-    if (props.showMobile == false && props.showSkinCare == true) {
-      return 679;
-    } else {
-      return 500;
-    }
-  }
   return (
     <div
       className={`flex ${props.showMobile ? "flex-col" : ""}`}
       style={{
-        height: height(),
         background: "#EDE6DD",
       }}
     >
@@ -65,10 +53,11 @@ export default function ServicesMap(props) {
           src={list[0].image}
         />
         <div
-          className={`${props.renderNav} inline-block mt-3 w-60 pr-3`}
-          style={{ textAlign: props.showMobile ? "-webkit-right" : "" }}
+          className={`${props.renderNav} ${
+            props.showMobile ? "block" : "hidden"
+          } inline-block mt-6 w-40 mx-3`}
         >
-          {props.showMobile ? props.mapNav : null}
+          {props.mapNav}
         </div>
       </div>
 
@@ -76,19 +65,20 @@ export default function ServicesMap(props) {
       <div className={`w-full ${props.showMobile ? "my-8" : "my-auto"}`}>
         {mapServices}
         {skinCareLogo}
-        <p
-          className={`${
-            props.showMobile ? "bottom" : ""
-          } font-bold text-black pt-6`}
-        >
-          Refer a friend and get $15 gift certificate!
-        </p>
+        {props.showMobile ? (
+          <Buttons mobile={props.showMobile} />
+        ) : (
+          <Refferal />
+        )}
       </div>
       <style jsx>{`
         .bottom {
           position: absolute;
           bottom: 20px;
           left: 13%;
+        }
+        .w-60 {
+          width: 15rem;
         }
       `}</style>
     </div>
