@@ -26,7 +26,7 @@ export default function ServiceMenuItem(props) {
         }
         @media screen and (max-width: 550px) {
           .service-box {
-            width: 100vw;
+            width: 97vw;
           }
           .background-box {
             left: 120px;

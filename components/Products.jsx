@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionTitle from "components/SectionTitle";
 export default function Products() {
   const [brand, setBrandOpen] = React.useState(false);
@@ -13,30 +14,37 @@ export default function Products() {
             className="mb-8 text-center cursor-pointer sm:cursor-pointer lg:cursor-default md:cursor-default xl:cursor-default"
             onClick={() => setBrandOpen(!brand)}
           >
-            <img
-              src="/top-brands-icon.png"
-              alt="Brands"
-              className="w-10 mr-2 inline-block"
-            />
+            <picture>
+              <source type="image/webp" srcSet="top-brands-icon.webp" />
+              <source type="image/png" srcSet="top-brands-icon.png" />
+              <img
+                src="/top-brands-icon.png"
+                alt="Top brands"
+                className="w-10 mr-2 inline-block"
+              />
+            </picture>
             <h3 className="inline-block">Top brands</h3>
-            <img
-              src="arrow.png"
-              className={
-                "inline-block w-6 ml-4 sm:inline-block md:hidden lg:hidden " +
-                (brand ? "transform rotate-180" : null)
-              }
-            />
+            <picture>
+              <source type="image/webp" srcSet="arrow.webp" />
+              <source type="image/png" srcSet="arrow.png" />
+              <img
+                src="arrow.png"
+                className={
+                  "inline-block w-6 ml-4 sm:inline-block md:hidden lg:hidden " +
+                  (brand ? "transform rotate-180" : null)
+                }
+              />
+            </picture>
           </div>
           <div
-            className={
-              "lg:block md:block " +
-              (brand ? "block sm:block" : "hidden sm:hidden")
-            }
+            className={"lg:block md:block " + (brand ? "block mb-6" : "hidden")}
           >
-            <img
-              src="top-brands.png"
+            <Image
+              src="/top-brands.png"
               alt="Top brands"
-              className="w-3/4 md:w-full mx-auto mb-6"
+              width={604}
+              height={426}
+              quality={75}
             />
           </div>
           <hr className="block sm:block md:hidden lg:hidden" />
@@ -48,19 +56,28 @@ export default function Products() {
             className="mb-8 text-center cursor-pointer sm:cursor-pointer lg:cursor-default md:cursor-default xl:cursor-default"
             onClick={() => setGreenOpen(!green)}
           >
-            <img
-              src="/green-choices-icon.png"
-              alt="Green choices"
-              className="w-10 mr-2 inline-block"
-            />
+            <picture>
+              <source type="image/webp" srcSet="green-choices-icon.webp" />
+              <source type="image/png" srcSet="green-choices-icon.png" />
+              <img
+                src="/green-choices-icon.png"
+                alt="Green choices"
+                className="w-10 mr-2 inline-block"
+              />
+            </picture>
             <h3 className="inline-block">Green choices</h3>
-            <img
-              src="arrow.png"
-              className={
-                "inline-block w-6 ml-4 sm:inline-block md:hidden lg:hidden " +
-                (green ? "transform rotate-180" : null)
-              }
-            />
+            <picture>
+              <source type="image/webp" srcSet="arrow.webp" />
+              <source type="image/png" srcSet="arrow.png" />
+              <img
+                src="arrow.png"
+                alt="Open/Hide arrow"
+                className={
+                  "inline-block w-6 ml-4 sm:inline-block md:hidden lg:hidden " +
+                  (green ? "transform rotate-180" : null)
+                }
+              />
+            </picture>
           </div>
           <div
             className={
@@ -68,10 +85,12 @@ export default function Products() {
               (green ? "block sm:block" : "hidden sm:hidden")
             }
           >
-            <img
-              src="green-choices.png"
+            <Image
+              src="/green-choices.png"
               alt="Green choices"
-              className="w-3/4 md:w-full mx-auto"
+              width={604}
+              height={426}
+              quality={75}
             />
           </div>
         </div>

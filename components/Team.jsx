@@ -14,7 +14,9 @@ export default function Team() {
     } else if (currentSlide === 7 && isMobile == true) {
       setCurrentSlide(0);
     } else {
-      setCurrentSlide(currentSlide + 1);
+      isMobile
+        ? setCurrentSlide(currentSlide + 1)
+        : setCurrentSlide(currentSlide + 3);
     }
   };
   const prev = () => {
@@ -23,7 +25,9 @@ export default function Team() {
     } else if (currentSlide === 0 && isMobile == true) {
       setCurrentSlide(7);
     } else {
-      setCurrentSlide(currentSlide - 1);
+      isMobile
+        ? setCurrentSlide(currentSlide - 1)
+        : setCurrentSlide(currentSlide - 3);
     }
   };
   // members
@@ -34,6 +38,7 @@ export default function Team() {
       title={member.title}
       description={member.description}
       photo={member.photo}
+      link={member.link}
     />
   ));
   // responsive carousel
@@ -57,24 +62,29 @@ export default function Team() {
     <div className="container mx-auto">
       <SectionTitle title={"Meet our team"} />
       <div className="flex flex-wrap flex-row justify-center relative team mx-auto">
-        <p className="w-3/4 header-color sm:w-3/4 md:w-2/4 lg:w-2/4 xl:w-1/4 mb-6">
-          We've been serving the Newton area since 1999 and have a pristine
-          reputation for our highly trained stylists who continually upgrade
-          their skills. By using the very best products on the market and
-          staying tuned in to the latest developments in our industry, we're
-          able to offer you an always modern beauty experience. Whether you’re
-          here to maintain your look or receive a beauty transformation, you can
-          do it all Tête-à-Tête.
-        </p>
-        <div className="flex mx-auto ml-auto">
-          {/* <img onClick={prev} className="arrow left" src="left.png"></img>
-          <img onClick={next} className="arrow right" src="right.png"></img> */}
+        <div className="w-3/4 header-color sm:w-3/4 md:w-2/4 lg:w-2/4 xl:w-80 mb-6">
+          <p className="mt-4">
+            We've been serving the Newton area since 1999 and have a pristine
+            reputation for our highly trained stylists who continually upgrade
+            their skills. By using the very best products on the market and
+            staying tuned in to the latest developments in our industry, we're
+            able to offer you an always modern beauty experience. Whether you’re
+            here to maintain your look or receive a beauty transformation, you
+            can do it all Tête-à-Tête.
+          </p>
+        </div>
+
+        <div className="flex mr-auto ml-auto">
           <div className="inline-block my-auto min-w-content">
-            <img
-              onClick={prev}
-              className="w-5 cursor-pointer mr-2 inline-block"
-              src="left.png"
-            ></img>
+            <picture>
+              <source type="image/webp" srcSet="left.webp" />
+              <source type="image/png" srcSet="left.png" />
+              <img
+                onClick={prev}
+                className="w-5 cursor-pointer mr-2 inline-block"
+                src="left.png"
+              ></img>
+            </picture>
           </div>
           <div className="inline-block">
             <Carousel
@@ -95,11 +105,15 @@ export default function Team() {
           </div>
 
           <div className="inline-block my-auto min-w-content">
-            <img
-              onClick={next}
-              className="w-5 cursor-pointer ml-2 inline-block"
-              src="right.png"
-            ></img>
+            <picture>
+              <source type="image/webp" srcSet="right.webp" />
+              <source type="image/png" srcSet="right.png" />
+              <img
+                onClick={next}
+                className="w-5 cursor-pointer ml-2 inline-block"
+                src="right.png"
+              ></img>
+            </picture>
           </div>
         </div>
       </div>

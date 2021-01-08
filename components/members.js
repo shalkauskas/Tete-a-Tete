@@ -6,6 +6,7 @@ const members = [
     description:
       "A salon owner and a stylist for over 20 years. Haircut and blow dry expert with a unique approach to each client.",
     photo: "katya.png",
+    link: "https://www.instagram.com/stories/highlights/18162872782046022/",
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const members = [
     description:
       "Creates fresh and natural styles using the best coloring techniques.",
     photo: "lilia.png",
+    link: "https://www.instagram.com/stories/highlights/17860344665111292/",
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const members = [
     description:
       "For over X years makes her clients feel young and beautiful. Performs both men’s and women’s haircuts.",
     photo: "mary.png",
+    link: "https://www.instagram.com/stories/highlights/17854588970224602/",
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ const members = [
     description:
       "For over a decade of service at Tete-A-Tete, Denis has been keeping up with the latest trends and innovations.",
     photo: "denis.png",
+    link: "https://www.instagram.com/stories/highlights/17971739809324790/",
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ const members = [
     description:
       "Passionate and dedicated  stylist who shows excellence at everything she does including keratin and extensions.",
     photo: "natalia.png",
+    link: "https://www.instagram.com/stories/highlights/17856005684194728/",
   },
   {
     id: 6,
@@ -46,6 +51,7 @@ const members = [
     description:
       "Tanya has over 30 years of professional experience. Specializes in long-lasting natural looks.",
     photo: "tanya.png",
+    link: "https://www.instagram.com/stories/highlights/17845925597369862/",
   },
   {
     id: 7,
@@ -54,6 +60,7 @@ const members = [
     description:
       "Has over 35 years of experience in working with bees waxing hair removal. And she does nails :-)",
     photo: "Vita.png",
+    link: "https://www.instagram.com/stories/highlights/17854828001238208/",
   },
   {
     id: 8,
@@ -62,6 +69,7 @@ const members = [
     description:
       "Lana uses unique anti-aging approach exclusive to this practice with immediate and long-lasting results.",
     photo: "Lana.png",
+    link: "https://www.instagram.com/stories/highlights/18027782548287385/",
   },
   {
     id: 9,
@@ -70,6 +78,7 @@ const members = [
     description:
       "Passionate for doing balayage and highlights. Finds personal approach and listens to her clients’ needs.",
     photo: "Jackie.png",
+    link: "",
   },
 ];
 export default members;

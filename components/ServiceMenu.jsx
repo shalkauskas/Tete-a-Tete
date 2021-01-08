@@ -5,24 +5,24 @@ export default function Services() {
   return (
     <div className="container mx-auto">
       <SectionTitle title={"Our Services"} />
-      <div className="flex flex-row flex-wrap justify-center gap-16 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
+      <div className="flex flex-row flex-wrap justify-center">
         <Link href="/haircare" passHref>
-          <a>
+          <a className="mx-auto mb-16">
             <Service service={"Hair care"} background={"haircare"} />
           </a>
         </Link>
         <Link href="/skincare" passHref>
-          <a>
+          <a className="mx-auto mb-16">
             <Service service={"Skin care"} background={"skincare"} />
           </a>
         </Link>
         <Link href="/nails" passHref>
-          <a>
+          <a className="mx-auto mb-16">
             <Service service={"Nails"} background={"nails"} />
           </a>
         </Link>
         <Link href="/waxing" passHref>
-          <a>
+          <a className="mx-auto">
             <Service service={"Waxing"} background={"waxing"} />
           </a>
         </Link>

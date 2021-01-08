@@ -1,4 +1,29 @@
 module.exports = {
+  purge: ["./pages/**/*.js", "./components/**/*.jsx"],
+  corePlugins: {
+    container: false,
+  },
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        ".container": {
+          width: "100%",
+          "@screen sm": {
+            maxWidth: "640px",
+          },
+          "@screen md": {
+            maxWidth: "768px",
+          },
+          "@screen lg": {
+            maxWidth: "1024px",
+          },
+          "@screen xl": {
+            maxWidth: "1280px",
+          },
+        },
+      });
+    },
+  ],
   theme: {
     inset: {
       0: 0,
@@ -12,6 +37,5 @@ module.exports = {
       90: "90%",
       full: "100%",
     },
-    purge: ["./pages/**/*.js", "./components/**/*.js"],
   },
 };

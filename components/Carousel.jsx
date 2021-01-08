@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-
+import Image from "next/image";
 export default function WelcomeCarousel() {
   const createCarouselItemImage = (index, options = {}) => (
-    <div key={index} style={{ width: "max-content" }}>
-      <img
-        style={{ width: "auto", height: "400px" }}
-        src={`carousel_${index}.jpg`}
+    <div key={index} style={{ width: "max-content", height: "400px" }}>
+      <Image
+        src={`/carousel_${index}.jpg`}
+        width={562}
+        height={400}
+        alt="Carousel welcome image"
+        quality={75}
+        loading={"eager"}
       />
     </div>
   );
@@ -15,11 +18,11 @@ export default function WelcomeCarousel() {
   const baseChildren = <div>{[5, 3, 1, 7].map(createCarouselItemImage)}</div>;
 
   // handle media query
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
   function mqChange(mq) {
     setIsMobile(mq.matches);
   }
-  useEffect(() => {
+  React.useEffect(() => {
     const mq = window.matchMedia("screen and (max-width: 600px)");
     mq.addListener(mqChange);
     mqChange(mq);

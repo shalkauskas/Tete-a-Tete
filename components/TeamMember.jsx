@@ -1,16 +1,34 @@
+import Image from "next/image";
 export default function TeamMember(props) {
   return (
     <div
       key="slide1"
       style={{ padding: 20, height: 500, background: "white", width: "272px" }}
     >
-      <img style={{ width: "223px" }} src={props.photo}></img>
+      <Image
+        src={`/` + props.photo}
+        alt="Team member"
+        quality={75}
+        width={223}
+        height={250}
+        loading={"eager"}
+      />
       <p
         className="header-color font-bold italic"
         style={{ fontSize: "16px", lineHeight: "40px" }}
       >
         {props.name}
-        <img style={{ width: "39px" }} src="instagram.png"></img>
+        <a target="_blank" rel="noopener noreferrer" href={props.link}>
+          <picture>
+            <source type="image/webp" srcSet="instagram.webp" />
+            <source type="image/png" srcSet="instagram.png" />
+            <img
+              style={{ width: "39px", height: "39px" }}
+              src="instagram.png"
+              alt="Instagram link"
+            />
+          </picture>
+        </a>
       </p>
       <p
         className="header-color italic font-semibold mt-2"

@@ -1,15 +1,15 @@
-import React, { useState } from "react";
 import Phone from "components/Phone";
 import CovidPolicy from "components/CovidPolicy";
 import useDocumentScrollThrottled from "components/useDocumentScrollThrottled";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import smoothscroll from "smoothscroll-polyfill";
 export default function Header() {
   const router = useRouter();
-  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [navbarOpen, setNavbarOpen] = React.useState(false);
 
   // Resize navbar on scroll //
-  const [showMiniNav, setShowMiniNav] = useState(false);
+  const [showMiniNav, setShowMiniNav] = React.useState(false);
 
   useDocumentScrollThrottled((callbackData) => {
     const { currentScrollTop } = callbackData;
@@ -33,9 +33,13 @@ export default function Header() {
           >
             <Link href="/" passHref>
               <a>
-                <img src="/logo.png" alt="Logo" className={`${logo}`} />
+                <picture>
+                  <source type="image/webp" srcSet="logo.webp" />
+                  <source type="image/png" srcSet="logo.png" />
+                  <img src="/logo.png" alt="Logo" className={`${logo}`} />
+                </picture>
                 <span
-                  className={`${textLogo} font-logo uppercase text-4xl xl:leading-4 lg:leading-4 md:leading-normal leading-relaxed inline-block mr-4 py-3 whitespace-no-wrap text-white`}
+                  className={`${textLogo} font-logo uppercase sm:text-4xl text-2xl xl:leading-4 lg:leading-4 md:leading-normal leading-relaxed inline-block mr-4 py-3 whitespace-no-wrap text-white`}
                 >
                   Tête-à-Tête
                 </span>
@@ -63,12 +67,13 @@ export default function Header() {
                 <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
                   <span
                     onClick={() =>
-                      router.push("/", "/services").then(() =>
+                      router.push("/").then(() => {
+                        smoothscroll.polyfill();
                         window.scrollTo({
                           top: 600,
                           behavior: "smooth",
-                        })
-                      )
+                        });
+                      })
                     }
                     className="ml-2"
                   >
@@ -81,12 +86,13 @@ export default function Header() {
                 <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
                   <span
                     onClick={() =>
-                      router.push("/", "/team").then(() =>
+                      router.push("/").then(() => {
+                        smoothscroll.polyfill();
                         window.scrollTo({
                           top: 1650,
                           behavior: "smooth",
-                        })
-                      )
+                        });
+                      })
                     }
                     className="ml-2"
                   >
@@ -99,12 +105,13 @@ export default function Header() {
                 <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
                   <span
                     onClick={() =>
-                      router.push("/", "/products").then(() =>
+                      router.push("/").then(() => {
+                        smoothscroll.polyfill();
                         window.scrollTo({
                           top: 2350,
                           behavior: "smooth",
-                        })
-                      )
+                        });
+                      })
                     }
                     className="ml-2"
                   >
@@ -117,12 +124,13 @@ export default function Header() {
                 <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
                   <span
                     onClick={() =>
-                      router.push("/", "/contact").then(() =>
+                      router.push("/").then(() => {
+                        smoothscroll.polyfill();
                         window.scrollTo({
                           top: 3150,
                           behavior: "smooth",
-                        })
-                      )
+                        });
+                      })
                     }
                     className="ml-2"
                   >
@@ -145,7 +153,7 @@ export default function Header() {
         }
         .logo {
           width: 238px;
-          height: 145px;
+          height: -webkit-fill-available;
           transition: all 0.5s ease;
         }
         .nav-full {

@@ -58,7 +58,10 @@ export default function ContactForm() {
               style={{ paddingBottom: "150px" }}
             />
           </div>
-          <button type="submit" className="block mx-auto hover:opacity-75">
+          <button
+            type="submit"
+            className="block mx-auto hover:opacity-75 shadow-lg"
+          >
             Send
           </button>
         </form>

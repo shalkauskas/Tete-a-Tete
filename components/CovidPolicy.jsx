@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function CovidPolicy() {
   const [showPolicy, setShowPolicy] = React.useState(false);
   const openPolicy = showPolicy ? "block" : "hidden";
@@ -7,7 +8,15 @@ export default function CovidPolicy() {
       style={{ backgroundColor: "#F0EAE7" }}
     >
       <div className="cursor-pointer" onClick={() => setShowPolicy(true)}>
-        <img src="/bell.png" alt="Policy" className="w-5 mr-2 inline-block" />
+        <picture>
+          <source type="image/webp" srcSet="bell.webp" />
+          <source type="image/png" srcSet="bell.png" />
+          <img
+            src="/bell.png"
+            alt="Policy"
+            className="w-5 h-6 mr-2 inline-block"
+          />
+        </picture>
         <span className="font-bold">Covid-19 policy</span>
         <span
           className="ml-3 underline font-light italic hidden lg:inline-block"
@@ -17,23 +26,24 @@ export default function CovidPolicy() {
         </span>
       </div>
       {/* Policy modal */}
-      <div
-        className={`${openPolicy} absolute w-11/12 md:w-3/4 lg:w-1/2 xl:w-1/3 z-50`}
-      >
-        <img src="covid-policy.png" className=" mx-auto mt-16" />
+      <div className={`${openPolicy} absolute sm:w-max z-50`}>
+        <div className="relative text-center">
+          <Image
+            src="/covid-policy.png"
+            alt="COVID-19 Policy"
+            width={597}
+            height={657}
+            quality={75}
+          />
+        </div>
         <span
-          className="absolute cursor-pointer close-button"
+          className="absolute cursor-pointer right-0 top-0 text-3xl"
           onClick={() => setShowPolicy(false)}
         >
           &times;
         </span>
       </div>
       <style jsx>{`
-        .close-button {
-          top: 65px;
-          right: 6px;
-          font-size: 28px;
-        }
         .backdrop {
           position: absolute;
           top: 0px;

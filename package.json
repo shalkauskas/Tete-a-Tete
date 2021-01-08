@@ -9,13 +9,16 @@
   },
   "dependencies": {
     "@react-google-maps/api": "^1.13.0",
+    "autoprefixer": "^10.1.0",
     "lodash": "^4.17.20",
     "next": "^10.0.2",
+    "postcss": "^8.2.2",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-responsive-carousel": "^3.2.10",
-    "tailwindcss": "^1.9.6"
+    "smoothscroll-polyfill": "^0.4.4",
+    "tailwindcss": "^2.0.2"
   }
 }

@@ -10,11 +10,11 @@ export default function HandyInfo() {
         </h2>
         {/* Blowdry */}
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
-          <img
-            src="blowdry.png"
-            alt="Schedule blowdry"
-            className="w-10 mx-auto inline"
-          />
+          <picture className="w-10 h-10 mx-auto inline">
+            <source type="image/webp" srcSet="blowdry.webp" />
+            <source type="image/png" srcSet="blowdry.png" />
+            <img src="blowdry.png" alt="Schedule blowdry" />
+          </picture>
           <div className="col-span-4">
             <p className="inline">
               Schedule blowdry along with your color appoitment.
@@ -23,7 +23,11 @@ export default function HandyInfo() {
         </div>
         {/* Kids */}
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
-          <img src="baby.png" alt="Children" className="w-8 mx-auto inline" />
+          <picture className="w-8 h-8 mx-auto inline">
+            <source type="image/webp" srcSet="baby.webp" />
+            <source type="image/png" srcSet="baby.png" />
+            <img src="baby.png" alt="Children" />
+          </picture>
           <div className="col-span-4">
             <p className="inline">
               Kids must be under adult supervision at all times.
@@ -31,11 +35,11 @@ export default function HandyInfo() {
           </div>
         </div>
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
-          <img
-            src="phone-contact.png"
-            alt="Contact"
-            className="w-8 mx-auto inline my-auto"
-          />
+          <picture className="w-8 h-8 mx-auto inline my-auto">
+            <source type="image/webp" srcSet="phone-contact.webp" />
+            <source type="image/png" srcSet="phone-contact.png" />
+            <img src="phone-contact.png" alt="Contact" />
+          </picture>
           {/* Contact */}
           <div className="col-span-4">
             <p className="inline">
@@ -45,11 +49,11 @@ export default function HandyInfo() {
           </div>
         </div>
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
-          <img
-            src="schedule.png"
-            alt="Schedule"
-            className="w-8 mx-auto inline my-auto"
-          />
+          <picture className="w-8 mx-auto inline my-auto">
+            <source type="image/webp" srcSet="schedule.webp" />
+            <source type="image/png" srcSet="schedule.png" />
+            <img src="schedule.png" alt="Schedule" />
+          </picture>
           {/* Cancellations */}
           <div className="col-span-4">
             <p className="inline">
@@ -59,11 +63,11 @@ export default function HandyInfo() {
         </div>
         {/* Payment */}
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
-          <img
-            src="payment.png"
-            alt="Payment"
-            className="w-10 mx-auto inline"
-          />
+          <picture className="w-10 h-10 mx-auto inline">
+            <source type="image/webp" srcSet="payment.webp" />
+            <source type="image/png" srcSet="payment.png" />
+            <img src="payment.png" alt="Payment" />
+          </picture>
           <div className="col-span-4">
             <p className="inline">
               Visa, Mastercard and Сash are accepted payment methods.
@@ -75,7 +79,7 @@ export default function HandyInfo() {
       </div>
       <style jsx>{`
         p {
-          font-size: 15px;
+          font-size: 14px;
           color: black;
         }
         @media (max-width: 1521px) {
