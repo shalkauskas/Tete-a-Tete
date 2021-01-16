@@ -2,10 +2,10 @@ export default function HandyInfo() {
   return (
     <div
       className="w-1/4 ml-auto slide-query"
-      style={{ background: "#F1E9E8", height: "500px" }}
+      style={{ background: "#F1E9E8" }}
     >
       <div className="max-w-90 mx-auto">
-        <h2 className="text-center font-bold text-black mt-8 mb-3">
+        <h2 className="text-center font-bold text-black mt-10 mb-8">
           Handy info
         </h2>
         {/* Blowdry */}
@@ -79,13 +79,18 @@ export default function HandyInfo() {
       </div>
       <style jsx>{`
         p {
-          font-size: 14px;
+          font-size: 15px;
           color: black;
+        }
+        .slide-query {
+          height: 600px;
         }
         @media (max-width: 1521px) {
           .slide-query {
             margin-right: auto;
             width: auto;
+            height: auto;
+            padding-bottom: 2rem;
           }
         }
       `}</style>

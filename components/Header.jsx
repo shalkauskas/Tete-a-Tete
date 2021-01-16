@@ -22,7 +22,7 @@ export default function Header() {
     : "hidden transition-all duration-300 ease-in-out";
   const dropdown = showMiniNav ? "" : "";
   return (
-    <div className="fixed z-40 top-0 w-screen">
+    <div className="fixed z-30 top-0 w-screen">
       <Phone />
       <nav
         className={`relative flex flex-wrap items-center justify-between ${header} px-2 navbar-expand-lg navbar-bg`}
@@ -64,78 +64,73 @@ export default function Header() {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="nav-item">
-                <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
-                  <span
-                    onClick={() =>
-                      router.push("/").then(() => {
-                        smoothscroll.polyfill();
-                        window.scrollTo({
-                          top: 600,
-                          behavior: "smooth",
-                        });
-                      })
-                    }
-                    className="ml-2"
-                  >
-                    Services
-                  </span>
+                <a
+                  onClick={() =>
+                    router.push("/").then(() => {
+                      smoothscroll.polyfill();
+                      window.scrollTo({
+                        top: 600,
+                        behavior: "smooth",
+                      });
+                    })
+                  }
+                  className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75"
+                >
+                  Services
                 </a>
+                <hr />
               </li>
-              <hr />
+
               <li className="nav-item">
-                <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
-                  <span
-                    onClick={() =>
-                      router.push("/").then(() => {
-                        smoothscroll.polyfill();
-                        window.scrollTo({
-                          top: 1650,
-                          behavior: "smooth",
-                        });
-                      })
-                    }
-                    className="ml-2"
-                  >
-                    Team
-                  </span>
+                <a
+                  onClick={() =>
+                    router.push("/").then(() => {
+                      smoothscroll.polyfill();
+                      window.scrollTo({
+                        top: 1650,
+                        behavior: "smooth",
+                      });
+                    })
+                  }
+                  className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75"
+                >
+                  Team
                 </a>
+                <hr />
               </li>
-              <hr />
+
               <li className="nav-item">
-                <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
-                  <span
-                    onClick={() =>
-                      router.push("/").then(() => {
-                        smoothscroll.polyfill();
-                        window.scrollTo({
-                          top: 2350,
-                          behavior: "smooth",
-                        });
-                      })
-                    }
-                    className="ml-2"
-                  >
-                    Products
-                  </span>
+                <a
+                  onClick={() =>
+                    router.push("/").then(() => {
+                      smoothscroll.polyfill();
+                      window.scrollTo({
+                        top: 2350,
+                        behavior: "smooth",
+                      });
+                    })
+                  }
+                  className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75"
+                >
+                  Products
                 </a>
+                <hr />
               </li>
-              <hr />
+
               <li className="nav-item">
-                <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
-                  <span
-                    onClick={() =>
-                      router.push("/").then(() => {
-                        smoothscroll.polyfill();
-                        window.scrollTo({
-                          top: 3150,
-                          behavior: "smooth",
-                        });
-                      })
-                    }
-                    className="ml-2"
-                  >
-                    Contact
-                  </span>
+                <a
+                  onClick={() =>
+                    router.push("/").then(() => {
+                      smoothscroll.polyfill();
+                      window.scrollTo({
+                        top: 3150,
+                        behavior: "smooth",
+                      });
+                    })
+                  }
+                  className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75"
+                >
+                  Contact
                 </a>
               </li>
             </ul>
@@ -167,6 +162,9 @@ export default function Header() {
         #example-navbar-danger {
           background-color: #716c6c;
         }
+        hr {
+          display: none;
+        }
         @media screen and (max-width: 1023px) {
           #example-navbar-danger {
             padding: 30px 0;
@@ -182,6 +180,7 @@ export default function Header() {
           }
           hr {
             width: 250px;
+            display: block;
           }
         }
       `}</style>

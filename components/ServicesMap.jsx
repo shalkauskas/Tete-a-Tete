@@ -2,33 +2,101 @@ import Buttons from "@/components/Buttons";
 import Refferal from "@/components/Refferal";
 import Image from "next/image";
 export default function ServicesMap(props) {
-  // mapping slide content
+  // importing data
   const list = props.list;
-  const mapServices = list.map((item, index) => (
-    <div
-      key={index}
-      className={`max-w-90 mx-auto grid ${
-        props.showSkinCare ? "grid-flow-row" : "grid-flow-col grid-cols-6"
-      } mb-4`}
-    >
-      <p
-        style={{ fontSize: "16px", textAlign: "left" }}
-        className={`text-black ${
-          props.showSkinCare ? "" : "col-start-1 col-end-5"
-        } mr-auto`}
-      >
-        {item.service}
-      </p>
-      <p
-        style={{ fontSize: "16px" }}
+  // state of popup and id of item clicked to show relevant popup info
+  const [showInfo, setShowInfo] = React.useState({
+    display: false,
+    id: "",
+  });
+  const node = React.useRef();
+  // Info popup container
+  function InfoNote(props) {
+    let infoText = null;
+    list.filter((item) => {
+      // matching id of clicked service with corresponding object id
+      if (item.id === showInfo.id) {
+        infoText = item.info;
+      }
+    });
+    return (
+      <div
+        onClick={() => handleClick()}
         className={`${
-          props.showSkinCare ? "mr-auto" : "col-end-7 col-span-2 ml-auto"
-        }`}
+          showInfo.display ? "block" : "hidden"
+        } absolute bg-white p-10 z-20 lg:max-w-1/2 max-w-90 h-auto flex items-start`}
+        style={{
+          top: "20%",
+          right: "1%",
+          boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.15)",
+        }}
       >
-        {item.price}
-      </p>
-    </div>
-  ));
+        <img
+          src="info.png"
+          style={{ width: "36px", height: "36px" }}
+          className="mb-auto mr-6"
+        />
+        <p className="text-black text-left">{infoText}</p>
+      </div>
+    );
+  }
+  // click handler for info popup
+  const handleClick = (id) => {
+    if (showInfo.display == true) {
+      document.addEventListener("mousedown", handleOutsideClick);
+      setShowInfo(() => ({ ...showInfo, display: !showInfo.display }));
+    }
+    if (showInfo.display == false) {
+      setShowInfo(() => ({ id: id, display: !showInfo.display }));
+      document.removeEventListener("mousedown", handleOutsideClick);
+    }
+  };
+  const handleOutsideClick = (event) => {
+    // ignore clicks on the component itself
+    if (node.current.contains(event.target)) {
+      return;
+    }
+    setShowInfo(() => ({ ...showInfo, display: !showInfo.display }));
+  };
+
+  // mapping service box with data
+  const mapServices = list.map((item, index) => {
+    // checking if service has additional info data
+    let check = `info` in item;
+    return (
+      <div
+        ref={node}
+        key={index}
+        className={`max-w-90 mx-auto grid ${
+          props.showSkinCare ? "grid-flow-row" : "grid-flow-col grid-cols-6"
+        } mb-4`}
+      >
+        <p
+          // if item has additional info it opens popup on click
+          onClick={() => (check ? handleClick(item.id) : null)}
+          style={{
+            fontSize: "16px",
+            textAlign: "left",
+            color: check ? "#895B4A" : "normal",
+          }}
+          className={`text-black ${
+            props.showSkinCare ? "" : "col-start-1 col-end-5"
+          } mr-auto relative ${check ? "cursor-pointer hover:opacity-75" : ""}`}
+        >
+          {item.service}
+        </p>
+        <p
+          style={{ fontSize: "16px" }}
+          className={`${
+            props.showSkinCare ? "mr-auto" : "col-end-7 col-span-2 ml-auto"
+          }`}
+        >
+          {item.price}
+        </p>
+      </div>
+    );
+  });
+  // shows additional logo for skin care services
   const skinCareLogo = (
     <div
       className={`${props.showMobile ? "flex" : ""} ${
@@ -43,6 +111,16 @@ export default function ServicesMap(props) {
       </picture>
     </div>
   );
+  // handle with of image
+  const width = () => {
+    if (props.showSkinCare == true) {
+      return props.showMobile ? 210 : 700;
+    } else if (props.showMobile == true) {
+      return 210;
+    } else {
+      return 790;
+    }
+  };
   return (
     <div
       className={`flex ${props.showMobile ? "flex-col" : ""}`}
@@ -53,20 +131,17 @@ export default function ServicesMap(props) {
     >
       {/* image */}
       <div className="flex">
-        <Image
-          src={`/${list[0].image}`}
-          width={props.showMobile ? 210 : 590}
-          height={props.showMobile ? 320 : 940}
-          alt="Service image"
-          quality={75}
-          loading={"eager"}
-        />
-        {/* <img
-          className={`${props.showMobile ? "float-left" : ""}`}
-          style={{ width: props.showMobile ? "179px" : "611px" }}
-          src={list[0].image}
-          alt="Service image"
-        /> */}
+        <div>
+          <Image
+            src={`/${list[0].image}`}
+            width={width()}
+            height={props.showMobile ? 320 : 1250}
+            alt="Service image"
+            quality={75}
+            loading={"eager"}
+          />
+        </div>
+        {/* rendering navigation for services */}
         <div
           className={`${props.renderNav} ${
             props.showMobile ? "inline-block" : "hidden"
@@ -79,6 +154,7 @@ export default function ServicesMap(props) {
       {/* description */}
       <div className={`w-full ${props.showMobile ? "my-8" : "my-auto"}`}>
         {mapServices}
+        <InfoNote />
         {skinCareLogo}
         {props.showMobile ? (
           <Buttons mobile={props.showMobile} />

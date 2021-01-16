@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import smoothscroll from "smoothscroll-polyfill";
 export default function Buttons(props) {
   const router = useRouter();
   return (
@@ -13,12 +14,13 @@ export default function Buttons(props) {
       </a>
       <a
         onClick={() =>
-          router.push("/", "/services").then(() =>
+          router.push("/").then(() => {
+            smoothscroll.polyfill();
             window.scrollTo({
               top: 600,
               behavior: "smooth",
-            })
-          )
+            });
+          })
         }
       >
         <button

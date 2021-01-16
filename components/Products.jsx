@@ -23,7 +23,7 @@ export default function Products() {
                 className="w-10 mr-2 inline-block"
               />
             </picture>
-            <h3 className="inline-block">Top brands</h3>
+            <h2 className="inline-block">Top brands</h2>
             <picture>
               <source type="image/webp" srcSet="arrow.webp" />
               <source type="image/png" srcSet="arrow.png" />
@@ -65,7 +65,7 @@ export default function Products() {
                 className="w-10 mr-2 inline-block"
               />
             </picture>
-            <h3 className="inline-block">Green choices</h3>
+            <h2 className="inline-block">Green choices</h2>
             <picture>
               <source type="image/webp" srcSet="arrow.webp" />
               <source type="image/png" srcSet="arrow.png" />
@@ -96,7 +96,7 @@ export default function Products() {
         </div>
       </div>
       <style jsx>{`
-        h3 {
+        h2 {
           font-size: 24px;
           line-height: 29px;
           color: #4d4949;

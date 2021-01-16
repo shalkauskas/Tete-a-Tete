@@ -83,6 +83,7 @@ export default function Team() {
                 onClick={prev}
                 className="w-5 cursor-pointer mr-2 inline-block"
                 src="left.png"
+                alt="Previous team member"
               ></img>
             </picture>
           </div>
@@ -112,6 +113,7 @@ export default function Team() {
                 onClick={next}
                 className="w-5 cursor-pointer ml-2 inline-block"
                 src="right.png"
+                alt="Next team member"
               ></img>
             </picture>
           </div>

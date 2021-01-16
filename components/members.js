@@ -78,7 +78,7 @@ const members = [
     description:
       "Passionate for doing balayage and highlights. Finds personal approach and listens to her clients’ needs.",
     photo: "Jackie.png",
-    link: "",
+    link: "/",
   },
 ];
 export default members;

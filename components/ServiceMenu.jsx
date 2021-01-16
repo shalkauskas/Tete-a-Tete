@@ -7,12 +7,12 @@ export default function Services() {
       <SectionTitle title={"Our Services"} />
       <div className="flex flex-row flex-wrap justify-center">
         <Link href="/haircare" passHref>
-          <a className="mx-auto mb-16">
+          <a className="ml-auto mr-auto mb-16">
             <Service service={"Hair care"} background={"haircare"} />
           </a>
         </Link>
         <Link href="/skincare" passHref>
-          <a className="mx-auto mb-16">
+          <a className="ml-auto mr-auto mb-16">
             <Service service={"Skin care"} background={"skincare"} />
           </a>
         </Link>

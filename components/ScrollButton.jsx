@@ -20,6 +20,7 @@ export default function ScrollButton() {
         <source type="image/png" srcSet="scrollToTop.png" />
         <img
           src="scrollToTop.png"
+          alt="Scroll to top"
           className={`${moveScroll ? "moveDown" : "moveUp"} scrollTop`}
           onClick={scrollTop}
           style={{

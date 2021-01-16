@@ -10,6 +10,7 @@
   "dependencies": {
     "@react-google-maps/api": "^1.13.0",
     "autoprefixer": "^10.1.0",
+    "emailjs-com": "^2.6.4",
     "lodash": "^4.17.20",
     "next": "^10.0.2",
     "postcss": "^8.2.2",

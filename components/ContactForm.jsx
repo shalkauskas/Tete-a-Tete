@@ -1,5 +1,27 @@
 import SectionTitle from "components/SectionTitle";
+import emailjs from "emailjs-com";
+import ContactFormResponse from "./ContactFormResponse";
 export default function ContactForm() {
+  const [showResponse, setShowResponse] = React.useState(false);
+  // console.log(showResponse);
+  function sendEmail(e) {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "default_service",
+        process.env.templateid,
+        e.target,
+        process.env.userid
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  }
   return (
     <div className="container mx-auto max-w-sm">
       <SectionTitle title={"Get in touch"} />
@@ -8,6 +30,7 @@ export default function ContactForm() {
           action="sumbit"
           className="mx-auto inline-block text-left w-full"
           autoComplete="on"
+          onSubmit={sendEmail}
         >
           <label htmlFor="name">Name*</label>
           <br />
@@ -65,8 +88,12 @@ export default function ContactForm() {
             Send
           </button>
         </form>
+        <button onClick={() => setShowResponse(true)}>Test</button>
       </div>
-
+      <ContactFormResponse
+        setShowResponse={setShowResponse}
+        showResponse={showResponse}
+      />
       <style jsx>{`
         input,
         textarea {

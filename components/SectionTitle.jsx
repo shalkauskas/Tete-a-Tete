@@ -13,7 +13,7 @@ export default function SectionTitle(props) {
           props.showLink ? "inline-block" : "hidden"
         }`}
         onClick={() =>
-          router.push("/", "/services").then(() =>
+          router.push("/", "/").then(() =>
             window.scrollTo({
               top: 600,
               behavior: "smooth",
