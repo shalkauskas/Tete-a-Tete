@@ -5,14 +5,17 @@ export default function TeamMember(props) {
       key="slide1"
       style={{ padding: 20, height: 500, background: "white", width: "272px" }}
     >
-      <Image
-        src={`/` + props.photo}
-        alt="Team member"
-        quality={75}
-        width={223}
-        height={250}
-        loading={"eager"}
-      />
+      <div style={{ marginLeft: "-20px" }}>
+        <Image
+          src={props.photo}
+          alt="Team member"
+          quality={75}
+          width={223}
+          height={250}
+          loading={"eager"}
+        />
+      </div>
+
       <p
         className="header-color font-bold italic"
         style={{ fontSize: "16px", lineHeight: "40px" }}

@@ -57,8 +57,8 @@ export default function Service(props) {
   ));
   return (
     <div>
-      <div className="pt-32 mx-auto sm:max-w-90">
-        <SectionTitle title={props.title} showLink={true} />
+      <div className="pt-40 mx-auto sm:max-w-90">
+        <SectionTitle title={props.title} showLink={true} isMobile={isMobile} />
         <div className={`${renderNav} mb-12 xl:ml-32 lg:ml-24 buttons`}>
           {mapNavButtons}
         </div>
@@ -74,7 +74,7 @@ export default function Service(props) {
                   src="left.png"
                 ></img>
               </div>
-              <div className="inline-block sm:mx-auto">
+              <div className="inline-block mx-auto">
                 <Carousel
                   showThumbs={false}
                   infiniteLoop={false}
@@ -83,7 +83,7 @@ export default function Service(props) {
                   autoPlay={false}
                   showStatus={false}
                   swipeable={isMobile ? false : true}
-                  width={isMobile ? "23rem" : "900px"}
+                  width={isMobile ? "375px" : "900px"}
                   selectedItem={currentSlide}
                   transitionTime={isMobile ? 1 : 300}
                   dynamicHeight={true}

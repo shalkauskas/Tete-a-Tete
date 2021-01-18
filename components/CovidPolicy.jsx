@@ -29,7 +29,7 @@ export default function CovidPolicy() {
       <div className={`${openPolicy} absolute sm:w-max z-50`}>
         <div className="relative text-center">
           <Image
-            src="/covid-policy.png"
+            src="https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006848/tete/covid-policy.png"
             alt="COVID-19 Policy"
             width={597}
             height={657}

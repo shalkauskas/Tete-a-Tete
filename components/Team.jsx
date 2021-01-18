@@ -62,7 +62,7 @@ export default function Team() {
     <div className="container mx-auto">
       <SectionTitle title={"Meet our team"} />
       <div className="flex flex-wrap flex-row justify-center relative team mx-auto">
-        <div className="w-3/4 header-color sm:w-3/4 md:w-2/4 lg:w-2/4 xl:w-80 mb-6">
+        <div className="w-11/12 header-color sm:w-3/4 md:w-2/4 lg:w-2/4 xl:w-80 mb-6">
           <p className="mt-4">
             We've been serving the Newton area since 1999 and have a pristine
             reputation for our highly trained stylists who continually upgrade
@@ -123,6 +123,11 @@ export default function Team() {
         @media screen and (max-width: 1400px) {
           .team {
             max-width: 90%;
+          }
+        }
+        @media screen and (max-width: 400px) {
+          .team {
+            max-width: 100%;
           }
         }
         .min-w-content {

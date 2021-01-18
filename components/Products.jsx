@@ -40,18 +40,19 @@ export default function Products() {
             className={"lg:block md:block " + (brand ? "block mb-6" : "hidden")}
           >
             <Image
-              src="/top-brands.png"
+              src="https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006870/tete/top-brands.png"
               alt="Top brands"
               width={604}
               height={426}
               quality={75}
+              loading={"eager"}
             />
           </div>
           <hr className="block sm:block md:hidden lg:hidden" />
         </div>
 
         {/* green choices */}
-        <div className="w-full p-4 sm:w-full md:w-1/2 lg:w-1/2">
+        <div className="w-full sm:p-4 pt-4 sm:w-full md:w-1/2 lg:w-1/2">
           <div
             className="mb-8 text-center cursor-pointer sm:cursor-pointer lg:cursor-default md:cursor-default xl:cursor-default"
             onClick={() => setGreenOpen(!green)}
@@ -86,11 +87,12 @@ export default function Products() {
             }
           >
             <Image
-              src="/green-choices.png"
+              src="https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006852/tete/green-choices.png"
               alt="Green choices"
               width={604}
               height={426}
               quality={75}
+              loading={"eager"}
             />
           </div>
         </div>

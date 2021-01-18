@@ -25,7 +25,7 @@ export default function Buttons(props) {
       >
         <button
           className={`border ${
-            props.mobile ? "ml-10" : "ml-24"
+            props.mobile ? "ml-3" : "ml-24"
           } py-2 px-3 hover:opacity-75`}
           style={{ color: "#895b4a" }}
         >
@@ -47,7 +47,7 @@ export default function Buttons(props) {
         }
         @media (max-width: 1080px) {
           .ml-80 {
-            margin-left: 1rem;
+            margin-left: 0rem;
           }
         }
       `}</style>

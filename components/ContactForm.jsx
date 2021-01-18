@@ -3,9 +3,10 @@ import emailjs from "emailjs-com";
 import ContactFormResponse from "./ContactFormResponse";
 export default function ContactForm() {
   const [showResponse, setShowResponse] = React.useState(false);
-  // console.log(showResponse);
+  let response = 0;
   function sendEmail(e) {
     e.preventDefault();
+
     emailjs
       .sendForm(
         "default_service",
@@ -16,9 +17,13 @@ export default function ContactForm() {
       .then(
         (result) => {
           console.log(result.text);
+          response = 200;
+          setShowResponse(true);
         },
         (error) => {
           console.log(error.text);
+          response = 404;
+          setShowResponse(true);
         }
       );
   }
@@ -88,11 +93,11 @@ export default function ContactForm() {
             Send
           </button>
         </form>
-        <button onClick={() => setShowResponse(true)}>Test</button>
       </div>
       <ContactFormResponse
         setShowResponse={setShowResponse}
         showResponse={showResponse}
+        response={response}
       />
       <style jsx>{`
         input,

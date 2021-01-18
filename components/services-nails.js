@@ -2,7 +2,8 @@ const servicesNails = [
   [
     {
       title: "",
-      image: "nails-service.png",
+      image:
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006870/tete/nails-service.png",
     },
     {
       id: 10,

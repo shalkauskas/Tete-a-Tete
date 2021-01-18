@@ -5,7 +5,7 @@ export default function WelcomeCarousel() {
   const createCarouselItemImage = (index, options = {}) => (
     <div key={index} style={{ width: "max-content", height: "400px" }}>
       <Image
-        src={`/carousel_${index}.jpg`}
+        src={`https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006841/tete/carousel_${index}.jpg`}
         width={562}
         height={400}
         alt="Carousel welcome image"

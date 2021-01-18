@@ -26,8 +26,8 @@ export default function ServicesMap(props) {
           showInfo.display ? "block" : "hidden"
         } absolute bg-white p-10 z-20 lg:max-w-1/2 max-w-90 h-auto flex items-start`}
         style={{
-          top: "20%",
-          right: "1%",
+          top: props.showMobile ? "40%" : "20%",
+          right: props.showMobile ? "4%" : "1%",
           boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.15)",
         }}
       >
@@ -40,24 +40,26 @@ export default function ServicesMap(props) {
       </div>
     );
   }
+
   // click handler for info popup
   const handleClick = (id) => {
-    if (showInfo.display == true) {
-      document.addEventListener("mousedown", handleOutsideClick);
-      setShowInfo(() => ({ ...showInfo, display: !showInfo.display }));
-    }
-    if (showInfo.display == false) {
-      setShowInfo(() => ({ id: id, display: !showInfo.display }));
-      document.removeEventListener("mousedown", handleOutsideClick);
-    }
+    // if (showInfo.display == true) {
+    //   document.addEventListener("mousedown", handleOutsideClick);
+    //   setShowInfo(() => ({ ...showInfo, display: !showInfo.display }));
+    // }
+    // if (showInfo.display == false) {
+
+    //   document.removeEventListener("mousedown", handleOutsideClick);
+    // }
+    setShowInfo(() => ({ id: id, display: !showInfo.display }));
   };
-  const handleOutsideClick = (event) => {
-    // ignore clicks on the component itself
-    if (node.current.contains(event.target)) {
-      return;
-    }
-    setShowInfo(() => ({ ...showInfo, display: !showInfo.display }));
-  };
+  // const handleOutsideClick = (event) => {
+  //   // ignore clicks on the component itself
+  //   if (node.current.contains(event.target || document.body)) {
+  //     return;
+  //   }
+  //   setShowInfo(() => ({ ...showInfo, display: !showInfo.display }));
+  // };
 
   // mapping service box with data
   const mapServices = list.map((item, index) => {
@@ -81,7 +83,7 @@ export default function ServicesMap(props) {
           }}
           className={`text-black ${
             props.showSkinCare ? "" : "col-start-1 col-end-5"
-          } mr-auto relative ${check ? "cursor-pointer hover:opacity-75" : ""}`}
+          } mr-auto ${check ? "cursor-pointer hover:opacity-75" : ""}`}
         >
           {item.service}
         </p>
@@ -133,12 +135,13 @@ export default function ServicesMap(props) {
       <div className="flex">
         <div>
           <Image
-            src={`/${list[0].image}`}
+            src={`${list[0].image}`}
             width={width()}
             height={props.showMobile ? 320 : 1250}
             alt="Service image"
             quality={75}
             loading={"eager"}
+            priority={true}
           />
         </div>
         {/* rendering navigation for services */}
@@ -154,7 +157,7 @@ export default function ServicesMap(props) {
       {/* description */}
       <div className={`w-full ${props.showMobile ? "my-8" : "my-auto"}`}>
         {mapServices}
-        <InfoNote />
+        <InfoNote showMobile={props.showMobile} />
         {skinCareLogo}
         {props.showMobile ? (
           <Buttons mobile={props.showMobile} />
@@ -171,7 +174,20 @@ export default function ServicesMap(props) {
         .w-60 {
           width: 15rem;
         }
+        .backdrop {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: 100%;
+        }
       `}</style>
+      <div
+        className={`z-30 backdrop ${showInfo.display ? "block" : "hidden"}`}
+        onClick={() =>
+          setShowInfo(() => ({ ...showInfo, display: !showInfo.display }))
+        }
+      />
     </div>
   );
 }

@@ -2,7 +2,8 @@ const servicesHaircare = [
   [
     {
       title: "Haircuts & styling",
-      image: "haircuts.png",
+      image:
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006867/tete/haircuts.png",
     },
     {
       id: 10,
@@ -36,7 +37,11 @@ const servicesHaircare = [
     },
   ],
   [
-    { title: "Hair color", image: "haircolor.png" },
+    {
+      title: "Hair color",
+      image:
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006862/tete/haircolor.png",
+    },
     {
       id: 20,
       service: "Color application & Gloss",
@@ -65,7 +70,11 @@ const servicesHaircare = [
     },
   ],
   [
-    { title: "Straightening & treatments", image: "treatments.png" },
+    {
+      title: "Straightening & treatments",
+      image:
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006875/tete/treatments.png",
+    },
     {
       id: 30,
       service: "Keratin hair straightening",
@@ -103,7 +112,11 @@ const servicesHaircare = [
     },
   ],
   [
-    { title: "Extensions & hairdreams", image: "extensions.png" },
+    {
+      title: "Extensions & hairdreams",
+      image:
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006851/tete/extensions.png",
+    },
     {
       id: 40,
       service: "Half extensions",

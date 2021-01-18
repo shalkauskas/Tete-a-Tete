@@ -2,7 +2,9 @@ export default function ServiceMenuItem(props) {
   return (
     <div
       className="relative rounded shadow-lg service-box"
-      style={{ backgroundImage: `url(${props.background}.png)` }}
+      style={{
+        backgroundImage: `url(https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006873/tete/${props.background}.png)`,
+      }}
     >
       <p className="absolute background-box">{props.service}</p>
       <style jsx>{`
@@ -26,7 +28,7 @@ export default function ServiceMenuItem(props) {
         }
         @media screen and (max-width: 550px) {
           .service-box {
-            width: 97vw;
+            width: 100vw;
           }
           .background-box {
             left: 120px;

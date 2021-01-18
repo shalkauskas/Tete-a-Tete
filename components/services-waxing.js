@@ -2,7 +2,8 @@ const servicesWaxing = [
   [
     {
       title: "Face waxing & tinting",
-      image: "face.png",
+      image:
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006852/tete/face.png",
     },
     {
       id: 10,
@@ -36,7 +37,11 @@ const servicesWaxing = [
     },
   ],
   [
-    { title: "Body waxing", image: "body.png" },
+    {
+      title: "Body waxing",
+      image:
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006853/tete/body.png",
+    },
     {
       id: 20,
       service: "Bikini",

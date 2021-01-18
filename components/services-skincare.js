@@ -2,7 +2,8 @@ const servicesSkincare = [
   [
     {
       title: "Anti-aging+",
-      image: "antiaging.png",
+      image:
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006845/tete/antiaging.png",
     },
     {
       id: 10,
@@ -48,7 +49,11 @@ const servicesSkincare = [
     },
   ],
   [
-    { title: "Classic facials & treatments", image: "facials.png" },
+    {
+      title: "Classic facials & treatments",
+      image:
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006867/tete/facials.png",
+    },
     {
       id: 20,
       service: "“Seabreeze” Adult Classic Facial",
@@ -92,7 +97,11 @@ const servicesSkincare = [
     },
   ],
   [
-    { title: "Acne treatment", image: "acne.png" },
+    {
+      title: "Acne treatment",
+      image:
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006850/tete/acne.png",
+    },
     {
       id: 30,
       service: "Adult Acne Medical Grade Facial",
@@ -128,7 +137,11 @@ const servicesSkincare = [
     },
   ],
   [
-    { title: "Hyperpigmentation & skin tags", image: "hyperpigmentation.png" },
+    {
+      title: "Hyperpigmentation & skin tags",
+      image:
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006863/tete/hyperpigmentation.png",
+    },
     {
       id: 40,
       service: "“Baby Skin” Skin Tag Removal",
