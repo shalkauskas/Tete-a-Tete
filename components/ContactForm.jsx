@@ -2,31 +2,35 @@ import SectionTitle from "components/SectionTitle";
 import emailjs from "emailjs-com";
 import ContactFormResponse from "./ContactFormResponse";
 export default function ContactForm() {
-  const [showResponse, setShowResponse] = React.useState(false);
-  let response = 0;
+  const [showResponse, setShowResponse] = React.useState({
+    display: false,
+    code: null,
+  });
   function sendEmail(e) {
     e.preventDefault();
 
     emailjs
       .sendForm(
         "default_service",
-        process.env.templateid,
+        process.env.NEXT_PUBLIC_templateid,
         e.target,
-        process.env.userid
+        process.env.NEXT_PUBLIC_userid
       )
       .then(
         (result) => {
           console.log(result.text);
-          response = 200;
-          setShowResponse(true);
+          handleSubmit(200);
         },
         (error) => {
           console.log(error.text);
-          response = 404;
-          setShowResponse(true);
+          handleSubmit(404);
         }
       );
   }
+  const handleSubmit = (code) => {
+    setShowResponse(() => ({ display: true, code: code }));
+  };
+  const responseCode = showResponse.code;
   return (
     <div className="container mx-auto max-w-sm">
       <SectionTitle title={"Get in touch"} />
@@ -96,8 +100,8 @@ export default function ContactForm() {
       </div>
       <ContactFormResponse
         setShowResponse={setShowResponse}
-        showResponse={showResponse}
-        response={response}
+        responseCode={responseCode}
+        showResponse={showResponse.display}
       />
       <style jsx>{`
         input,

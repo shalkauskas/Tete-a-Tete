@@ -21,7 +21,11 @@ export default function SectionTitle(props) {
           )
         }
       >
-        <img src="left.png" className="w-3 inline-block mr-2" />
+        <img
+          src="left.png"
+          className="w-3 inline-block mr-2"
+          alt="Go back to services"
+        />
         <span>Back to services</span>
       </a>
       <style jsx>

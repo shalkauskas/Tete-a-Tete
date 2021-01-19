@@ -22,10 +22,9 @@ export default function Map() {
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null);
   }, []);
-
   return (
     <div className="w-full mx-auto">
-      <LoadScript googleMapsApiKey="AIzaSyBpfuPMmxyEvu7VGQncWMsC-hJpaySOCe8">
+      <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_googleMapsApiKey}>
         <div
           style={{
             height: "100%",

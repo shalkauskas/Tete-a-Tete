@@ -109,18 +109,22 @@ export default function ServicesMap(props) {
       <picture>
         <source type="image/webp" srcSet="rezage-logo.webp" />
         <source type="image/png" srcSet="rezage-logo.png" />
-        <img src="rezage-logo.png" style={{ width: "60px", height: "60px" }} />
+        <img
+          src="rezage-logo.png"
+          style={{ width: "60px", height: "60px" }}
+          alt="We Use The Rezâge Skin Care Line"
+        />
       </picture>
     </div>
   );
-  // handle with of image
+  // handle width of image
   const width = () => {
     if (props.showSkinCare == true) {
-      return props.showMobile ? 210 : 700;
+      return props.showMobile ? 190 : 670;
     } else if (props.showMobile == true) {
       return 210;
     } else {
-      return 790;
+      return 820;
     }
   };
   return (
@@ -139,7 +143,7 @@ export default function ServicesMap(props) {
             width={width()}
             height={props.showMobile ? 320 : 1250}
             alt="Service image"
-            quality={75}
+            quality={50}
             loading={"eager"}
             priority={true}
           />

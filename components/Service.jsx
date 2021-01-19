@@ -72,6 +72,7 @@ export default function Service(props) {
                     currentSlide == 0 ? "invisible" : "inline-block"
                   }`}
                   src="left.png"
+                  alt="Prev service"
                 ></img>
               </div>
               <div className="inline-block mx-auto">
@@ -100,6 +101,7 @@ export default function Service(props) {
                       : "inline-block"
                   }`}
                   src="right.png"
+                  alt="Next service"
                 ></img>
               </div>
             </div>

@@ -1,4 +1,4 @@
-const ContactFormResponse = (params, props) => {
+const ContactFormResponse = (params) => {
   const openResponse = params.showResponse ? "block" : "hidden";
   return (
     <div
@@ -13,12 +13,12 @@ const ContactFormResponse = (params, props) => {
             className="sm:text-xl font-bold mb-4"
             style={{ color: "rgba(77, 73, 73, 1)" }}
           >
-            {props.response == 200
+            {params.responseCode === 200
               ? "Thank you for contacting Tete-A-Tete!"
               : "Ooops! Something went wrong!"}
           </h2>
           <p>
-            {props.response == 200
+            {params.responseCode === 200
               ? "We will get back to you shortly. If you are willing to book, change or cancel the appointment, please call us at (617) 559‑0660."
               : "If you are willing to book, change or cancel the appointment, please call us at (617) 559‑0660."}
           </p>
@@ -38,7 +38,7 @@ const ContactFormResponse = (params, props) => {
           style={{ top: "-6px" }}
         >
           &times;
-        </span>{" "}
+        </span>
       </div>
 
       <style jsx>{`
