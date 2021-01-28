@@ -4,7 +4,7 @@ import useDocumentScrollThrottled from "components/useDocumentScrollThrottled";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import smoothscroll from "smoothscroll-polyfill";
-export default function Header() {
+export default function Header(props) {
   const router = useRouter();
   const [navbarOpen, setNavbarOpen] = React.useState(false);
 
@@ -64,74 +64,74 @@ export default function Header() {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="nav-item">
+                {/* <Link
+                  shallow={true}
+                  scroll={false}
+                  href={{
+                    pathname: "/",
+                    query: { id: "services" },
+                  }}
+                > */}
                 <a
-                  onClick={() =>
-                    router.push("/").then(() => {
-                      smoothscroll.polyfill();
-                      window.scrollTo({
-                        top: 600,
-                        behavior: "smooth",
-                      });
-                    })
-                  }
+                  onClick={() => {
+                    router.push({
+                      pathname: "/",
+                      query: { id: "services" },
+                    });
+                  }}
                   className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75"
                 >
                   Services
                 </a>
+                {/* </Link> */}
+
                 <hr />
               </li>
 
               <li className="nav-item">
-                <a
-                  onClick={() =>
-                    router.push("/").then(() => {
-                      smoothscroll.polyfill();
-                      window.scrollTo({
-                        top: 1650,
-                        behavior: "smooth",
-                      });
-                    })
-                  }
-                  className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75"
+                <Link
+                  scroll={false}
+                  href={{
+                    pathname: "/",
+                    query: { id: "team" },
+                  }}
                 >
-                  Team
-                </a>
+                  <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
+                    Team
+                  </a>
+                </Link>
+
                 <hr />
               </li>
 
               <li className="nav-item">
-                <a
-                  onClick={() =>
-                    router.push("/").then(() => {
-                      smoothscroll.polyfill();
-                      window.scrollTo({
-                        top: 2350,
-                        behavior: "smooth",
-                      });
-                    })
-                  }
-                  className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75"
+                <Link
+                  scroll={false}
+                  href={{
+                    pathname: "/",
+                    query: { id: "products" },
+                  }}
                 >
-                  Products
-                </a>
+                  <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
+                    Products
+                  </a>
+                </Link>
+
                 <hr />
               </li>
 
               <li className="nav-item">
-                <a
-                  onClick={() =>
-                    router.push("/").then(() => {
-                      smoothscroll.polyfill();
-                      window.scrollTo({
-                        top: 3150,
-                        behavior: "smooth",
-                      });
-                    })
-                  }
-                  className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75"
+                <Link
+                  scroll={false}
+                  href={{
+                    pathname: "/",
+                    query: { id: "contact" },
+                  }}
                 >
-                  Contact
-                </a>
+                  <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
+                    Contact
+                  </a>
+                </Link>
               </li>
             </ul>
           </div>

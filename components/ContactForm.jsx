@@ -34,7 +34,7 @@ export default function ContactForm() {
   return (
     <div className="container mx-auto max-w-sm">
       <SectionTitle title={"Get in touch"} />
-      <div className="mx-auto block text-center lg:w-1/2 w-3/4">
+      <div className="mx-auto block text-center lg:w-1/2 sm:w-3/4 w-11/12">
         <form
           action="sumbit"
           className="mx-auto inline-block text-left w-full"
