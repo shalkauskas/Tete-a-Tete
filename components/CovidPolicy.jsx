@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Backdrop from "@/components/Backdrop";
 export default function CovidPolicy() {
   const [showPolicy, setShowPolicy] = React.useState(false);
   const openPolicy = showPolicy ? "block" : "hidden";
@@ -43,20 +44,10 @@ export default function CovidPolicy() {
           &times;
         </span>
       </div>
-      <style jsx>{`
-        .backdrop {
-          position: absolute;
-          top: 0px;
-          left: 0px;
-          width: 100%;
-          height: 100vh;
-          background: rgba(0, 0, 0, 0.3);
-          backdrop-filter: blur(5px);
-        }
-      `}</style>
-      <div
-        className={`z-30 backdrop ${openPolicy}`}
+      <Backdrop
+        toggle={showPolicy}
         onClick={() => setShowPolicy(false)}
+        blur={true}
       />
     </div>
   );

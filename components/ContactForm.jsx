@@ -1,14 +1,20 @@
 import SectionTitle from "components/SectionTitle";
 import emailjs from "emailjs-com";
 import ContactFormResponse from "./ContactFormResponse";
+import { useForm } from "@/components/useForm";
 export default function ContactForm() {
   const [showResponse, setShowResponse] = React.useState({
     display: false,
     code: null,
   });
+  const { values, handleChange, reset } = useForm({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
   function sendEmail(e) {
     e.preventDefault();
-
     emailjs
       .sendForm(
         "default_service",
@@ -29,6 +35,7 @@ export default function ContactForm() {
   }
   const handleSubmit = (code) => {
     setShowResponse(() => ({ display: true, code: code }));
+    reset();
   };
   const responseCode = showResponse.code;
   return (
@@ -51,6 +58,8 @@ export default function ContactForm() {
               name="name"
               placeholder="Joe Doe"
               required
+              value={values.name}
+              onChange={handleChange}
             />
           </div>
 
@@ -64,6 +73,8 @@ export default function ContactForm() {
               name="email"
               placeholder="example@smth.com"
               required
+              value={values.email}
+              onChange={handleChange}
             />
           </div>
           <label htmlFor="phone">Phone number</label>
@@ -75,6 +86,8 @@ export default function ContactForm() {
               id="phone"
               placeholder="***-***-****"
               name="phone"
+              value={values.phone}
+              onChange={handleChange}
             />
           </div>
           <label htmlFor="message">Message*</label>
@@ -88,6 +101,8 @@ export default function ContactForm() {
               required
               rows="4"
               style={{ paddingBottom: "150px" }}
+              value={values.message}
+              onChange={handleChange}
             />
           </div>
           <button

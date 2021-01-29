@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 export default function SectionTitle(props) {
   const router = useRouter();
@@ -7,27 +8,28 @@ export default function SectionTitle(props) {
         {props.title}
       </h1>
       {/* conditional rendering of "Back to services button" */}
-      <a
-        style={{ fontSize: "16px" }}
-        className={`text-color font-light italic text underline inline-block absolute bottom-0 cursor-pointer ${
-          props.showLink ? "inline-block" : "hidden"
-        }`}
-        onClick={() =>
-          router.push("/", "/").then(() =>
-            window.scrollTo({
-              top: 600,
-              behavior: "smooth",
-            })
-          )
-        }
+      <Link
+        passHref={true}
+        scroll={false}
+        href={{
+          pathname: "/",
+          query: { id: "services" },
+        }}
       >
-        <img
-          src="left.png"
-          className="w-3 inline-block mr-2"
-          alt="Go back to services"
-        />
-        <span>Back to services</span>
-      </a>
+        <a
+          style={{ fontSize: "16px" }}
+          className={`text-color font-light italic text underline inline-block absolute bottom-0 cursor-pointer ${
+            props.showLink ? "inline-block" : "hidden"
+          }`}
+        >
+          <img
+            src="left.png"
+            className="w-3 inline-block mr-2"
+            alt="Go back to services"
+          />
+          <span>Back to services</span>
+        </a>
+      </Link>
       <style jsx>
         {`
           @media (max-width: 415px) {

@@ -108,7 +108,7 @@ const servicesHaircare = [
       service: "Olaplex treatment",
       price: "$35",
       info:
-        "Olaplex treatment rebuilds the damaged disulphide bonds in your hair that are broken during the chemical process. If you've over-bleached or had your hair highlighted for years, Olaplex allows you to rebuild the strength, structure and integrity of your hair",
+        "Olaplex treatment rebuilds the damaged disulphide bonds in your hair that are broken during the chemical process. If you've over-bleached or had your hair highlighted for years, Olaplex allows you to rebuild the strength, structure and integrity of your hair.",
     },
   ],
   [

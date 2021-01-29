@@ -1,3 +1,4 @@
+import Backdrop from "@/components/Backdrop";
 const ContactFormResponse = (params) => {
   const openResponse = params.showResponse ? "block" : "hidden";
   return (
@@ -40,21 +41,10 @@ const ContactFormResponse = (params) => {
           &times;
         </span>
       </div>
-
-      <style jsx>{`
-        .backdrop {
-          position: absolute;
-          top: 0px;
-          left: 0px;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.3);
-          backdrop-filter: blur(5px);
-        }
-      `}</style>
-      <div
-        className={`z-30 backdrop ${openResponse}`}
+      <Backdrop
+        toggle={openResponse}
         onClick={() => params.setShowResponse(false)}
+        blur={true}
       />
     </div>
   );

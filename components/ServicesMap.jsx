@@ -1,6 +1,7 @@
 import Buttons from "@/components/Buttons";
 import Refferal from "@/components/Refferal";
 import Image from "next/image";
+import Backdrop from "@/components/Backdrop";
 export default function ServicesMap(props) {
   // importing data
   const list = props.list;
@@ -24,7 +25,9 @@ export default function ServicesMap(props) {
         onClick={() => handleClick()}
         className={`${
           showInfo.display ? "block" : "hidden"
-        } absolute bg-white p-10 z-20 lg:max-w-1/2 max-w-90 h-auto flex items-start`}
+        } absolute bg-white  z-20 h-auto flex items-start ${
+          props.showMobile ? "flex-col max-w-90 p-9" : "flex-row max-w-1/2 p-10"
+        }`}
         style={{
           top: props.showMobile ? "40%" : "20%",
           right: props.showMobile ? "4%" : "1%",
@@ -34,32 +37,17 @@ export default function ServicesMap(props) {
         <img
           src="info.png"
           style={{ width: "36px", height: "36px" }}
-          className="mb-auto mr-6"
+          className={`${props.showMobile ? "mx-auto mb-3" : "mr-6 mb-auto"}  `}
         />
-        <p className="text-black text-left">{infoText}</p>
+        <p className="text-black lg:text-left text-center">{infoText}</p>
       </div>
     );
   }
 
   // click handler for info popup
   const handleClick = (id) => {
-    // if (showInfo.display == true) {
-    //   document.addEventListener("mousedown", handleOutsideClick);
-    //   setShowInfo(() => ({ ...showInfo, display: !showInfo.display }));
-    // }
-    // if (showInfo.display == false) {
-
-    //   document.removeEventListener("mousedown", handleOutsideClick);
-    // }
     setShowInfo(() => ({ id: id, display: !showInfo.display }));
   };
-  // const handleOutsideClick = (event) => {
-  //   // ignore clicks on the component itself
-  //   if (node.current.contains(event.target || document.body)) {
-  //     return;
-  //   }
-  //   setShowInfo(() => ({ ...showInfo, display: !showInfo.display }));
-  // };
 
   // mapping service box with data
   const mapServices = list.map((item, index) => {
@@ -175,22 +163,13 @@ export default function ServicesMap(props) {
           bottom: 20px;
           left: 13%;
         }
-        .w-60 {
-          width: 15rem;
-        }
-        .backdrop {
-          position: absolute;
-          top: 0px;
-          left: 0px;
-          width: 100%;
-          height: 100%;
-        }
       `}</style>
-      <div
-        className={`z-30 backdrop ${showInfo.display ? "block" : "hidden"}`}
+      <Backdrop
+        toggle={showInfo.display}
         onClick={() =>
           setShowInfo(() => ({ ...showInfo, display: !showInfo.display }))
         }
+        blur={false}
       />
     </div>
   );

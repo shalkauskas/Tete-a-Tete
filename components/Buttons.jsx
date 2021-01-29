@@ -1,38 +1,36 @@
 import { useRouter } from "next/router";
-import smoothscroll from "smoothscroll-polyfill";
+import Link from "next/link";
 export default function Buttons(props) {
   const router = useRouter();
   return (
     <div className="mb-12">
       <a href="https://swipeit.com/product/1218/tete-a-tete">
         <button
-          className="shadow-lg text-white py-2 px-6 ml-80 hover:opacity-75"
+          className="shadow-lg text-white py-2 px-6 2xl:ml-80 ml-64 hover:opacity-75"
           style={{ backgroundColor: "#895b4a" }}
         >
           Buy a gift card
         </button>
       </a>
-      <a
-        onClick={() =>
-          router.push("/").then(() => {
-            smoothscroll.polyfill();
-            window.scrollTo({
-              top: 600,
-              behavior: "smooth",
-            });
-          })
-        }
+      <Link
+        passHref={true}
+        scroll={false}
+        href={{
+          pathname: "/",
+          query: { id: "services" },
+        }}
       >
-        <button
-          className={`border ${
-            props.mobile ? "ml-3" : "ml-24"
-          } py-2 px-3 hover:opacity-75`}
-          style={{ color: "#895b4a" }}
-        >
-          See other services
-        </button>
-      </a>
-
+        <a>
+          <button
+            className={`border ${
+              props.mobile ? "ml-3" : "ml-24"
+            } py-2 px-3 hover:opacity-75`}
+            style={{ color: "#895b4a" }}
+          >
+            See other services
+          </button>
+        </a>
+      </Link>
       <style jsx>{`
         button {
           border-color: #895b4a;

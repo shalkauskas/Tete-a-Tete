@@ -16,10 +16,8 @@ export default function Header(props) {
     setShowMiniNav(currentScrollTop > 100);
   });
   const header = showMiniNav ? "nav-small" : "nav-full";
-  const logo = showMiniNav ? "w-0 transition-all duration-500 ease" : "logo";
-  const textLogo = showMiniNav
-    ? "font-logo"
-    : "hidden transition-all duration-300 ease-in-out";
+  const logo = showMiniNav ? "w-0" : "logo";
+  const textLogo = showMiniNav ? "font-logo" : "hidden";
   const dropdown = showMiniNav ? "" : "";
   return (
     <div className="fixed z-30 top-0 w-screen">
@@ -36,10 +34,14 @@ export default function Header(props) {
                 <picture>
                   <source type="image/webp" srcSet="logo.webp" />
                   <source type="image/png" srcSet="logo.png" />
-                  <img src="/logo.png" alt="Logo" className={`${logo}`} />
+                  <img
+                    src="/logo.png"
+                    alt="Logo"
+                    className={`${logo} hover:opacity-75 logo-transition`}
+                  />
                 </picture>
                 <span
-                  className={`${textLogo} font-logo uppercase sm:text-4xl text-2xl xl:leading-4 lg:leading-4 md:leading-normal leading-relaxed inline-block mr-4 py-3 whitespace-no-wrap text-white`}
+                  className={`${textLogo} logo-transition font-logo uppercase sm:text-4xl text-2xl xl:leading-4 lg:leading-4 md:leading-normal leading-relaxed inline-block mr-4 py-3 whitespace-no-wrap text-white`}
                 >
                   Tête-à-Tête
                 </span>
@@ -64,32 +66,25 @@ export default function Header(props) {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="nav-item">
-                {/* <Link
-                  shallow={true}
+                <Link
+                  passHref={true}
                   scroll={false}
                   href={{
                     pathname: "/",
                     query: { id: "services" },
                   }}
-                > */}
-                <a
-                  onClick={() => {
-                    router.push({
-                      pathname: "/",
-                      query: { id: "services" },
-                    });
-                  }}
-                  className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75"
                 >
-                  Services
-                </a>
-                {/* </Link> */}
+                  <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
+                    Services
+                  </a>
+                </Link>
 
                 <hr />
               </li>
 
               <li className="nav-item">
                 <Link
+                  passHref={true}
                   scroll={false}
                   href={{
                     pathname: "/",
@@ -106,6 +101,7 @@ export default function Header(props) {
 
               <li className="nav-item">
                 <Link
+                  passHref={true}
                   scroll={false}
                   href={{
                     pathname: "/",
@@ -122,6 +118,7 @@ export default function Header(props) {
 
               <li className="nav-item">
                 <Link
+                  passHref={true}
                   scroll={false}
                   href={{
                     pathname: "/",
@@ -144,12 +141,13 @@ export default function Header(props) {
         }
         .font-logo {
           font-family: "News Cycle", sans-serif;
-          transition: all 0.5s;
         }
         .logo {
           width: 238px;
           height: -webkit-fill-available;
-          transition: all 0.5s ease;
+        }
+        .logo-transition {
+          transition: all 0.7s cubic-bezier(0.01, 0.81, 1, 1.26);
         }
         .nav-full {
           height: 137px;

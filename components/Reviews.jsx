@@ -1,0 +1,74 @@
+export default function Reviews(props) {
+  const placeid = process.env.NEXT_PUBLIC_placeid;
+  const placesAPIkey = process.env.NEXT_PUBLIC_placesAPIkey;
+  const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeid}&key=${placesAPIkey}&language=en`;
+  React.useEffect(() => {
+    getReviews();
+  }, []);
+  const [reviews, setReviews] = React.useState([]);
+  const getReviews = () => {
+    fetch(url)
+      .then((result) => result.json())
+      .then((result) => {
+        const data = result.result;
+        setReviews(data.reviews);
+        console.log(data);
+      });
+  };
+  const [expand, setExpand] = React.useState(false);
+  const mapReviews = reviews.map((item, index) => {
+    const expandButton = (
+      <span className={`${item.text.length > 200 ? "inline-block" : "hidden"}`}>
+        {expand ? "" : "..."}
+        <a
+          onClick={() => setExpand((prevState) => !prevState)}
+          className={`ml-2 text-blue-600 cursor-pointer`}
+        >
+          {`Read ${expand ? "less" : "more"}`}
+        </a>
+      </span>
+    );
+    const text = item.text.substring(0, expand ? 5000 : 200);
+    return (
+      <div className="flex mb-4 flex-row" key={index}>
+        <div className="flex-shrink-0">
+          <img
+            width="50px"
+            src={item.profile_photo_url}
+            className="mr-4 mt-2"
+          />
+        </div>
+        <div>
+          <a target="_blank" rel="noopener noreferrer" href={item.author_url}>
+            <h2 className="text-blue-500 font-bold text-sm">
+              {item.author_name}
+            </h2>
+          </a>
+          <span className="text-gray-500 text-xs align-text-top">
+            {item.relative_time_description}
+          </span>
+          <div className="">
+            <img width="100px" src="stars.png" className="inline-block mr-3" />
+            <p
+              style={{ fontSize: "14px" }}
+              className="inline overflow-ellipsis h-32"
+            >
+              {text}
+              {expandButton}
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  });
+  return (
+    <div
+      style={{ height: "calc(100% - 180px)" }}
+      className={`${
+        props.open ? "block" : "hidden"
+      } fixed bottom-0 left-0 bg-white w-1/4 p-5 z-20 shadow-inner border overflow-y-scroll`}
+    >
+      <div>{mapReviews}</div>
+    </div>
+  );
+}

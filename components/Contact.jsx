@@ -1,6 +1,9 @@
 import SectionTitle from "components/SectionTitle";
 import Map from "components/GoogleMap";
+import Reviews from "./Reviews";
+import Backdrop from "@/components/Backdrop";
 export default function Contact() {
+  const [openReview, setOpenReview] = React.useState(false);
   return (
     <div className="container mx-auto md:max-w-90">
       <SectionTitle title={"Contact"} />
@@ -72,11 +75,18 @@ export default function Contact() {
                 <source type="image/webp" srcSet="google.webp" />
                 <source type="image/png" srcSet="google.png" />
                 <img
+                  onClick={() => setOpenReview((prevState) => !prevState)}
                   src="google.png"
                   alt="Google rating"
-                  className="w-48 mx-auto md:mr-12 mr-5 ml-2 md:ml-0 inline my-4"
+                  className="w-48 mx-auto md:mr-12 mr-5 ml-2 md:ml-0 inline my-4 hover:opacity-75 cursor-pointer"
                 />
               </picture>
+              <Reviews open={openReview} />
+              <Backdrop
+                toggle={openReview}
+                onClick={() => setOpenReview((prevState) => !prevState)}
+                blur={true}
+              />
               <a
                 target="_blank"
                 rel="noopener noreferrer"
