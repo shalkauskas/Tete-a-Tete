@@ -16,19 +16,19 @@ export default function Reviews(props) {
       });
   };
   const [expand, setExpand] = React.useState(false);
-  const mapReviews = reviews.map((item, index) => {
+  const mapReviews = reviews.slice(0, 4).map((item, index) => {
     const expandButton = (
-      <span className={`${item.text.length > 200 ? "inline-block" : "hidden"}`}>
+      <span className={`${item.text.length > 150 ? "inline-block" : "hidden"}`}>
         {expand ? "" : "..."}
         <a
           onClick={() => setExpand((prevState) => !prevState)}
-          className={`ml-2 text-blue-600 cursor-pointer`}
+          className={`ml-2 text-blue-600 cursor-pointer underline`}
         >
           {`Read ${expand ? "less" : "more"}`}
         </a>
       </span>
     );
-    const text = item.text.substring(0, expand ? 5000 : 200);
+    const text = item.text.substring(0, expand ? 4000 : 150);
     return (
       <div className="flex mb-4 flex-row" key={index}>
         <div className="flex-shrink-0">
@@ -48,11 +48,8 @@ export default function Reviews(props) {
             {item.relative_time_description}
           </span>
           <div className="">
-            <img width="100px" src="stars.png" className="inline-block mr-3" />
-            <p
-              style={{ fontSize: "14px" }}
-              className="inline overflow-ellipsis h-32"
-            >
+            <img width="100px" height="20px" src="stars.png" className="mr-3" />
+            <p style={{ fontSize: "14px" }} className="leading-snug">
               {text}
               {expandButton}
             </p>
@@ -66,9 +63,21 @@ export default function Reviews(props) {
       style={{ height: "calc(100% - 180px)" }}
       className={`${
         props.open ? "block" : "hidden"
-      } fixed bottom-0 left-0 bg-white w-1/4 p-5 z-20 shadow-inner border overflow-y-scroll`}
+      } fixed bottom-0 left-0 bg-white 2xl:w-1/4 lg:w-1/3 sm:w-1/2 w-3/4 p-5 z-20 shadow-inner border overflow-y-scroll`}
     >
-      <div>{mapReviews}</div>
+      <div>
+        {mapReviews}
+        <div className="text-center">
+          <a
+            href="https://maps.google.com/?cid=13262548078072798292"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-blue-600 text-sm"
+          >
+            More reviews
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
