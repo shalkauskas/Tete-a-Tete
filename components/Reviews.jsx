@@ -1,20 +1,27 @@
 export default function Reviews(props) {
   const placeid = process.env.NEXT_PUBLIC_placeid;
   const placesAPIkey = process.env.NEXT_PUBLIC_placesAPIkey;
-  const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeid}&key=${placesAPIkey}&language=en`;
+  const url = `https://stark-hollows-81263.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeid}&key=${placesAPIkey}&language=en`;
+
   React.useEffect(() => {
-    getReviews();
-  }, []);
-  const [reviews, setReviews] = React.useState([]);
-  const getReviews = () => {
+    let isActive = true;
     fetch(url)
       .then((result) => result.json())
       .then((result) => {
-        const data = result.result;
-        setReviews(data.reviews);
-        console.log(data);
-      });
-  };
+        if (isActive) {
+          const data = result.result;
+          setReviews(data.reviews);
+        }
+      })
+      .catch((error) => console.log(error.message));
+    return () => {
+      isActive = false;
+    };
+  }, []);
+  const [reviews, setReviews] = React.useState([]);
+  // const getReviews = () => {
+
+  // };
   const [expand, setExpand] = React.useState(false);
   const mapReviews = reviews.slice(0, 4).map((item, index) => {
     const expandButton = (
@@ -36,6 +43,7 @@ export default function Reviews(props) {
             width="50px"
             src={item.profile_photo_url}
             className="mr-4 mt-2"
+            loading="lazy"
           />
         </div>
         <div>
@@ -48,7 +56,13 @@ export default function Reviews(props) {
             {item.relative_time_description}
           </span>
           <div className="">
-            <img width="100px" height="20px" src="stars.png" className="mr-3" />
+            <img
+              width="100px"
+              height="20px"
+              src="stars.png"
+              className="mr-3"
+              loading="lazy"
+            />
             <p style={{ fontSize: "14px" }} className="leading-snug">
               {text}
               {expandButton}

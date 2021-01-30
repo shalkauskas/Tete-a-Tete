@@ -7,7 +7,7 @@ export default function Backdrop(props) {
         position: "fixed",
         top: "0",
         left: "0",
-        width: "100%",
+        width: "1000%",
         height: "100vh",
         minHeight: "100%",
         zIndex: "10",

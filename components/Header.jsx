@@ -4,6 +4,7 @@ import useDocumentScrollThrottled from "components/useDocumentScrollThrottled";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import smoothscroll from "smoothscroll-polyfill";
+import { route } from "next/dist/next-server/server/router";
 export default function Header(props) {
   const router = useRouter();
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -29,24 +30,30 @@ export default function Header(props) {
           <div
             className={`${dropdown} w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start`}
           >
-            <Link href="/" passHref>
-              <a>
-                <picture>
-                  <source type="image/webp" srcSet="logo.webp" />
-                  <source type="image/png" srcSet="logo.png" />
-                  <img
-                    src="/logo.png"
-                    alt="Logo"
-                    className={`${logo} hover:opacity-75 logo-transition`}
-                  />
-                </picture>
-                <span
-                  className={`${textLogo} logo-transition font-logo uppercase sm:text-4xl text-2xl xl:leading-4 lg:leading-4 md:leading-normal leading-relaxed inline-block mr-4 py-3 whitespace-no-wrap text-white`}
-                >
-                  Tête-à-Tête
-                </span>
-              </a>
-            </Link>
+            <a
+              className="cursor-pointer"
+              onClick={() =>
+                router.push("/").then(() => {
+                  smoothscroll.polyfill();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                })
+              }
+            >
+              <picture>
+                <source type="image/webp" srcSet="logo.webp" />
+                <source type="image/png" srcSet="logo.png" />
+                <img
+                  src="/logo.png"
+                  alt="Logo"
+                  className={`${logo} hover:opacity-75 logo-transition`}
+                />
+              </picture>
+              <span
+                className={`${textLogo} logo-transition font-logo uppercase sm:text-4xl text-2xl xl:leading-4 lg:leading-4 md:leading-normal leading-relaxed inline-block mr-4 py-3 whitespace-no-wrap text-white`}
+              >
+                Tête-à-Tête
+              </span>
+            </a>
             <button
               className={`text-white cursor-pointer text-xl leading-none px-3 pt-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none`}
               type="button"
@@ -144,7 +151,7 @@ export default function Header(props) {
         }
         .logo {
           width: 238px;
-          height: -webkit-fill-available;
+          height: 136px;
         }
         .logo-transition {
           transition: all 0.7s cubic-bezier(0.01, 0.81, 1, 1.26);

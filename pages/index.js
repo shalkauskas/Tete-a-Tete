@@ -44,12 +44,12 @@ export default function Home() {
   }, [id]);
 
   const scroll = (tag) => {
+    smoothscroll.polyfill();
     tag.current.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
-    smoothscroll.polyfill();
   };
 
   return (
