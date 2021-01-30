@@ -3,7 +3,7 @@ export default function ServiceMenuItem(props) {
     <div
       className="relative rounded shadow-lg service-box"
       style={{
-        backgroundImage: `url(https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006873/tete/${props.background}.png)`,
+        backgroundImage: `url(https://res.cloudinary.com/dyj6lkekg/image/upload/tete/${props.background}.png)`,
       }}
     >
       <p className="absolute background-box">{props.service}</p>

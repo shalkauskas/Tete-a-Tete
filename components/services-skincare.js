@@ -3,7 +3,7 @@ const servicesSkincare = [
     {
       title: "Anti-aging+",
       image:
-        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006845/tete/antiaging.png",
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/antiaging.png",
     },
     {
       id: 10,
@@ -52,7 +52,7 @@ const servicesSkincare = [
     {
       title: "Classic facials & treatments",
       image:
-        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006867/tete/facials.png",
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/facials.png",
     },
     {
       id: 20,
@@ -99,8 +99,7 @@ const servicesSkincare = [
   [
     {
       title: "Acne treatment",
-      image:
-        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006850/tete/acne.png",
+      image: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/acne.png",
     },
     {
       id: 30,
@@ -140,7 +139,7 @@ const servicesSkincare = [
     {
       title: "Hyperpigmentation & skin tags",
       image:
-        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006863/tete/hyperpigmentation.png",
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/hyperpigmentation.png",
     },
     {
       id: 40,

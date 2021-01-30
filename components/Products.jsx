@@ -40,7 +40,7 @@ export default function Products() {
             className={"lg:block md:block " + (brand ? "block mb-6" : "hidden")}
           >
             <Image
-              src="https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006870/tete/top-brands.png"
+              src="https://res.cloudinary.com/dyj6lkekg/image/upload/tete/top-brands.png"
               alt="Top brands"
               width={604}
               height={426}
@@ -87,7 +87,7 @@ export default function Products() {
             }
           >
             <Image
-              src="https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006852/tete/green-choices.png"
+              src="https://res.cloudinary.com/dyj6lkekg/image/upload/tete/green-choices.png"
               alt="Green choices"
               width={604}
               height={426}

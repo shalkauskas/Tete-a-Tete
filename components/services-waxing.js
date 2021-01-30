@@ -39,8 +39,7 @@ const servicesWaxing = [
   [
     {
       title: "Body waxing",
-      image:
-        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006853/tete/body.png",
+      image: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/body.png",
     },
     {
       id: 20,

@@ -3,7 +3,7 @@ const servicesHaircare = [
     {
       title: "Haircuts & styling",
       image:
-        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006867/tete/haircuts.png",
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/haircuts.png",
     },
     {
       id: 10,
@@ -40,7 +40,7 @@ const servicesHaircare = [
     {
       title: "Hair color",
       image:
-        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006862/tete/haircolor.png",
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/haircolor.png",
     },
     {
       id: 20,
@@ -73,7 +73,7 @@ const servicesHaircare = [
     {
       title: "Straightening & treatments",
       image:
-        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006875/tete/treatments.png",
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/treatments.png",
     },
     {
       id: 30,
@@ -115,7 +115,7 @@ const servicesHaircare = [
     {
       title: "Extensions & hairdreams",
       image:
-        "https://res.cloudinary.com/dyj6lkekg/image/upload/v1611006851/tete/extensions.png",
+        "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/extensions.png",
     },
     {
       id: 40,
