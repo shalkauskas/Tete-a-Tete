@@ -3,10 +3,10 @@ import Link from "next/link";
 export default function Buttons(props) {
   const router = useRouter();
   return (
-    <div className="mb-12">
+    <div className="lg:mb-12">
       <a href="https://swipeit.com/product/1218/tete-a-tete">
         <button
-          className="shadow-lg text-white py-2 px-6 2xl:ml-80 ml-64 hover:opacity-75"
+          className="shadow-lg text-white py-2 px-6 ml-80 hover:opacity-75"
           style={{ backgroundColor: "#895b4a" }}
         >
           Buy a gift card
@@ -42,6 +42,11 @@ export default function Buttons(props) {
         }
         .ml-80 {
           margin-left: 20rem;
+        }
+        @media (max-width: 1521px) {
+          .ml-80 {
+            margin-left: 15rem;
+          }
         }
         @media (max-width: 1080px) {
           .ml-80 {

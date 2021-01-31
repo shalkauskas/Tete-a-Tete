@@ -18,11 +18,10 @@ export default function Reviews(props) {
       isActive = false;
     };
   }, []);
-  const [reviews, setReviews] = React.useState([]);
-  // const getReviews = () => {
 
-  // };
+  const [reviews, setReviews] = React.useState([]);
   const [expand, setExpand] = React.useState(false);
+
   const mapReviews = reviews.slice(0, 4).map((item, index) => {
     const expandButton = (
       <span className={`${item.text.length > 150 ? "inline-block" : "hidden"}`}>
