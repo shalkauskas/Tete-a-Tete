@@ -1,10 +1,9 @@
-import Phone from "components/Phone";
-import CovidPolicy from "components/CovidPolicy";
-import useDocumentScrollThrottled from "components/useDocumentScrollThrottled";
+import Phone from "@/components/Layout/Phone";
+import CovidPolicy from "components/Layout/CovidPolicy";
+import useDocumentScrollThrottled from "@/components/Hooks/useDocumentScrollThrottled";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import smoothscroll from "smoothscroll-polyfill";
-import { route } from "next/dist/next-server/server/router";
 export default function Header(props) {
   const router = useRouter();
   const [navbarOpen, setNavbarOpen] = React.useState(false);

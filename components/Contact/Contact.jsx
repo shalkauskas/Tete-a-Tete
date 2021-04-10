@@ -1,5 +1,5 @@
 import SectionTitle from "components/SectionTitle";
-import Map from "components/GoogleMap";
+import Map from "@/components/Contact/GoogleMap";
 import Reviews from "./Reviews";
 import Backdrop from "@/components/Backdrop";
 export default function Contact() {
@@ -81,12 +81,17 @@ export default function Contact() {
                   className="w-48 mx-auto md:mr-12 mr-5 ml-2 md:ml-0 inline my-4 hover:opacity-75 cursor-pointer"
                 />
               </picture>
-              <Reviews open={openReview} />
-              <Backdrop
-                toggle={openReview}
-                onClick={() => setOpenReview((prevState) => !prevState)}
-                blur={true}
-              />
+              {openReview && (
+                <>
+                  <Reviews />
+                  <Backdrop
+                    toggle={openReview}
+                    onClick={() => setOpenReview((prevState) => !prevState)}
+                    blur={true}
+                  />
+                </>
+              )}
+
               <a
                 target="_blank"
                 rel="noopener noreferrer"

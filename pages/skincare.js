@@ -1,6 +1,6 @@
-import Layout from "@/components/Layout";
-import skincare from "@/components/services-skincare";
-import Service from "@/components/Service";
+import Layout from "@/components/Layout/Layout";
+import skincare from "@/components/Services/services-skincare";
+import Service from "@/components/Services/Service";
 
 export default function Skincare() {
   return (

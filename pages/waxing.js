@@ -1,6 +1,6 @@
-import Layout from "@/components/Layout";
-import waxing from "@/components/services-waxing";
-import Service from "@/components/Service";
+import Layout from "@/components/Layout/Layout";
+import waxing from "@/components/Services/services-waxing";
+import Service from "@/components/Services/Service";
 export default function Waxing() {
   return (
     <Layout>

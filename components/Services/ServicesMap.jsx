@@ -1,5 +1,5 @@
 import Buttons from "@/components/Buttons";
-import Refferal from "@/components/Refferal";
+import Refferal from "@/components/Services/Refferal";
 import Image from "next/image";
 import Backdrop from "@/components/Backdrop";
 export default function ServicesMap(props) {

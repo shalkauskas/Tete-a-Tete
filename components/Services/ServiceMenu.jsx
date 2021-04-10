@@ -1,4 +1,4 @@
-import Service from "@/components/ServiceMenuItem";
+import Service from "@/components/Services/ServiceMenuItem";
 import SectionTitle from "components/SectionTitle";
 import Link from "next/link";
 export default function Services() {

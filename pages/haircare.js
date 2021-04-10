@@ -1,6 +1,6 @@
-import Layout from "@/components/Layout";
-import haircare from "@/components/services-haircare";
-import Service from "@/components/Service";
+import Layout from "@/components/Layout/Layout";
+import haircare from "@/components/Services/services-haircare";
+import Service from "@/components/Services/Service";
 
 export default function Haircare() {
   return (

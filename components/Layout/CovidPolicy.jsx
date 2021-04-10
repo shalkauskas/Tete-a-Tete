@@ -2,7 +2,6 @@ import Image from "next/image";
 import Backdrop from "@/components/Backdrop";
 export default function CovidPolicy() {
   const [showPolicy, setShowPolicy] = React.useState(false);
-  const openPolicy = showPolicy ? "block" : "hidden";
   return (
     <div
       className="flex justify-center py-2 text-color"
@@ -27,28 +26,32 @@ export default function CovidPolicy() {
         </span>
       </div>
       {/* Policy modal */}
-      <div className={`${openPolicy} absolute sm:w-max z-50`}>
-        <div className="relative text-center">
-          <Image
-            src="https://res.cloudinary.com/dyj6lkekg/image/upload/tete/covid-policy.png"
-            alt="COVID-19 Policy"
-            width={597}
-            height={657}
-            quality={75}
+      {showPolicy && (
+        <>
+          <div className={`absolute sm:w-max z-50`}>
+            <div className="relative text-center">
+              <Image
+                src="https://res.cloudinary.com/dyj6lkekg/image/upload/tete/covid-policy.png"
+                alt="COVID-19 Policy"
+                width={597}
+                height={657}
+                quality={75}
+              />
+            </div>
+            <span
+              className="absolute cursor-pointer right-0 top-0 text-3xl"
+              onClick={() => setShowPolicy(false)}
+            >
+              &times;
+            </span>
+          </div>
+          <Backdrop
+            toggle={showPolicy}
+            onClick={() => setShowPolicy(false)}
+            blur={true}
           />
-        </div>
-        <span
-          className="absolute cursor-pointer right-0 top-0 text-3xl"
-          onClick={() => setShowPolicy(false)}
-        >
-          &times;
-        </span>
-      </div>
-      <Backdrop
-        toggle={showPolicy}
-        onClick={() => setShowPolicy(false)}
-        blur={true}
-      />
+        </>
+      )}
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import WelcomeCarousel from "@/components/Carousel";
-import Services from "@/components/ServiceMenu";
-import Team from "@/components/Team";
+import Services from "@/components/Services/ServiceMenu";
+import Team from "@/components/Team/Team";
 import Products from "@/components/Products";
-import Contact from "@/components/Contact";
-import ContactForm from "@/components/ContactForm";
-import Layout from "@/components/Layout";
+import Contact from "@/components/Contact/Contact";
+import ContactForm from "@/components/Contact/ContactForm";
+import Layout from "@/components/Layout/Layout";
 import ScrollButton from "@/components/ScrollButton";
 import smoothscroll from "smoothscroll-polyfill";
 import { useRouter } from "next/router";

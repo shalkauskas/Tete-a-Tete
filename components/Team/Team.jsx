@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import SectionTitle from "components/SectionTitle";
-import TeamMember from "components/TeamMember";
+import TeamMember from "@/components/Team/TeamMember";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import members from "components/members.js";
+import members from "@/components/Team/members.js";
 export default function Team() {
   // carousel controls
   const [currentSlide, setCurrentSlide] = useState(1);

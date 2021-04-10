@@ -1,6 +1,6 @@
-import Layout from "@/components/Layout";
-import nails from "@/components/services-nails";
-import Service from "@/components/Service";
+import Layout from "@/components/Layout/Layout";
+import nails from "@/components/Services/services-nails";
+import Service from "@/components/Services/Service";
 
 export default function Nails() {
   return (
