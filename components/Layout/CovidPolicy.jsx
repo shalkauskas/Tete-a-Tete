@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Backdrop from "@/components/Backdrop";
+import Backdrop from "../Backdrop";
+import React from "react";
 export default function CovidPolicy() {
   const [showPolicy, setShowPolicy] = React.useState(false);
   return (

@@ -1,5 +1,5 @@
-import Service from "@/components/Services/ServiceMenuItem";
-import SectionTitle from "components/SectionTitle";
+import Service from "./ServiceMenuItem";
+import SectionTitle from "../../components/SectionTitle";
 import Link from "next/link";
 export default function Services() {
   return (

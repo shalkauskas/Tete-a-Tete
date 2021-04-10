@@ -1,7 +1,8 @@
-import SectionTitle from "components/SectionTitle";
-import Map from "@/components/Contact/GoogleMap";
+import React from "react";
+import SectionTitle from "../../components/SectionTitle";
+import Map from "../../components/Contact/GoogleMap";
 import Reviews from "./Reviews";
-import Backdrop from "@/components/Backdrop";
+import Backdrop from "../../components/Backdrop";
 export default function Contact() {
   const [openReview, setOpenReview] = React.useState(false);
   return (

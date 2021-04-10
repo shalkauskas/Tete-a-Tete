@@ -1,6 +1,7 @@
-import Phone from "@/components/Layout/Phone";
-import CovidPolicy from "components/Layout/CovidPolicy";
-import useDocumentScrollThrottled from "@/components/Hooks/useDocumentScrollThrottled";
+import React from "react";
+import Phone from "./Phone";
+import CovidPolicy from "./CovidPolicy";
+import useDocumentScrollThrottled from "../Hooks/useDocumentScrollThrottled";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import smoothscroll from "smoothscroll-polyfill";

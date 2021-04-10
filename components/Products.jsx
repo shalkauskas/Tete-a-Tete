@@ -1,5 +1,6 @@
+import React from "react";
 import Image from "next/image";
-import SectionTitle from "components/SectionTitle";
+import SectionTitle from "./SectionTitle";
 export default function Products() {
   const [brand, setBrandOpen] = React.useState(false);
   const [green, setGreenOpen] = React.useState(false);

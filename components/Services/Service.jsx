@@ -1,12 +1,12 @@
-import SectionTitle from "@/components/SectionTitle";
+import SectionTitle from "../../components/SectionTitle";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import ServicesMap from "@/components/Services/ServicesMap";
-import HandyInfo from "@/components/Services/HandyInfo";
-import Buttons from "@/components/Buttons";
-import Refferal from "@/components/Services/Refferal";
-import NavMap from "@/components/Services/ServicesNavMap";
-
+import ServicesMap from "./ServicesMap";
+import HandyInfo from "./HandyInfo";
+import Buttons from "../../components/Buttons";
+import Refferal from "./Refferal";
+import NavMap from "./ServicesNavMap";
+import React from "react";
 export default function Service(props) {
   // responsive carousel
   const [isMobile, setIsMobile] = React.useState(false);

@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Header from "@/components/Layout/Header";
-import Giftcard from "@/components/Layout/Giftcard";
-import Footer from "@/components/Layout/Footer";
+import Header from "./Header";
+import Giftcard from "./Giftcard";
+import Footer from "./Footer";
 export default function Layout({ children, title }) {
   return (
     <div className="overflow-y-hidden relative pb-40">

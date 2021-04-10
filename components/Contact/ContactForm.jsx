@@ -1,7 +1,8 @@
-import SectionTitle from "components/SectionTitle";
+import React from "react";
+import SectionTitle from "../../components/SectionTitle";
 import emailjs from "emailjs-com";
 import ContactFormResponse from "./ContactFormResponse";
-import { useForm } from "@/components/Hooks/useForm";
+import { useForm } from "../../components/Hooks/useForm";
 export default function ContactForm() {
   const [showResponse, setShowResponse] = React.useState({
     display: false,

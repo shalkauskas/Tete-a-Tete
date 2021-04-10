@@ -1,3 +1,4 @@
+import React from "react";
 export default function ReviewsItem(props) {
   const { item, index } = props;
   const [expand, setExpand] = React.useState(false);

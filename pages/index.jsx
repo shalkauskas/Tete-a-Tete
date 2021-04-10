@@ -1,13 +1,15 @@
-import WelcomeCarousel from "@/components/Carousel";
-import Services from "@/components/Services/ServiceMenu";
-import Team from "@/components/Team/Team";
-import Products from "@/components/Products";
-import Contact from "@/components/Contact/Contact";
-import ContactForm from "@/components/Contact/ContactForm";
-import Layout from "@/components/Layout/Layout";
-import ScrollButton from "@/components/ScrollButton";
+import React from "react";
+import WelcomeCarousel from "../components/Carousel";
+import Services from "../components/Services/ServiceMenu";
+import Team from "../components/Team/Team";
+import Products from "../components/Products";
+import Contact from "../components/Contact/Contact";
+import ContactForm from "../components/Contact/ContactForm";
+import Layout from "../components/Layout/Layout";
+import ScrollButton from "../components/ScrollButton";
 import smoothscroll from "smoothscroll-polyfill";
 import { useRouter } from "next/router";
+
 export default function Home() {
   const router = useRouter();
   // refs
@@ -19,30 +21,21 @@ export default function Home() {
   React.useEffect(() => {
     if (id === "services") {
       scroll(servicesRef);
-      router.push({
-        query: {},
-      });
-    }
-    if (id === "team") {
-      scroll(teamRef);
-      router.push({
-        query: {},
-      });
+      router.replace("/", undefined, { shallow: true });
     }
     if (id === "products") {
       scroll(productsRef);
-      router.push({
-        query: {},
-      });
+      router.replace("/", undefined, { shallow: true });
+    }
+    if (id === "team") {
+      scroll(teamRef);
+      router.replace("/", undefined, { shallow: true });
     }
     if (id === "contact") {
       scroll(contactRef);
-      router.push({
-        query: {},
-      });
+      router.replace("/", undefined, { shallow: true });
     }
   }, [id]);
-
   const scroll = (tag) => {
     smoothscroll.polyfill();
     tag.current.scrollIntoView({
@@ -56,7 +49,12 @@ export default function Home() {
     <Layout>
       <WelcomeCarousel />
       <div className="relative">
-        <div ref={servicesRef} className="absolute" style={{ top: "-170px" }} />
+        <div
+          ref={servicesRef}
+          className="absolute"
+          style={{ top: "-170px" }}
+          id="services"
+        />
         <Services />
       </div>
       <div className="relative">
