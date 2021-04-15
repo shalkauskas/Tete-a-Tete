@@ -4,7 +4,7 @@
 
 ### [Website](https://tete-a-tete.vercel.app/)
 
-[![](https://res.cloudinary.com/dyj6lkekg/image/upload/v1618264797/github/tete-gif.gif)](https://tete-a-tete.vercel.app/ "Visit website")
+[![](https://github.com/shalkauskas/media/blob/main/tete-gif.gif)](https://tete-a-tete.vercel.app/ "Visit website")
 
 ### Features
 
