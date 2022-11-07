@@ -40,7 +40,7 @@ export default function WelcomeCarousel() {
     }
   };
   return (
-    <div className="mx-auto	mb-6 mt-64">
+    <div className="mx-auto	mb-6 mt-48">
       <Carousel
         showThumbs={false}
         infiniteLoop={true}

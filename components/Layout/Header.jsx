@@ -1,20 +1,15 @@
 import React from "react";
 import Phone from "./Phone";
-import CovidPolicy from "./CovidPolicy";
 import useDocumentScrollThrottled from "../Hooks/useDocumentScrollThrottled";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import smoothscroll from "smoothscroll-polyfill";
-import Booking from "./Booking";
-import BookingMobile from "./BookingMobile";
 export default function Header(props) {
   const router = useRouter();
   const [navbarOpen, setNavbarOpen] = React.useState(false);
-  const [showBooking, setShowBooking] = React.useState(false);
 
   // Resize navbar on scroll //
   const [showMiniNav, setShowMiniNav] = React.useState(false);
-
   useDocumentScrollThrottled((callbackData) => {
     const { currentScrollTop } = callbackData;
     setShowMiniNav(currentScrollTop > 100);
@@ -142,7 +137,7 @@ export default function Header(props) {
               </li>
               <li className="nav-item bookingItem">
                 <a
-                  onClick={() => setShowBooking(true)}
+                  onClick={() => props.onClick(true)}
                   className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg md:leading-snug hover:opacity-75 booking rounded-2xl ml-2 shadow-md"
                 >
                   Book Appointment
@@ -152,11 +147,6 @@ export default function Header(props) {
           </div>
         </div>
       </nav>
-      {/* <CovidPolicy /> */}
-      <BookingMobile onClick={() => setShowBooking(true)} />
-      {showBooking && (
-        <Booking showBooking={showBooking} setShowBooking={setShowBooking} />
-      )}
       <style jsx>{`
         .booking {
           background-color: #f0eae7;

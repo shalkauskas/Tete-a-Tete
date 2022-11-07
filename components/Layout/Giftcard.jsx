@@ -1,21 +1,23 @@
-export default function Giftcard() {
+export default function Giftcard(props) {
   return (
-    <div>
+    <div
+      className={`${props.position ? "fixed" : "absolute"} bg-white rounded-xl`}
+    >
       <a href="https://swipeit.com/product/1218/tete-a-tete">
         <picture>
           <source type="image/webp" srcSet="giftcard.webp" />
           <source type="image/png" srcSet="giftcard.png" />
           <img
             src="giftcard.png"
-            className="fixed w-10 hidden lg:block hover:opacity-75"
+            className="w-10 hidden lg:block hover:opacity-75"
             alt="Gift cards"
           />
         </picture>
       </a>
 
       <style jsx>{`
-        img {
-          top: 400px;
+        div {
+          top: 300px;
           right: 0px;
         }
       `}</style>

@@ -1,10 +1,22 @@
+import React from "react";
 import Head from "next/head";
 import Header from "./Header";
-import Giftcard from "./Giftcard";
 import Footer from "./Footer";
-export default function Layout({ children, title }) {
+import useDocumentScrollThrottled from "../Hooks/useDocumentScrollThrottled";
+import BookingMobile from "./BookingMobile";
+import Booking from "./Booking";
+export default function Layout({ children, props }) {
+  const [footerFixed, setFooterFixed] = React.useState(true);
+  const [showBooking, setShowBooking] = React.useState(false);
+
+  useDocumentScrollThrottled((callbackData) => {
+    const { currentScrollTop } = callbackData;
+    const footerHeight =
+      document.documentElement.scrollHeight - document.body.clientHeight - 154;
+    setFooterFixed(currentScrollTop < footerHeight);
+  });
   return (
-    <div className="overflow-y-hidden relative pb-40">
+    <div className="overflow-y-hidden overflow-x-hidden relative">
       <Head>
         <title>Tete-a-Tete Salon</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -45,8 +57,14 @@ export default function Layout({ children, title }) {
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="theme-color" content="#f0eae7" />
       </Head>
-      <Header />
-      <Giftcard />
+      <Header onClick={() => setShowBooking(true)} />
+      <BookingMobile
+        onClick={() => setShowBooking(true)}
+        position={footerFixed}
+      />
+      {showBooking && (
+        <Booking showBooking={showBooking} setShowBooking={setShowBooking} />
+      )}
       {children}
       <Footer />
     </div>
