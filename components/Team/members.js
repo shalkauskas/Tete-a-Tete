@@ -55,30 +55,30 @@ const members = [
   },
   {
     id: 7,
+    name: "Jackie Jordan",
+    title: "Stylist",
+    description:
+      "Passionate for doing balayage and highlights. Finds personal approach and listens to her clients’ needs.",
+    photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/Jackie.png",
+    link: "https://instagram.com/hairbyjackiejordan?igshid=YmMyMTA2M2Y=",
+  },
+  {
+    id: 8,
     name: "Victoria Simenkov",
-    title: "Esthetician and nail techician",
+    title: "Esthetician and nail technician",
     description:
       "Has over 35 years of experience in working with bees waxing hair removal. And she does nails :-)",
     photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/Vita.png",
     link: "https://www.instagram.com/stories/highlights/17854828001238208/",
   },
   {
-    id: 8,
+    id: 9,
     name: "Svetlana Mirvoda (Lana)",
     title: "Esthetician and skincare expert",
     description:
       "Lana uses unique anti-aging approach exclusive to this practice with immediate and long-lasting results.",
     photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/Lana.png",
     link: "https://www.instagram.com/stories/highlights/18027782548287385/",
-  },
-  {
-    id: 9,
-    name: "Jackie Jordan",
-    title: "Junior stylist",
-    description:
-      "Passionate for doing balayage and highlights. Finds personal approach and listens to her clients’ needs.",
-    photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/Jackie.png",
-    link: "/",
   },
 ];
 export default members;
