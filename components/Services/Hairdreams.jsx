@@ -12,6 +12,8 @@ export default function Hairdreams(props) {
           width={590}
           height={436}
           layout="responsive"
+          loading={"eager"}
+          priority={true}
           src={"/hairdreams.png"}
           alt="Hairdreams"
         />
@@ -24,14 +26,14 @@ export default function Hairdreams(props) {
           and hair thickening in Premium quality, with partner salons in over 60
           countries and millions of customers worldwide.
         </p>
+        <h2 className="mb-4 font-semibold">
+          Do you have less and less hair? Is it brittle, getting thinner or
+          there are even bald patches forming?
+        </h2>
         <p>
-          Would you like long hair? Strong right into the tips? With extra shine
-          and volume? With a Hairdreams hair extension, you can achieve
-          wonderful voluminous hair quickly and easily. From bondings to tapes,
-          brilliant hair colours and hair lengths up to 80cm, we have everything
-          in our product range to fulfil your hairstyle wishes. Hairdreams hair
-          is made in our own manufacturing facility and boasts the highest
-          quality.
+          You are not alone in this. Thousands of women have already entrusted
+          Hairdreams with their hair problem. Our solutions will help you to
+          gain natural hair volume. So that you can enjoy a carefree life again.
         </p>
         <a
           className="contents"
