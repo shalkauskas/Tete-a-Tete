@@ -3,6 +3,7 @@ import SectionTitle from "../../components/SectionTitle";
 import emailjs from "emailjs-com";
 import ContactFormResponse from "./ContactFormResponse";
 import { useForm } from "../../components/Hooks/useForm";
+import Button from "../Button";
 export default function ContactForm() {
   const [showResponse, setShowResponse] = React.useState({
     display: false,
@@ -25,11 +26,11 @@ export default function ContactForm() {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          // console.log(result.text);
           handleSubmit(200);
         },
         (error) => {
-          console.log(error.text);
+          // console.log(error.text);
           handleSubmit(404);
         }
       );
@@ -42,18 +43,24 @@ export default function ContactForm() {
   return (
     <div className="container mx-auto max-w-sm">
       <SectionTitle title={"Get in touch"} />
-      <div className="mx-auto block text-center lg:w-1/2 sm:w-3/4 w-11/12">
+
+      <div className="mx-auto lg:w-1/2 sm:w-3/4 w-11/12">
+        <p className="italic text-gray-500 text-sm mb-4">
+          Please do not change or cancel appointments over email. To modify your
+          appointment call salon directly at 617-559-0660
+        </p>
         <form
           action="sumbit"
-          className="mx-auto inline-block text-left w-full"
+          className="mx-auto inline-block text-left w-full flex flex-col gap-4 pb-24"
           autoComplete="on"
           onSubmit={sendEmail}
         >
-          <label htmlFor="name">Name*</label>
-          <br />
           <div className="w-full">
+            <label className="font-bold" htmlFor="name">
+              Name
+            </label>
             <input
-              className="w-full"
+              className="w-full py-1 px-4"
               type="text"
               id="name"
               name="name"
@@ -64,11 +71,12 @@ export default function ContactForm() {
             />
           </div>
 
-          <label htmlFor="email">Email address*</label>
-          <br />
           <div className="w-full">
+            <label className="font-bold" htmlFor="email">
+              Email address
+            </label>
             <input
-              className="w-full"
+              className="w-full py-1 px-4"
               type="text"
               id="email"
               name="email"
@@ -78,11 +86,14 @@ export default function ContactForm() {
               onChange={handleChange}
             />
           </div>
-          <label htmlFor="phone">Phone number</label>
-          <br />
+
           <div className="w-full">
+            <label className="font-bold" htmlFor="phone">
+              Phone number
+            </label>
+
             <input
-              className="w-full"
+              className="w-full py-1 px-4"
               type="text"
               id="phone"
               placeholder="***-***-****"
@@ -91,27 +102,25 @@ export default function ContactForm() {
               onChange={handleChange}
             />
           </div>
-          <label htmlFor="message">Message*</label>
-          <br />
+
           <div className="w-full">
+            <label className="font-bold" htmlFor="message">
+              Message
+            </label>
             <textarea
-              className="w-full"
+              className="w-full py-1 px-4"
               type="text"
               id="message"
               name="message"
               required
-              rows="4"
-              style={{ paddingBottom: "150px" }}
+              rows="8"
               value={values.message}
               onChange={handleChange}
             />
           </div>
-          <button
-            type="submit"
-            className="block mx-auto hover:opacity-75 shadow-lg"
-          >
+          <Button type="submit" className="px-24 mx-auto">
             Send
-          </button>
+          </Button>
         </form>
       </div>
       <ContactFormResponse
@@ -123,29 +132,14 @@ export default function ContactForm() {
         input,
         textarea {
           background: rgba(229, 229, 229, 0.5);
-          margin: 10px 0 20px 0;
-          padding: 5px 20px 5px 15px;
           vertical-align: middle;
           display: inline-block;
         }
-        label {
-          font-weight: 700;
-          font-size: 16px;
-          line-height: 19px;
-          color: #000000;
-          line-height: 19px;
-        }
-        form {
-          padding-bottom: 50px;
-        }
-        button {
-          background-color: #895b4a;
-          border-radius: 15px;
-          padding: 10px 80px;
-          color: white;
-          font-weight: bold;
-          font-size: 16px;
-          margin-top: 50px;
+        label:after {
+          content: "*";
+          color: red;
+          font-size: 0.8rem;
+          vertical-align: top;
         }
       `}</style>
     </div>

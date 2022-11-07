@@ -4,7 +4,7 @@ export default function SectionTitle(props) {
   const router = useRouter();
   return (
     <div className="relative">
-      <h1 className="font-bold text-center text-color text-2xl pt-10 my-10">
+      <h1 className="font-bold text-center text-color text-2xl pt-10 mb-5 mt-7">
         {props.title}
       </h1>
       {/* conditional rendering of "Back to services button" */}
@@ -17,7 +17,7 @@ export default function SectionTitle(props) {
         }}
       >
         <a
-          style={{ fontSize: "16px" }}
+          style={{ fontSize: "1rem" }}
           className={`text-color font-light italic text underline inline-block absolute bottom-0 cursor-pointer ${
             props.showLink ? "inline-block" : "hidden"
           }`}
@@ -38,7 +38,7 @@ export default function SectionTitle(props) {
             }
             img {
               margin-left: 25%;
-              margin-bottom: 8px;
+              margin-bottom: 0.5rem;
             }
             a {
               width: 100%;

@@ -1,5 +1,3 @@
-import { loadGetInitialProps } from "next/dist/next-server/lib/utils";
-
 export default function Backdrop(props) {
   return (
     <div
@@ -18,6 +16,4 @@ export default function Backdrop(props) {
       onClick={props.onClick}
     />
   );
-}
-{
 }

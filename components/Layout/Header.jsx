@@ -5,9 +5,12 @@ import useDocumentScrollThrottled from "../Hooks/useDocumentScrollThrottled";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import smoothscroll from "smoothscroll-polyfill";
+import Booking from "./Booking";
+import BookingMobile from "./BookingMobile";
 export default function Header(props) {
   const router = useRouter();
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const [showBooking, setShowBooking] = React.useState(false);
 
   // Resize navbar on scroll //
   const [showMiniNav, setShowMiniNav] = React.useState(false);
@@ -137,12 +140,28 @@ export default function Header(props) {
                   </a>
                 </Link>
               </li>
+              <li className="nav-item bookingItem">
+                <a
+                  onClick={() => setShowBooking(true)}
+                  className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg md:leading-snug hover:opacity-75 booking rounded-2xl ml-2 shadow-md"
+                >
+                  Book Appointment
+                </a>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
-      <CovidPolicy />
+      {/* <CovidPolicy /> */}
+      <BookingMobile onClick={() => setShowBooking(true)} />
+      {showBooking && (
+        <Booking showBooking={showBooking} setShowBooking={setShowBooking} />
+      )}
       <style jsx>{`
+        .booking {
+          background-color: #f0eae7;
+          font-weight: 600;
+        }
         .navbar-bg {
           background-color: #706d6c;
         }
@@ -171,6 +190,9 @@ export default function Header(props) {
           display: none;
         }
         @media screen and (max-width: 1023px) {
+          .bookingItem {
+            display: none;
+          }
           #example-navbar-danger {
             padding: 30px 0;
             position: absolute;

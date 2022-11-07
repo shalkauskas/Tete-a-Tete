@@ -1,37 +1,32 @@
 export default function ServiceMenuItem(props) {
   return (
     <div
-      className="relative rounded shadow-lg service-box"
+      className="relative rounded shadow-lg service-box flex justify-center"
       style={{
         backgroundImage: `url(https://res.cloudinary.com/dyj6lkekg/image/upload/tete/${props.background}.png)`,
       }}
     >
-      <p className="absolute background-box">{props.service}</p>
+      <p className="absolute background-box px-10 py-2.5">{props.service}</p>
       <style jsx>{`
         .background-box {
           background: rgba(255, 255, 255);
           box-decoration-break: clone;
-          padding: 10px 40px;
-          margin: auto;
           bottom: 0;
-          left: 200px;
+          justify-content: center;
           border: 1px solid #c4c4c4;
           box-sizing: border-box;
-          font-size: 24px;
+          font-size: 1.5rem;
           line-height: 29px;
           color: #4c4949;
         }
         .service-box {
-          width: 547px;
-          height: 404px;
+          width: 36.875rem;
+          height: 27.25rem;
           background-size: cover;
         }
         @media screen and (max-width: 550px) {
           .service-box {
             width: 100vw;
-          }
-          .background-box {
-            left: 120px;
           }
         }
       `}</style>

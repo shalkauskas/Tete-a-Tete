@@ -5,9 +5,10 @@ import {
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
-
+import Button from "../Button";
 const containerStyle = {
-  width: "669px",
+  maxWidth: "669px",
+  width: "100vw",
   height: "431px",
 };
 
@@ -24,16 +25,16 @@ export default function Map() {
     setMap(null);
   }, []);
   return (
-    <div className="w-full mx-auto">
+    <div className="md:w-max w-full ml-auto">
       <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_googleMapsApiKey}>
         <div
           style={{
             height: "100%",
             width: "100%",
             display: "flex",
-            flexFlow: "row nowrap",
-            justifyContent: "center",
+            flexFlow: "column nowrap",
             padding: 0,
+            gap: "2rem",
           }}
         >
           <GoogleMap
@@ -55,6 +56,14 @@ export default function Map() {
               </InfoWindow>
             </Marker>
           </GoogleMap>
+          <a
+            className="contents"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.google.com/maps/dir//Tete+A+Tete+Salon,+Beacon+Street,+Newton,+MA/@42.3306046,-71.2623209,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x89e37882776a3071:0xb80e093582119c54!2m2!1d-71.192109!2d42.330626?hl=en"
+          >
+            <Button className="ml-auto">Get directions</Button>
+          </a>
         </div>
       </LoadScript>
     </div>
