@@ -40,7 +40,7 @@ export default function WelcomeCarousel() {
     }
   };
   return (
-    <div className="container mx-auto mb-6 mt-64">
+    <div className="mx-auto	mb-6 mt-64">
       <Carousel
         showThumbs={false}
         infiniteLoop={true}
@@ -55,6 +55,9 @@ export default function WelcomeCarousel() {
         {baseChildren.props.children}
       </Carousel>
       <style jsx>{`
+        div {
+          max-width: 1350px;
+        }
         @media screen and (max-width: 1400px) {
           div {
             max-width: 90%;
