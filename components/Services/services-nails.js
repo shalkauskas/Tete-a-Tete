@@ -15,11 +15,11 @@ const servicesNails = [
       service: "French manicure",
       price: "$30",
     },
-    {
-      id: 12,
-      service: "Shellac manicure",
-      price: "$45 & Up",
-    },
+    // {
+    //   id: 12,
+    //   service: "Shellac manicure",
+    //   price: "$45 & Up",
+    // },
     {
       id: 13,
       service: "Paraffin Treatment",
@@ -38,7 +38,7 @@ const servicesNails = [
     {
       id: 16,
       service: "Polish change hands",
-      price: "$10",
+      price: "$15",
     },
   ],
 ];

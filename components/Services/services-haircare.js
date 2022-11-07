@@ -13,12 +13,12 @@ const servicesHaircare = [
     {
       id: 11,
       service: "Men’s haircut, shampoo & blowdry",
-      price: "$50 & Up",
+      price: "$60 & Up",
     },
     {
       id: 12,
       service: "Shampoo & Blow Dry Style",
-      price: "$40 & Up",
+      price: "$60 & Up",
     },
     {
       id: 13,
@@ -45,27 +45,27 @@ const servicesHaircare = [
     {
       id: 20,
       service: "Color application & Gloss",
-      price: "$100 & Up",
+      price: "$120 & Up",
     },
     {
       id: 21,
       service: "Organic Color Application",
-      price: "$100 & Up",
-      info: "Color lines we use - Wella, O-way, All-nutrient.",
+      price: "$120 & Up",
+      info: "Color lines we use - Wella, O&M, All-nutrient.",
     },
     {
       id: 22,
       service: "Double Process (color+highlights)",
-      price: "$150 & Up",
+      price: "$250 & Up",
     },
     {
       id: 23,
       service: "Foil Highlighting or Balayage",
-      price: "$175 & Up",
+      price: "$200 & Up",
     },
     {
       id: 24,
-      service: "Gloss",
+      service: "Gloss with any Color service",
       price: "$35",
     },
   ],
@@ -78,42 +78,37 @@ const servicesHaircare = [
     {
       id: 30,
       service: "Keratin hair straightening",
-      price: "$300 & Up",
-      info:
-        "A keratin treatment is a cosmetic or beauty product used to straighten hair. It will make naturally curly or wavy hair straighter and smoother. ",
+      price: "$350 & Up",
+      info: "A keratin treatment is a cosmetic or beauty product used to straighten hair. It will make naturally curly or wavy hair straighter and smoother. ",
     },
     {
       id: 31,
       service: "Brazilian Blowout Treatment",
       price: "$300 & Up",
-      info:
-        "Brazilian Blowout is a specific brand of keratin treatment, a semi-permanent way to smooth frizz, soften hair texture, and make hair more manageable and easy to style.",
+      info: "Brazilian Blowout is a specific brand of keratin treatment, a semi-permanent way to smooth frizz, soften hair texture, and make hair more manageable and easy to style.",
     },
     {
       id: 32,
       service: "Hair botox",
-      price: "$300 & Up",
-      info:
-        "Hair Botox is actually a deep conditioning treatment that coats hair fibers with a filler, such as keratin. That helps create the appearance of fuller, smoother hair.",
+      price: "$350 & Up",
+      info: "Hair Botox is actually a deep conditioning treatment that coats hair fibers with a filler, such as keratin. That helps create the appearance of fuller, smoother hair.",
     },
     {
       id: 33,
       service: "Bio-ionic/Japanese straightening",
-      price: "$300 & Up",
-      info:
-        "Ionic is a chemical Japanese hair straightening treatment designed to straighten curly or frizzy hair, without using heat. This treatment seals down the hair's cuticles, to eliminate frizz. The result is straight hair, without being completely flat.",
+      price: "$350 & Up",
+      info: "Ionic is a chemical Japanese hair straightening treatment designed to straighten curly or frizzy hair, without using heat. This treatment seals down the hair's cuticles, to eliminate frizz. The result is straight hair, without being completely flat.",
     },
     {
       id: 34,
       service: "Olaplex treatment",
       price: "$35",
-      info:
-        "Olaplex treatment rebuilds the damaged disulphide bonds in your hair that are broken during the chemical process. If you've over-bleached or had your hair highlighted for years, Olaplex allows you to rebuild the strength, structure and integrity of your hair.",
+      info: "Olaplex treatment rebuilds the damaged disulphide bonds in your hair that are broken during the chemical process. If you've over-bleached or had your hair highlighted for years, Olaplex allows you to rebuild the strength, structure and integrity of your hair.",
     },
   ],
   [
     {
-      title: "Extensions & hairdreams",
+      title: "Extensions",
       image:
         "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/extensions.png",
     },
@@ -132,12 +127,12 @@ const servicesHaircare = [
       service: "Hair enhancement",
       price: "Prices vary",
     },
-    {
-      id: 43,
-      service: "(Micropoint solutions, Hairdreams)",
-      price: "",
-      info: "Consultation is required for these services.",
-    },
+    // {
+    //   id: 43,
+    //   service: "(Micropoint solutions, Hairdreams)",
+    //   price: "",
+    //   info: "Consultation is required for these services.",
+    // },
   ],
 ];
 export default servicesHaircare;
