@@ -3,7 +3,7 @@ import Backdrop from "../Backdrop";
 import React from "react";
 export default function Booking(props) {
   return (
-    <div className="justify-center flex">
+    <div className="justify-center flex fixed z-50 inset-x-0">
       <div className={`absolute sm:w-max z-50 bg-white container top-0 my-24`}>
         <div className="mx-auto">
           <div className="py-4 px-8 border-b-2 relative flex justify-between items-center">
