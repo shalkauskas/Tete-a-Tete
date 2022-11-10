@@ -126,17 +126,15 @@ export default function ServicesMap(props) {
     >
       {/* image */}
       <div className="flex">
-        <div>
-          <Image
-            src={`${list[0].image}`}
-            width={width()}
-            height={props.showMobile ? 320 : 1250}
-            alt="Service image"
-            quality={50}
-            loading={"eager"}
-            priority={true}
-          />
-        </div>
+        <Image
+          src={`${list[0].image}`}
+          width={width()}
+          height={props.showMobile ? 320 : 1250}
+          alt="Service image"
+          quality={50}
+          loading={"eager"}
+          priority={true}
+        />
         {/* rendering navigation for services */}
         <div
           className={`${props.renderNav} ${

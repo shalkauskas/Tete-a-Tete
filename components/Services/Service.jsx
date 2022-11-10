@@ -87,7 +87,6 @@ export default function Service(props) {
                   width={isMobile ? "375px" : "900px"}
                   selectedItem={currentSlide}
                   transitionTime={isMobile ? 1 : 300}
-                  dynamicHeight={true}
                 >
                   {mapServices}
                 </Carousel>
