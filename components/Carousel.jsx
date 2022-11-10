@@ -47,7 +47,6 @@ export default function WelcomeCarousel() {
         showArrows={false}
         autoPlay={true}
         showStatus={false}
-        swipeable={true}
         centerMode={true}
         centerSlidePercentage={mobileSize()}
         interval={3000}
