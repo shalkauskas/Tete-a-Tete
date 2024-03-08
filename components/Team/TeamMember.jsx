@@ -3,7 +3,7 @@ export default function TeamMember(props) {
   return (
     <div
       key="slide1"
-      style={{ padding: 20, height: 500, background: "white", width: "272px" }}
+      style={{ padding: 20, height: 510, background: "white", width: "272px" }}
     >
       <div style={{ marginLeft: "-20px" }}>
         <Image

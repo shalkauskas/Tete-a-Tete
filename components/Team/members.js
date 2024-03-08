@@ -26,30 +26,30 @@ const members = [
     photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/mary.png",
     link: "https://www.instagram.com/stories/highlights/17854588970224602/",
   },
-  {
-    id: 4,
-    name: "Denis Pinhone",
-    title: "Stylist and beauty enthusiast",
-    description:
-      "For over a decade of service at Tete-A-Tete, Denis has been keeping up with the latest trends and innovations.",
-    photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/denis.png",
-    link: "https://www.instagram.com/stories/highlights/17971739809324790/",
-  },
-  {
-    id: 5,
-    name: "Natalia Llordi",
-    title: "Stylist and color resquer",
-    description:
-      "Passionate and dedicated  stylist who shows excellence at everything she does including keratin and extensions.",
-    photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/natalia.png",
-    link: "https://www.instagram.com/stories/highlights/17856005684194728/",
-  },
+  // {
+  //   id: 4,
+  //   name: "Denis Pinhone",
+  //   title: "Stylist and beauty enthusiast",
+  //   description:
+  //     "For over a decade of service at Tete-A-Tete, Denis has been keeping up with the latest trends and innovations.",
+  //   photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/denis.png",
+  //   link: "https://www.instagram.com/stories/highlights/17971739809324790/",
+  // },
+  // {
+  //   id: 5,
+  //   name: "Natalia Llordi",
+  //   title: "Stylist and color resquer",
+  //   description:
+  //     "Passionate and dedicated  stylist who shows excellence at everything she does including keratin and extensions.",
+  //   photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/natalia.png",
+  //   link: "https://www.instagram.com/stories/highlights/17856005684194728/",
+  // },
   {
     id: 6,
     name: "Tanya Mitnik",
     title: "Senior stylist and colorist",
     description:
-      "Tanya has over 30 years of professional experience. Specializes in long-lasting natural looks.",
+      "Senior stylist and colorist specializing in long-lasting natural looks. Areas of expertise: Organic coloring, Balayage, Precision cutting, Short haircuts for women.",
     photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/tanya.png",
     link: "https://www.instagram.com/stories/highlights/17845925597369862/",
   },
