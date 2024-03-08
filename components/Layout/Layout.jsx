@@ -56,6 +56,19 @@ export default function Layout({ children, props }) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="theme-color" content="#f0eae7" />
+        <meta property="og:url" content="https://teteatetesalon.com/" />
+        <link rel="canonical" href="https://teteatetesalon.com/" />
+        <meta
+          name="google-site-verification"
+          content="ACxh2FEhQYkgtjFFbBKYBqdCaXctMgTMTvzlSlqI0BM"
+        />
+        <meta property="og:title" content="Tete-a-Tete salon" />
+        <meta property="og:site_name" content="Tete-a-Tete salon" />
+        <meta
+          property="og:description"
+          content="Whether you’re here to maintain your look or receive a beauty transformation, you can do it all Tête-à-Tête."
+        />
+        <meta property="og:image" content="/android-chrome-512x512.png" />
       </Head>
       <Header onClick={() => setShowBooking(true)} />
       <BookingMobile
