@@ -4,6 +4,9 @@ import useDocumentScrollThrottled from "../Hooks/useDocumentScrollThrottled";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import smoothscroll from "smoothscroll-polyfill";
+
+import { navItemStyles } from "./styles";
+
 export default function Header(props) {
   const router = useRouter();
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -18,6 +21,7 @@ export default function Header(props) {
   const logo = showMiniNav ? "w-0" : "logo";
   const textLogo = showMiniNav ? "font-logo" : "hidden";
   const dropdown = showMiniNav ? "" : "";
+
   return (
     <div className="fixed z-30 top-0 w-screen">
       <Phone />
@@ -79,7 +83,12 @@ export default function Header(props) {
                     query: { id: "services" },
                   }}
                 >
-                  <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
+                  <a
+                    className={navItemStyles}
+                    onClick={() => {
+                      setNavbarOpen(false);
+                    }}
+                  >
                     Services
                   </a>
                 </Link>
@@ -96,7 +105,12 @@ export default function Header(props) {
                     query: { id: "team" },
                   }}
                 >
-                  <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
+                  <a
+                    className={navItemStyles}
+                    onClick={() => {
+                      setNavbarOpen(false);
+                    }}
+                  >
                     Team
                   </a>
                 </Link>
@@ -113,7 +127,12 @@ export default function Header(props) {
                     query: { id: "products" },
                   }}
                 >
-                  <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
+                  <a
+                    className={navItemStyles}
+                    onClick={() => {
+                      setNavbarOpen(false);
+                    }}
+                  >
                     Products
                   </a>
                 </Link>
@@ -130,7 +149,12 @@ export default function Header(props) {
                     query: { id: "contact" },
                   }}
                 >
-                  <a className="cursor-pointer px-3 py-4 lg:py-2 xl:py-2 flex items-center text-lg leading-snug text-white hover:opacity-75">
+                  <a
+                    className={navItemStyles}
+                    onClick={() => {
+                      setNavbarOpen(false);
+                    }}
+                  >
                     Contact
                   </a>
                 </Link>
