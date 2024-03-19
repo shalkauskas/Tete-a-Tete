@@ -14,7 +14,8 @@ const members = [
     title: "Senior stylist and colorist",
     description:
       "Creates fresh and natural styles using the best coloring techniques.",
-    photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/lilia.png",
+    photo:
+      "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/lilia.png",
     link: "https://www.instagram.com/stories/highlights/17860344665111292/",
   },
   {
@@ -23,7 +24,8 @@ const members = [
     title: "Senior stylist and colorist",
     description:
       "For over X years makes her clients feel young and beautiful. Performs both men’s and women’s haircuts.",
-    photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/mary.png",
+    photo:
+      "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/mary.jpg",
     link: "https://www.instagram.com/stories/highlights/17854588970224602/",
   },
   // {
@@ -50,7 +52,8 @@ const members = [
     title: "Senior stylist and colorist",
     description:
       "Senior stylist and colorist specializing in long-lasting natural looks. Areas of expertise: Organic coloring, Balayage, Precision cutting, Short haircuts for women.",
-    photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/tanya.png",
+    photo:
+      "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/tanya.png",
     link: "https://www.instagram.com/stories/highlights/17845925597369862/",
   },
   {
@@ -59,7 +62,8 @@ const members = [
     title: "Stylist",
     description:
       "Passionate for doing balayage and highlights. Finds personal approach and listens to her clients’ needs.",
-    photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/Jackie.png",
+    photo:
+      "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/Jackie.png",
     link: "https://instagram.com/hairbyjackiejordan?igshid=YmMyMTA2M2Y=",
   },
   {
