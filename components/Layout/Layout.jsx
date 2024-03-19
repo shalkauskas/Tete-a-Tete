@@ -62,6 +62,10 @@ export default function Layout({ children, props }) {
           name="google-site-verification"
           content="ACxh2FEhQYkgtjFFbBKYBqdCaXctMgTMTvzlSlqI0BM"
         />
+        <meta
+          name="google-site-verification"
+          content="L9WVy8fDJV8puodulOqjeOIh3Pg_0odyE4hbv23KrdQ"
+        />
         <meta property="og:title" content="Tete-a-Tete salon" />
         <meta property="og:site_name" content="Tete-a-Tete salon" />
         <meta
