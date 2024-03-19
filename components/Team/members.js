@@ -30,24 +30,15 @@ const members = [
   },
   // {
   //   id: 4,
-  //   name: "Denis Pinhone",
-  //   title: "Stylist and beauty enthusiast",
+  //   name: "Velma",
+  //   title: "Manager", // @TODO
   //   description:
-  //     "For over a decade of service at Tete-A-Tete, Denis has been keeping up with the latest trends and innovations.",
-  //   photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/denis.png",
-  //   link: "https://www.instagram.com/stories/highlights/17971739809324790/",
-  // },
-  // {
-  //   id: 5,
-  //   name: "Natalia Llordi",
-  //   title: "Stylist and color resquer",
-  //   description:
-  //     "Passionate and dedicated  stylist who shows excellence at everything she does including keratin and extensions.",
-  //   photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/natalia.png",
-  //   link: "https://www.instagram.com/stories/highlights/17856005684194728/",
+  //     "For over a decade of service at Tete-A-Tete, Denis has been keeping up with the latest trends and innovations.", // @TODO
+  //   photo:
+  //     "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/velma.jpg",
   // },
   {
-    id: 6,
+    id: 5,
     name: "Tanya Mitnik",
     title: "Senior stylist and colorist",
     description:
@@ -57,7 +48,7 @@ const members = [
     link: "https://www.instagram.com/stories/highlights/17845925597369862/",
   },
   {
-    id: 7,
+    id: 6,
     name: "Jackie Jordan",
     title: "Stylist",
     description:
@@ -67,7 +58,7 @@ const members = [
     link: "https://instagram.com/hairbyjackiejordan?igshid=YmMyMTA2M2Y=",
   },
   {
-    id: 8,
+    id: 7,
     name: "Victoria Simenkov",
     title: "Esthetician and nail technician",
     description:
@@ -76,7 +67,7 @@ const members = [
     link: "https://www.instagram.com/stories/highlights/17854828001238208/",
   },
   {
-    id: 9,
+    id: 8,
     name: "Svetlana Mirvoda (Lana)",
     title: "Esthetician and skincare expert",
     description:
@@ -84,5 +75,43 @@ const members = [
     photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/Lana.png",
     link: "https://www.instagram.com/stories/highlights/18027782548287385/",
   },
+  // {
+  //   id: 9,
+  //   name: "Sandra",
+  //   title: "Stylist and color resquer", // @TODO
+  //   description:
+  //     "Passionate and dedicated  stylist who shows excellence at everything she does including keratin and extensions.", // @TODO
+  //   photo:
+  //     "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/sandra.png",
+  //   link: "https://www.instagram.com/stories/highlights/18018117991839163/",
+  // },
+  // {
+  //   id: 10,
+  //   name: "Yari",
+  //   title: "Stylist and color resquer", // @TODO
+  //   description:
+  //     "Passionate and dedicated  stylist who shows excellence at everything she does including keratin and extensions.", // @TODO
+  //   photo:
+  //     "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/yari.png",
+  //   link: "https://www.instagram.com/stories/highlights/17984816960297639/",
+  // },
+  // {
+  //   id: 11,
+  //   name: "Anya",
+  //   title: "Assistant", // @TODO
+  //   description:
+  //     "Passionate and dedicated  stylist who shows excellence at everything she does including keratin and extensions.", // @TODO
+  //   photo:
+  //     "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/anya.png",
+  // },
+  // {
+  //   id: 12,
+  //   name: "Kate",
+  //   title: "Assistant", // @TODO
+  //   description:
+  //     "Passionate and dedicated  stylist who shows excellence at everything she does including keratin and extensions.", // @TODO
+  //   photo:
+  //     "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/kate_2.png",
+  // },
 ];
 export default members;

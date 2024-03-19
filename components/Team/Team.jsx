@@ -7,11 +7,12 @@ import members from "./members.js";
 export default function Team() {
   // carousel controls
   const [currentSlide, setCurrentSlide] = useState(1);
+  const lastSlide = members.length - 1;
 
   const next = () => {
-    if (currentSlide === 7 && isMobile == false) {
+    if (currentSlide >= lastSlide && isMobile == false) {
       setCurrentSlide(1);
-    } else if (currentSlide === 7 && isMobile == true) {
+    } else if (currentSlide >= lastSlide && isMobile == true) {
       setCurrentSlide(0);
     } else {
       isMobile
@@ -21,9 +22,9 @@ export default function Team() {
   };
   const prev = () => {
     if (currentSlide === 1 && isMobile == false) {
-      setCurrentSlide(7);
+      setCurrentSlide(lastSlide);
     } else if (currentSlide === 0 && isMobile == true) {
-      setCurrentSlide(7);
+      setCurrentSlide(lastSlide);
     } else {
       isMobile
         ? setCurrentSlide(currentSlide - 1)

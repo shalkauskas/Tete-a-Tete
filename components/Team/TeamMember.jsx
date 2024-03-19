@@ -21,17 +21,19 @@ export default function TeamMember(props) {
         style={{ fontSize: "16px", lineHeight: "40px" }}
       >
         {props.name}
-        <a target="_blank" rel="noopener noreferrer" href={props.link}>
-          <picture>
-            <source type="image/webp" srcSet="instagram.webp" />
-            <source type="image/png" srcSet="instagram.png" />
-            <img
-              style={{ width: "39px", height: "39px" }}
-              src="instagram.png"
-              alt="Instagram link"
-            />
-          </picture>
-        </a>
+        {props.link && (
+          <a target="_blank" rel="noopener noreferrer" href={props.link}>
+            <picture>
+              <source type="image/webp" srcSet="instagram.webp" />
+              <source type="image/png" srcSet="instagram.png" />
+              <img
+                style={{ width: "39px", height: "39px" }}
+                src="instagram.png"
+                alt="Instagram link"
+              />
+            </picture>
+          </a>
+        )}
       </p>
       <p
         className="header-color italic font-semibold mt-2"
