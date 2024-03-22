@@ -10,7 +10,7 @@ export default function Hairdreams(props) {
       <div className="lg:flex-1 w-full">
         <Image
           width={590}
-          height={436}
+          height={490}
           layout="responsive"
           loading={"eager"}
           priority={true}
@@ -30,10 +30,14 @@ export default function Hairdreams(props) {
           Do you have less and less hair? Is it brittle, getting thinner or
           there are even bald patches forming?
         </h2>
-        <p>
+        <p className="mb-4">
           You are not alone in this. Thousands of women have already entrusted
           Hairdreams with their hair problem. Our solutions will help you to
           gain natural hair volume. So that you can enjoy a carefree life again.
+        </p>
+        <p className="underline">
+          Katya does exclusive service in applying Hairdreams microlines. Book
+          your appointment for free consultation!
         </p>
         <a
           className="contents"
