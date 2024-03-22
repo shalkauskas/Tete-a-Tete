@@ -4,7 +4,7 @@ const members = [
     name: "Katya Bababekov",
     title: "Owner",
     description:
-      "A salon owner and a stylist for over 20 years. Haircut and blow dry expert with a unique approach to each client.",
+      "Specialises in fine hair solututions, haircut & blowdry. She has unique approach in finding the best style for clients.",
     photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/katya.png",
     link: "https://www.instagram.com/stories/highlights/18162872782046022/",
   },
@@ -13,7 +13,7 @@ const members = [
     name: "Lilia Kravchuk",
     title: "Senior stylist and colorist",
     description:
-      "Creates fresh and natural styles using the best coloring techniques.",
+      "Creates fresh and natural looking color using the best coloring techniques and color products.",
     photo:
       "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/lilia.png",
     link: "https://www.instagram.com/stories/highlights/17860344665111292/",
@@ -23,7 +23,7 @@ const members = [
     name: "Mary B Talbot",
     title: "Senior stylist and colorist",
     description:
-      "For over X years makes her clients feel young and beautiful. Performs both men’s and women’s haircuts.",
+      "Mary has creative approach to hair color, cut & style. Performs both men’s and women’s haircuts.",
     photo:
       "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/mary.jpg",
     link: "https://www.instagram.com/stories/highlights/17854588970224602/",
@@ -52,20 +52,20 @@ const members = [
     name: "Jackie Jordan",
     title: "Stylist",
     description:
-      "Passionate for doing balayage and highlights. Finds personal approach and listens to her clients’ needs.",
+      "Passionate for doing balayage and highlights. Hair extensions & non-toxic hair relaxer. Finds personal approach and listens to her clients’ needs.",
     photo:
       "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/Jackie.png",
     link: "https://instagram.com/hairbyjackiejordan?igshid=YmMyMTA2M2Y=",
   },
-  {
-    id: 7,
-    name: "Victoria Simenkov",
-    title: "Esthetician and nail technician",
-    description:
-      "Has over 35 years of experience in working with bees waxing hair removal. And she does nails :-)",
-    photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/Vita.png",
-    link: "https://www.instagram.com/stories/highlights/17854828001238208/",
-  },
+  // {
+  //   id: 7,
+  //   name: "Victoria Simenkov",
+  //   title: "Esthetician and nail technician",
+  //   description:
+  //     "Experienced nail technician. Has over 35 years of experience in working with bees waxing hair removal.",
+  //   photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/Vita.png",
+  //   link: "https://www.instagram.com/stories/highlights/17854828001238208/",
+  // },
   {
     id: 8,
     name: "Svetlana Mirvoda (Lana)",
@@ -75,26 +75,25 @@ const members = [
     photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/Lana.png",
     link: "https://www.instagram.com/stories/highlights/18027782548287385/",
   },
-  // {
-  //   id: 9,
-  //   name: "Sandra",
-  //   title: "Stylist and color resquer", // @TODO
-  //   description:
-  //     "Passionate and dedicated  stylist who shows excellence at everything she does including keratin and extensions.", // @TODO
-  //   photo:
-  //     "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/sandra.png",
-  //   link: "https://www.instagram.com/stories/highlights/18018117991839163/",
-  // },
-  // {
-  //   id: 10,
-  //   name: "Yari",
-  //   title: "Stylist and color resquer", // @TODO
-  //   description:
-  //     "Passionate and dedicated  stylist who shows excellence at everything she does including keratin and extensions.", // @TODO
-  //   photo:
-  //     "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/yari.png",
-  //   link: "https://www.instagram.com/stories/highlights/17984816960297639/",
-  // },
+  {
+    id: 9,
+    name: "Sandra",
+    title: "Stylist and color resquer",
+    description:
+      "Passionate and dedicated  stylist who shows excellence at everything she does including keratin and extensions.",
+    photo:
+      "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/sandra.png",
+    link: "https://www.instagram.com/stories/highlights/18018117991839163/",
+  },
+  {
+    id: 10,
+    name: "Yari",
+    title: "Junior Stylist",
+    description: "Shows excellence in browdrying thick curly hair.",
+    photo:
+      "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/yari.png",
+    link: "https://www.instagram.com/stories/highlights/17984816960297639/",
+  },
   // {
   //   id: 11,
   //   name: "Anya",
