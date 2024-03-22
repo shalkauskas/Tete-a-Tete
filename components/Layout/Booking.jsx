@@ -16,7 +16,7 @@ export default function Booking(props) {
             </span>
           </div>
           <div className="flex gap-4 flex-col py-6 px-8 content">
-            <p className="font-bold">First-Time Clients</p>
+            {/* <p className="font-bold">First-Time Clients</p>
             <p>
               Welcome to Tete-a-Tete Cut & Color Group. All first-time visitors,
               please call the salon at{" "}
@@ -25,9 +25,11 @@ export default function Booking(props) {
               </a>
               in order for us to properly assess your service needs and provide
               the best possible stylist.
+            </p> */}
+            {/* <p className="font-bold">Returning Clients</p> */}
+            <p>
+              Welcome to Tete-a-Tete Cut & Color Group. Important to remember:
             </p>
-            <p className="font-bold">Returning Clients</p>
-            <p>Welcome back. Important to remember:</p>
             <ol className="list-decimal	px-6">
               <li>
                 Schedule any color/chemical services before a haircut or
