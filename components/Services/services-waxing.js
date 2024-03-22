@@ -7,13 +7,13 @@ const servicesWaxing = [
     },
     {
       id: 10,
-      service: "Eyebrow waxing",
-      price: "$25",
+      service: "Eyebrow shaping & waxing",
+      price: "$30",
     },
     {
       id: 11,
       service: "Eyebrow tint",
-      price: "$20",
+      price: "$28",
     },
     {
       id: 12,
@@ -23,16 +23,16 @@ const servicesWaxing = [
     {
       id: 13,
       service: "Lip waxing",
-      price: "$15",
+      price: "$20",
     },
     {
       id: 14,
       service: "Chin waxing",
-      price: "$15",
+      price: "$20",
     },
     {
       id: 15,
-      service: "Sides waxing",
+      service: "Sideburns waxing",
       price: "$15",
     },
   ],
@@ -44,7 +44,7 @@ const servicesWaxing = [
     {
       id: 20,
       service: "Bikini",
-      price: "$60",
+      price: "$45",
     },
     {
       id: 21,
@@ -54,17 +54,17 @@ const servicesWaxing = [
     {
       id: 22,
       service: "Upper leg",
-      price: "$50",
+      price: "$60",
     },
     {
       id: 23,
       service: "Lower leg",
-      price: "$75",
+      price: "$50",
     },
     {
       id: 24,
       service: "Full leg",
-      price: "$125",
+      price: "$100",
     },
     {
       id: 24,
@@ -74,7 +74,7 @@ const servicesWaxing = [
     {
       id: 24,
       service: "Underarm",
-      price: "$40",
+      price: "$30",
     },
     {
       id: 24,
