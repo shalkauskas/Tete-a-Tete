@@ -5,22 +5,33 @@ export default function Hairdreams(props) {
   return (
     <div
       style={{ background: "#EDE6DD", maxWidth: "75.25rem" }}
-      className="mx-auto mt-6 rounded shadow-lg flex flex-wrap"
+      className="mx-auto mt-6 rounded shadow-lg grid xl:grid-cols-3 grid-cols-2"
     >
-      <div className="lg:flex-1 w-full">
+      <div className="flex rounded-l overflow-hidden h-full col-span-2">
         <Image
-          width={590}
-          height={490}
-          layout="responsive"
+          width={600}
+          height={800}
           loading={"eager"}
           priority={true}
-          src={"/hairdreams.png"}
+          src={
+            "https://res.cloudinary.com/dyj6lkekg/image/upload/v1711816297/tete/hairdreams1.jpg"
+          }
+          alt="Hairdreams"
+        />
+        <Image
+          width={600}
+          height={800}
+          loading={"eager"}
+          priority={true}
+          src={
+            "https://res.cloudinary.com/dyj6lkekg/image/upload/v1711816297/tete/hairdreams2.jpg"
+          }
           alt="Hairdreams"
         />
       </div>
 
-      <div className="flex-1 px-6 py-10">
-        <h2 className="font-bold mb-4 text-xl">Hairdreams</h2>
+      <div className="flex-1 xl:px-6 px-10 py-10 xl:col-span-1 col-span-2">
+        <h2 className="font-bold mb-4 text-xl">Hairdreams by KATYA</h2>
         <p className="mb-4">
           Hairdreams© is the leading supplier internationally of hair extensions
           and hair thickening in Premium quality, with partner salons in over 60

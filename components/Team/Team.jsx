@@ -71,7 +71,7 @@ export default function Team() {
             staying tuned in to the latest developments in our industry, we're
             able to offer you an always modern beauty experience. Whether you’re
             here to maintain your look or receive a beauty transformation, you
-            can do it all Tête-à-Tête.
+            can do it all at Tête-à-Tête.
           </p>
         </div>
 

@@ -57,15 +57,16 @@ const members = [
       "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/Jackie.png",
     link: "https://instagram.com/hairbyjackiejordan?igshid=YmMyMTA2M2Y=",
   },
-  // {
-  //   id: 7,
-  //   name: "Victoria Simenkov",
-  //   title: "Esthetician and nail technician",
-  //   description:
-  //     "Experienced nail technician. Has over 35 years of experience in working with bees waxing hair removal.",
-  //   photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/Vita.png",
-  //   link: "https://www.instagram.com/stories/highlights/17854828001238208/",
-  // },
+  {
+    id: 7,
+    name: "Victoria Simenkov",
+    title: "Esthetician and nail technician",
+    description:
+      "Experienced nail technician. Has over 35 years of experience in working with bees waxing hair removal.",
+    photo:
+      "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_2100,w_3100/tete/Vita.png",
+    link: "https://www.instagram.com/stories/highlights/17854828001238208/",
+  },
   {
     id: 8,
     name: "Svetlana Mirvoda (Lana)",
