@@ -18,7 +18,7 @@ export default function Layout({ children, props }) {
   return (
     <div className="overflow-y-hidden overflow-x-hidden relative">
       <Head>
-        <title>Tete-a-Tete Salon</title>
+        <title>Tete-a-Tete Salon | Newton</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"
@@ -57,6 +57,10 @@ export default function Layout({ children, props }) {
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="theme-color" content="#f0eae7" />
         <meta property="og:url" content="https://teteatetesalon.com/" />
+        <meta
+          name="keywords"
+          content="Hair salon, Newton, Hairdreams, hair color, nails, skin care, Organic coloring, Balayage, highlights"
+        />
         <link rel="canonical" href="https://teteatetesalon.com/" />
         <meta
           name="google-site-verification"
