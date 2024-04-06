@@ -8,7 +8,7 @@ const servicesNails = [
     {
       id: 10,
       service: "Classic manicure",
-      price: "$27 & Up",
+      price: "$28 & Up",
     },
     {
       id: 11,

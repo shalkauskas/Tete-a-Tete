@@ -70,7 +70,7 @@ export default function HandyInfo() {
           </picture>
           <div className="col-span-4">
             <p className="inline">
-              Visa, Mastercard and Сash are accepted payment methods.
+              We accept all major credit cards.
               <br />
               (regretfully gratuity cannot be charged to the credit card).
             </p>

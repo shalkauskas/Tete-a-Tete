@@ -8,12 +8,12 @@ const servicesWaxing = [
     {
       id: 10,
       service: "Eyebrow shaping & waxing",
-      price: "$30",
+      price: "$30 & Up",
     },
     {
       id: 11,
       service: "Eyebrow tint",
-      price: "$28",
+      price: "$30",
     },
     {
       id: 12,
@@ -33,7 +33,7 @@ const servicesWaxing = [
     {
       id: 15,
       service: "Sideburns waxing",
-      price: "$15",
+      price: "$20",
     },
   ],
   [
