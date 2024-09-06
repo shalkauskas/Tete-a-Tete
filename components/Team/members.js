@@ -88,6 +88,15 @@ const members = [
   },
   {
     id: 10,
+    name: "Alana",
+    title: "Stylist",
+    description:
+      "Specializes in precise and artistic approach to cutting hair, as well as color, creating shapes, and encouraging movement that works with individual textures.",
+    photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/alana.jpg",
+    // link: "https://www.instagram.com/stories/highlights/17984816960297639/",
+  },
+  {
+    id: 11,
     name: "Yari",
     title: "Junior Stylist",
     description: "Shows excellence in browdrying thick curly hair.",
