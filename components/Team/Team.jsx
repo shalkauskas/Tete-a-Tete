@@ -10,9 +10,9 @@ export default function Team() {
   const lastSlide = members.length - 1;
 
   const next = () => {
-    if (currentSlide >= lastSlide && isMobile == false) {
+    if (currentSlide >= lastSlide - 2 && !isMobile) {
       setCurrentSlide(1);
-    } else if (currentSlide >= lastSlide && isMobile == true) {
+    } else if (currentSlide >= lastSlide && isMobile) {
       setCurrentSlide(0);
     } else {
       isMobile
@@ -21,9 +21,9 @@ export default function Team() {
     }
   };
   const prev = () => {
-    if (currentSlide === 1 && isMobile == false) {
+    if (currentSlide === 1 && !isMobile) {
       setCurrentSlide(lastSlide);
-    } else if (currentSlide === 0 && isMobile == true) {
+    } else if (currentSlide === 0 && isMobile) {
       setCurrentSlide(lastSlide);
     } else {
       isMobile
