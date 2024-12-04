@@ -99,7 +99,8 @@ const members = [
     id: 10,
     name: "Yari",
     title: "Junior Stylist",
-    description: "Shows excellence in browdrying thick curly hair.",
+    description:
+      "Creative stylist keeping up with today's cutting and styling trends. Shows excellence in browdrying thick curly hair.",
     photo:
       "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/yari.png",
     link: "https://www.instagram.com/stories/highlights/17984816960297639/",
