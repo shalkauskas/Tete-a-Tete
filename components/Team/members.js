@@ -79,7 +79,7 @@ const members = [
   {
     id: 9,
     name: "Sandra",
-    title: "Stylist and color resquer",
+    title: "Stylist and color rescuer",
     description:
       "Passionate and dedicated  stylist who shows excellence at everything she does including keratin and extensions.",
     photo:
@@ -100,7 +100,7 @@ const members = [
     name: "Yari",
     title: "Junior Stylist",
     description:
-      "Creative stylist keeping up with today's cutting and styling trends. Shows excellence in browdrying thick curly hair.",
+      "Creative stylist keeping up with today's cutting and styling trends. Shows excellence in blowdrying thick curly hair.",
     photo:
       "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/yari.png",
     link: "https://www.instagram.com/stories/highlights/17984816960297639/",
