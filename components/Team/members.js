@@ -79,7 +79,7 @@ const members = [
   {
     id: 9,
     name: "Sandra",
-    title: "Stylist and color rescuer",
+    title: "Stylist and color correction",
     description:
       "Passionate and dedicated  stylist who shows excellence at everything she does including keratin and extensions.",
     photo:
