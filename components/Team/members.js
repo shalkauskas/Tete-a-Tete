@@ -105,6 +105,14 @@ const members = [
       "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/yari.png",
     link: "https://www.instagram.com/stories/highlights/17984816960297639/",
   },
+  {
+    id: 11,
+    name: "Julia",
+    title: "Stylist",
+    description:
+      "With experience in gents' and ladies' styling, Julia can elevate your look—whether you're after a subtle refresh or a bold change, trust her magic touch.",
+    photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/julia.png",
+  },
   // {
   //   id: 11,
   //   name: "Anya",
