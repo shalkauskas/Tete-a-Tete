@@ -61,7 +61,7 @@ const servicesHaircare = [
     {
       id: 23,
       service: "Foil Highlighting or Balayage",
-      price: "$200 & Up",
+      price: "$225 & Up",
     },
     {
       id: 24,
@@ -78,7 +78,7 @@ const servicesHaircare = [
     {
       id: 30,
       service: "Keratin hair straightening",
-      price: "$400 & Up",
+      price: "$450 & Up",
       info: "A keratin treatment is a cosmetic or beauty product used to straighten hair. It will make naturally curly or wavy hair straighter and smoother. ",
     },
     {
