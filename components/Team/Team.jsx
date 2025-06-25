@@ -10,7 +10,7 @@ export default function Team() {
   const lastSlide = members.length - 1;
 
   const next = () => {
-    if (currentSlide >= lastSlide - 2 && !isMobile) {
+    if (currentSlide >= lastSlide - 1 && !isMobile) {
       setCurrentSlide(1);
     } else if (currentSlide >= lastSlide && isMobile) {
       setCurrentSlide(0);
