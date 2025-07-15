@@ -95,16 +95,16 @@ const members = [
   //   photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/alana.jpg",
   //   // link: "https://www.instagram.com/stories/highlights/17984816960297639/",
   // },
-  {
-    id: 10,
-    name: "Yari",
-    title: "Junior Stylist",
-    description:
-      "Creative stylist keeping up with today's cutting and styling trends. Shows excellence in blowdrying thick curly hair.",
-    photo:
-      "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/yari.png",
-    link: "https://www.instagram.com/stories/highlights/17984816960297639/",
-  },
+  // {
+  //   id: 10,
+  //   name: "Yari",
+  //   title: "Junior Stylist",
+  //   description:
+  //     "Creative stylist keeping up with today's cutting and styling trends. Shows excellence in blowdrying thick curly hair.",
+  //   photo:
+  //     "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/yari.png",
+  //   link: "https://www.instagram.com/stories/highlights/17984816960297639/",
+  // },
   {
     id: 11,
     name: "Julia",
