@@ -8,7 +8,7 @@ const servicesHaircare = [
     {
       id: 10,
       service: "Women’s haircut, shampoo & blowdry",
-      price: "$85 & Up",
+      price: "$90 & Up",
     },
     {
       id: 11,
