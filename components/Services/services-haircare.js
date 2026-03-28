@@ -68,6 +68,11 @@ const servicesHaircare = [
       service: "Gloss with any Color service",
       price: "$50",
     },
+    {
+      id: 25,
+      service: "Air Touch with Lily",
+      price: "$500 & Up",
+    },
   ],
   [
     {
