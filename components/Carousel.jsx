@@ -1,17 +1,17 @@
-import React from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
-import Image from "next/image";
+import React from 'react';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+import Image from 'next/image';
 export default function WelcomeCarousel() {
   const createCarouselItemImage = (index, options = {}) => (
-    <div key={index} style={{ width: "max-content", height: "400px" }}>
+    <div key={index} style={{ width: 'max-content', height: '400px' }}>
       <Image
         src={`https://res.cloudinary.com/dyj6lkekg/image/upload/tete/carousel_${index}.jpg`}
         width={562}
         height={400}
         alt="Carousel welcome image"
         quality={75}
-        loading={"eager"}
+        loading={'eager'}
       />
     </div>
   );
@@ -24,7 +24,7 @@ export default function WelcomeCarousel() {
     setIsMobile(mq.matches);
   }
   React.useEffect(() => {
-    const mq = window.matchMedia("screen and (max-width: 600px)");
+    const mq = window.matchMedia('screen and (max-width: 600px)');
     mq.addListener(mqChange);
     mqChange(mq);
 

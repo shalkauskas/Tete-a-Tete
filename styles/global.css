@@ -1,31 +1,35 @@
-html, body {
- padding: 0;
- margin: 0;
- font-family: 'Lato', sans-serif;
- font-size: 18px;
- color: #4C4949;
- min-height:100%;
- height: 100%;
-     }
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  color: #4c4949;
+  min-height: 100%;
+  height: 100%;
+}
 .text-color {
-     color: #895B4A;
+  color: #895b4a;
 }
 .loader {
-border: 0.2em solid rgba(0, 0, 0, 0.1);
-border-top: 0.2em solid #767676;
-border-radius: 50%;
-width: 2.28571429rem;
-height: 2.28571429rem;
-animation: spin 0.6s linear infinite;
-margin-left: auto;
-margin-right: auto;
-margin-bottom: 20%;
+  border: 0.2em solid rgba(0, 0, 0, 0.1);
+  border-top: 0.2em solid #767676;
+  border-radius: 50%;
+  width: 2.28571429rem;
+  height: 2.28571429rem;
+  animation: spin 0.6s linear infinite;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20%;
+}
+.slide {
+  background-color: transparent !important;
 }
 @keyframes spin {
-     0% {
-     transform: rotate(0deg);
- }
- 100% {
-     transform: rotate(360deg);
- }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

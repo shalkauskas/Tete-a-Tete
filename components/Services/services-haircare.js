@@ -1,103 +1,105 @@
 const servicesHaircare = [
   [
     {
-      title: "Haircuts & styling",
+      title: 'Haircuts & styling',
       image:
-        "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/haircuts.png",
+        'https://res.cloudinary.com/dyj6lkekg/image/upload/tete/haircuts.png'
     },
     {
       id: 10,
-      service: "Women’s haircut, shampoo & blowdry",
-      price: "$90 & Up",
+      service: 'Women’s haircut, shampoo & blowdry',
+      price: '$90 & Up'
     },
     {
       id: 11,
-      service: "Men’s haircut, shampoo & blowdry",
-      price: "$65 & Up",
+      service: 'Men’s haircut, shampoo & blowdry',
+      price: '$65 & Up'
     },
     {
       id: 12,
-      service: "Shampoo & Blow Dry Style",
-      price: "$65 & Up",
+      service: 'Shampoo & Blow Dry Style',
+      price: '$65 & Up'
     },
     {
       id: 13,
-      service: "Non-toxic Permanent wave",
-      price: "$225 & Up",
+      service: 'Non-toxic Permanent wave',
+      price: '$225 & Up'
     },
     {
       id: 14,
-      service: "Updo",
-      price: "$100 & Up",
+      service: 'Updo',
+      price: '$100 & Up'
     },
     {
       id: 15,
-      service: "Bridal updo",
-      price: "$175 & Up",
-    },
+      service: 'Bridal updo',
+      price: '$175 & Up'
+    }
   ],
   [
     {
-      title: "Hair color",
+      title: 'Hair color',
       image:
-        "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/haircolor.png",
+        'https://res.cloudinary.com/dyj6lkekg/image/upload/tete/haircolor.png'
     },
     {
       id: 20,
-      service: "Color application & Gloss",
-      price: "$145 & Up",
+      service: 'Color application & Gloss',
+      price: '$145 & Up'
     },
     {
       id: 21,
-      service: "Organic Color Application",
-      price: "$145 & Up",
-      info: "Color lines we use - Wella, O&M, All-nutrient.",
+      service: 'Organic Color Application',
+      price: '$145 & Up',
+      info: 'Color lines we use - Wella, O&M, All-nutrient.'
     },
     {
       id: 22,
-      service: "Double Process (color+highlights)",
-      price: "$275 & Up",
+      service: 'Double Process (color+highlights)',
+      price: '$275 & Up'
     },
     {
       id: 23,
-      service: "Foil Highlighting or Balayage",
-      price: "$225 & Up",
+      service: 'Foil Highlighting or Balayage',
+      price: '$225 & Up'
     },
     {
       id: 24,
-      service: "Gloss with any Color service",
-      price: "$50",
+      service: 'Gloss with any Color service',
+      price: '$50'
     },
     {
       id: 25,
-      service: "Air Touch with Lily",
-      price: "$500 & Up",
-    },
+      service: 'Air Touch with Lily',
+      price: '$500 & Up',
+      info: '',
+      isVideo: true
+    }
   ],
   [
     {
-      title: "Straightening & treatments",
+      title: 'Straightening & treatments',
       image:
-        "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/treatments.png",
+        'https://res.cloudinary.com/dyj6lkekg/image/upload/tete/treatments.png'
     },
     {
       id: 30,
-      service: "Keratin hair straightening",
-      price: "$450 & Up",
-      info: "A keratin treatment is a cosmetic or beauty product used to straighten hair. It will make naturally curly or wavy hair straighter and smoother. ",
+      service: 'Keratin hair straightening',
+      price: '$450 & Up',
+      info: 'A keratin treatment is a cosmetic or beauty product used to straighten hair. It will make naturally curly or wavy hair straighter and smoother. '
     },
     {
       id: 31,
-      service: "Brazilian Blowout Treatment",
-      price: "$300 & Up",
-      info: "Brazilian Blowout is a specific brand of keratin treatment, a semi-permanent way to smooth frizz, soften hair texture, and make hair more manageable and easy to style.",
+      service: 'Brazilian Blowout Treatment',
+      price: '$300 & Up',
+      info: 'Brazilian Blowout is a specific brand of keratin treatment, a semi-permanent way to smooth frizz, soften hair texture, and make hair more manageable and easy to style.'
     },
     {
       id: 32,
-      service: "Hair botox (non-formaldehyde treatment)",
-      price: "$400 & Up",
-      info: "Hair Botox is actually a deep conditioning treatment that coats hair fibers with a filler, such as keratin. That helps create the appearance of fuller, smoother hair.",
-    },
+      service: 'Hair botox (non-formaldehyde treatment)',
+      price: '$400 & Up',
+      info: 'Hair Botox is actually a deep conditioning treatment that coats hair fibers with a filler, such as keratin. That helps create the appearance of fuller, smoother hair.'
+    }
     // {
     //   id: 33,
     //   service: "Bio-ionic/Japanese straightening",
@@ -113,9 +115,9 @@ const servicesHaircare = [
   ],
   [
     {
-      title: "Extensions",
+      title: 'Extensions',
       image:
-        "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/extensions.png",
+        'https://res.cloudinary.com/dyj6lkekg/image/upload/tete/extensions.png'
     },
     // {
     //   id: 40,
@@ -129,16 +131,16 @@ const servicesHaircare = [
     // },
     {
       id: 42,
-      service: "Hair enhancement",
-      price: "Prices vary",
-      info: "Make appointment for a free consultation",
-    },
+      service: 'Hair enhancement',
+      price: 'Prices vary',
+      info: 'Make appointment for a free consultation'
+    }
     // {
     //   id: 43,
     //   service: "(Micropoint solutions, Hairdreams)",
     //   price: "",
     //   info: "Consultation is required for these services.",
     // },
-  ],
+  ]
 ];
 export default servicesHaircare;

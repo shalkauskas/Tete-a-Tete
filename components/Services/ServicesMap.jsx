@@ -1,21 +1,22 @@
-import Buttons from "../../components/Buttons";
-import Refferal from "./Refferal";
-import Image from "next/image";
-import Backdrop from "../../components/Backdrop";
-import React from "react";
+import Buttons from '../../components/Buttons';
+import Refferal from './Refferal';
+import Image from 'next/image';
+import Backdrop from '../../components/Backdrop';
+import React from 'react';
 export default function ServicesMap(props) {
   // importing data
   const list = props.list;
   // state of popup and id of item clicked to show relevant popup info
   const [showInfo, setShowInfo] = React.useState({
     display: false,
-    id: "",
+    id: '',
+    isVideo: false
   });
   const node = React.useRef();
   // Info popup container
   function InfoNote(props) {
     let infoText = null;
-    list.filter((item) => {
+    list.filter(item => {
       // matching id of clicked service with corresponding object id
       if (item.id === showInfo.id) {
         infoText = item.info;
@@ -25,29 +26,61 @@ export default function ServicesMap(props) {
       <div
         onClick={() => handleClick()}
         className={`${
-          showInfo.display ? "block" : "hidden"
+          showInfo.display ? 'block' : 'hidden'
         } absolute bg-white  z-20 h-auto flex items-start ${
-          props.showMobile ? "flex-col max-w-90 p-9" : "flex-row max-w-1/2 p-10"
-        }`}
+          showInfo.isVideo ? 'p-0' : ''
+        } ${
+          showInfo.isVideo
+            ? 'p-0'
+            : props.showMobile
+            ? 'flex-col max-w-90 p-9'
+            : 'flex-row max-w-1/2 p-10'
+        } `}
         style={{
-          top: props.showMobile ? "40%" : "20%",
-          right: props.showMobile ? "4%" : "1%",
-          boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.15)",
+          top: props.showMobile ? '40%' : '20%',
+          right: props.showMobile ? '4%' : '1%',
+          boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.15)',
+          borderRadius: showInfo.isVideo ? '8px' : '0'
         }}
       >
-        <img
-          src="info.png"
-          style={{ width: "36px", height: "36px" }}
-          className={`${props.showMobile ? "mx-auto mb-3" : "mr-6 mb-auto"}  `}
-        />
-        <p className="text-black lg:text-left text-center">{infoText}</p>
+        {showInfo.isVideo ? (
+          <div
+            style={{
+              top: '30%',
+              right: '2%',
+              zIndex: 30,
+              boxShadow: '0px 5px 15px rgba(0,0,0,0.25)',
+              borderRadius: '8px',
+              overflow: 'hidden'
+            }}
+          >
+            <video width={180} autoPlay muted loop playsInline>
+              <source src="/airtouch.mp4" type="video/mp4" />
+            </video>
+          </div>
+        ) : (
+          <>
+            <img
+              src="info.png"
+              style={{ width: '36px', height: '36px' }}
+              className={`${
+                props.showMobile ? 'mx-auto mb-3' : 'mr-6 mb-auto'
+              }  `}
+            />
+            <p className="text-black lg:text-left text-center">{infoText}</p>
+          </>
+        )}
       </div>
     );
   }
 
   // click handler for info popup
-  const handleClick = (id) => {
-    setShowInfo(() => ({ id: id, display: !showInfo.display }));
+  const handleClick = (id, isVideo) => {
+    setShowInfo(() => ({
+      id: id,
+      display: !showInfo.display,
+      isVideo: isVideo
+    }));
   };
 
   // mapping service box with data
@@ -59,27 +92,27 @@ export default function ServicesMap(props) {
         ref={node}
         key={index}
         className={`max-w-90 mx-auto grid ${
-          props.showSkinCare ? "grid-flow-row" : "grid-flow-col grid-cols-6"
+          props.showSkinCare ? 'grid-flow-row' : 'grid-flow-col grid-cols-6'
         } mb-4`}
       >
         <p
           // if item has additional info it opens popup on click
-          onClick={() => (check ? handleClick(item.id) : null)}
+          onClick={() => (check ? handleClick(item.id, item.isVideo) : null)}
           style={{
-            fontSize: "16px",
-            textAlign: "left",
-            color: check ? "#895B4A" : "normal",
+            fontSize: '16px',
+            textAlign: 'left',
+            color: check ? '#895B4A' : 'normal'
           }}
           className={`text-black ${
-            props.showSkinCare ? "" : "col-start-1 col-end-5"
-          } mr-auto ${check ? "cursor-pointer hover:opacity-75" : ""}`}
+            props.showSkinCare ? '' : 'col-start-1 col-end-5'
+          } mr-auto ${check ? 'cursor-pointer hover:opacity-75' : ''}`}
         >
           {item.service}
         </p>
         <p
-          style={{ fontSize: "16px" }}
+          style={{ fontSize: '16px' }}
           className={`${
-            props.showSkinCare ? "mr-auto" : "col-end-7 col-span-2 ml-auto"
+            props.showSkinCare ? 'mr-auto' : 'col-end-7 col-span-2 ml-auto'
           }`}
         >
           {item.price}
@@ -90,8 +123,8 @@ export default function ServicesMap(props) {
   // shows additional logo for skin care services
   const skinCareLogo = (
     <div
-      className={`${props.showMobile ? "flex" : ""} ${
-        props.showSkinCare ? "block" : "hidden"
+      className={`${props.showMobile ? 'flex' : ''} ${
+        props.showSkinCare ? 'block' : 'hidden'
       } max-w-90 mx-auto text-left justify-evenly`}
     >
       <p className="mb-3 mt-auto">We Use The Rezâge Skin Care Line</p>
@@ -100,7 +133,7 @@ export default function ServicesMap(props) {
         <source type="image/png" srcSet="rezage-logo.png" />
         <img
           src="rezage-logo.png"
-          style={{ width: "60px", height: "60px" }}
+          style={{ width: '60px', height: '60px' }}
           alt="We Use The Rezâge Skin Care Line"
         />
       </picture>
@@ -118,10 +151,10 @@ export default function ServicesMap(props) {
   };
   return (
     <div
-      className={`flex ${props.showMobile ? "flex-col" : ""}`}
+      className={`flex ${props.showMobile ? 'flex-col' : ''}`}
       style={{
-        background: "#EDE6DD",
-        height: props.showMobile ? "auto" : "600px",
+        background: '#EDE6DD',
+        height: props.showMobile ? 'auto' : '600px'
       }}
     >
       {/* image */}
@@ -132,13 +165,13 @@ export default function ServicesMap(props) {
           height={props.showMobile ? 320 : 1250}
           alt="Service image"
           quality={50}
-          loading={"eager"}
+          loading={'eager'}
           priority={true}
         />
         {/* rendering navigation for services */}
         <div
           className={`${props.renderNav} ${
-            props.showMobile ? "inline-block" : "hidden"
+            props.showMobile ? 'inline-block' : 'hidden'
           }  mt-6 w-40 mx-3`}
         >
           {props.mapNav}
@@ -146,7 +179,7 @@ export default function ServicesMap(props) {
       </div>
 
       {/* description */}
-      <div className={`w-full ${props.showMobile ? "my-8" : "my-auto"}`}>
+      <div className={`w-full ${props.showMobile ? 'my-8' : 'my-auto'}`}>
         {mapServices}
         <InfoNote showMobile={props.showMobile} />
         {skinCareLogo}
