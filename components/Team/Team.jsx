@@ -65,11 +65,11 @@ export default function Team() {
       <div className="flex flex-wrap flex-row justify-center relative team mx-auto">
         <div className="w-11/12 header-color sm:w-3/4 md:w-2/4 lg:w-2/4 xl:w-80 mb-6">
           <p className="mt-4">
-            We've been serving the Newton area since 1999 and have a pristine
+            We&apos;ve been serving the Newton area since 1999 and have a pristine
             reputation for our highly trained stylists who continually upgrade
             their skills. By using the very best products on the market and
-            staying tuned in to the latest developments in our industry, we're
-            able to offer you an always modern beauty experience. Whether you’re
+            staying tuned in to the latest developments in our industry, we&apos;re
+            able to offer you an always modern beauty experience. Whether you&apos;re
             here to maintain your look or receive a beauty transformation, you
             can do it all at Tête-à-Tête.
           </p>

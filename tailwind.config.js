@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ["./pages/**/*.js", "./components/**/*.jsx"],
+  purge: ["./pages/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
   corePlugins: {
     container: false,
   },
