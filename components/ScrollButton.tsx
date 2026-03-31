@@ -1,10 +1,10 @@
-import React from "react";
-import useDocumentScrollThrottled from "../components/Hooks/useDocumentScrollThrottled";
-import smoothscroll from "smoothscroll-polyfill";
+import React from 'react';
+import useDocumentScrollThrottled from './Hooks/useDocumentScrollThrottled';
+import smoothscroll from 'smoothscroll-polyfill';
 export default function ScrollButton() {
   const [showScroll, setShowScroll] = React.useState(false);
   const [moveScroll, setMoveScroll] = React.useState(false);
-  useDocumentScrollThrottled((callbackData) => {
+  useDocumentScrollThrottled(callbackData => {
     const { currentScrollTop } = callbackData;
     const bottom = document.body.scrollHeight - 1100;
     setShowScroll(currentScrollTop > 400);
@@ -12,7 +12,7 @@ export default function ScrollButton() {
   });
   const scrollTop = () => {
     smoothscroll.polyfill();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   return (
     <div>
@@ -22,12 +22,12 @@ export default function ScrollButton() {
         <img
           src="scrollToTop.png"
           alt="Scroll to top"
-          className={`${moveScroll ? "moveDown" : "moveUp"} scrollTop`}
+          className={`${moveScroll ? 'moveDown' : 'moveUp'} scrollTop`}
           onClick={scrollTop}
           style={{
             height: 40,
             width: 40,
-            display: showScroll ? "flex" : "none",
+            display: showScroll ? 'flex' : 'none'
           }}
         />
       </picture>
