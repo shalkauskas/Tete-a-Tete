@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionTitle from '../SectionTitle';
-import Map from '../../components/Contact/GoogleMap';
+import Map from './GoogleMap';
 import Reviews from './Reviews';
 import Backdrop from '../Backdrop';
 export default function Contact() {
