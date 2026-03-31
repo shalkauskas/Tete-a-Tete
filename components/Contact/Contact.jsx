@@ -1,13 +1,13 @@
-import React from "react";
-import SectionTitle from "../../components/SectionTitle";
-import Map from "../../components/Contact/GoogleMap";
-import Reviews from "./Reviews";
-import Backdrop from "../../components/Backdrop";
+import React from 'react';
+import SectionTitle from '../SectionTitle';
+import Map from '../../components/Contact/GoogleMap';
+import Reviews from './Reviews';
+import Backdrop from '../Backdrop';
 export default function Contact() {
   const [openReview, setOpenReview] = React.useState(false);
   return (
     <div className="container mx-auto md:max-w-90">
-      <SectionTitle title={"Contact"} />
+      <SectionTitle title={'Contact'} />
       {/* contact section grid*/}
       <div className="pt-6 grid grid-row-2 grid-flow-row gap-4 sm:grid-flow-row md:grid-flow-col-row lg:grid-flow-col-dense xl:grid-flow-col md:justify-items-center">
         {/* left side info grid */}
@@ -64,7 +64,7 @@ export default function Contact() {
                 <source type="image/webp" srcSet="google.webp" />
                 <source type="image/png" srcSet="google.png" />
                 <img
-                  onClick={() => setOpenReview((prevState) => !prevState)}
+                  onClick={() => setOpenReview(prevState => !prevState)}
                   src="google.png"
                   alt="Google rating"
                   className="w-48 mx-auto md:mr-12 mr-5 ml-2 md:ml-0 inline my-4 hover:opacity-75 cursor-pointer"
@@ -75,7 +75,7 @@ export default function Contact() {
                   <Reviews />
                   <Backdrop
                     toggle={openReview}
-                    onClick={() => setOpenReview((prevState) => !prevState)}
+                    onClick={() => setOpenReview(prevState => !prevState)}
                     blur={true}
                   />
                 </>

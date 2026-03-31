@@ -1,48 +1,48 @@
-import React from "react";
-import SectionTitle from "../../components/SectionTitle";
-import emailjs from "emailjs-com";
-import ContactFormResponse from "./ContactFormResponse";
-import { useForm } from "../../components/Hooks/useForm";
-import Button from "../Button";
+import React from 'react';
+import SectionTitle from '../SectionTitle';
+import emailjs from 'emailjs-com';
+import ContactFormResponse from './ContactFormResponse';
+import { useForm } from '../../components/Hooks/useForm';
+import Button from '../Button';
 export default function ContactForm() {
   const [showResponse, setShowResponse] = React.useState({
     display: false,
-    code: null,
+    code: null
   });
   const { values, handleChange, reset } = useForm({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
   });
   function sendEmail(e) {
     e.preventDefault();
     emailjs
       .sendForm(
-        "default_service",
+        'default_service',
         process.env.NEXT_PUBLIC_templateid,
         e.target,
         process.env.NEXT_PUBLIC_userid
       )
       .then(
-        (result) => {
+        result => {
           // console.log(result.text);
           handleSubmit(200);
         },
-        (error) => {
+        error => {
           // console.log(error.text);
           handleSubmit(404);
         }
       );
   }
-  const handleSubmit = (code) => {
+  const handleSubmit = code => {
     setShowResponse(() => ({ display: true, code: code }));
     reset();
   };
   const responseCode = showResponse.code;
   return (
     <div className="container mx-auto max-w-sm">
-      <SectionTitle title={"Get in touch"} />
+      <SectionTitle title={'Get in touch'} />
 
       <div className="mx-auto lg:w-1/2 sm:w-3/4 w-11/12">
         <p className="italic text-gray-500 text-sm mb-4">
@@ -136,7 +136,7 @@ export default function ContactForm() {
           display: inline-block;
         }
         label:after {
-          content: "*";
+          content: '*';
           color: red;
           font-size: 0.8rem;
           vertical-align: top;

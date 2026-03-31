@@ -1,7 +1,7 @@
-import Buttons from '../../components/Buttons';
+import Buttons from '../Buttons';
 import Refferal from './Refferal';
 import Image from 'next/image';
-import Backdrop from '../../components/Backdrop';
+import Backdrop from '../Backdrop';
 import React from 'react';
 export default function ServicesMap(props) {
   // importing data
@@ -33,8 +33,8 @@ export default function ServicesMap(props) {
           showInfo.isVideo
             ? 'p-0'
             : props.showMobile
-            ? 'flex-col max-w-90 p-9'
-            : 'flex-row max-w-1/2 p-10'
+              ? 'flex-col max-w-90 p-9'
+              : 'flex-row max-w-1/2 p-10'
         } `}
         style={{
           top: props.showMobile ? '40%' : '20%',

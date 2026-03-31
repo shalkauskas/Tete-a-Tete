@@ -1,12 +1,12 @@
-import SectionTitle from "../../components/SectionTitle";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
-import ServicesMap from "./ServicesMap";
-import HandyInfo from "./HandyInfo";
-import Buttons from "../../components/Buttons";
-import Refferal from "./Refferal";
-import NavMap from "./ServicesNavMap";
-import React from "react";
+import SectionTitle from '../SectionTitle';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+import ServicesMap from './ServicesMap';
+import HandyInfo from './HandyInfo';
+import Buttons from '../Buttons';
+import Refferal from './Refferal';
+import NavMap from './ServicesNavMap';
+import React from 'react';
 export default function Service(props) {
   // responsive carousel
   const [isMobile, setIsMobile] = React.useState(false);
@@ -14,7 +14,7 @@ export default function Service(props) {
     setIsMobile(mq.matches);
   }
   React.useEffect(() => {
-    const mq = window.matchMedia("screen and (max-width: 1080px)");
+    const mq = window.matchMedia('screen and (max-width: 1080px)');
     mq.addListener(mqChange);
     mqChange(mq);
 
@@ -25,14 +25,14 @@ export default function Service(props) {
 
   // carousel controls
   const [currentSlide, setCurrentSlide] = React.useState(0);
-  const changeSlide = (index) => {
+  const changeSlide = index => {
     setCurrentSlide(index);
   };
   const next = () => setCurrentSlide(currentSlide + 1);
 
   const prev = () => setCurrentSlide(currentSlide - 1);
   // mapping nav buttons
-  const renderNav = props.service.length <= 1 || isMobile ? "hidden" : "block";
+  const renderNav = props.service.length <= 1 || isMobile ? 'hidden' : 'block';
   const mapNavButtons = props.service.map((item, index) => (
     <NavMap
       key={index}
@@ -49,10 +49,10 @@ export default function Service(props) {
     <ServicesMap
       key={index}
       list={item}
-      showSkinCare={props.title === "Skin care"}
+      showSkinCare={props.title === 'Skin care'}
       showMobile={isMobile}
       mapNav={mapNavButtons}
-      renderNav={props.service.length <= 1 ? "hidden" : "block"}
+      renderNav={props.service.length <= 1 ? 'hidden' : 'block'}
     />
   ));
   return (
@@ -69,7 +69,7 @@ export default function Service(props) {
                 <img
                   onClick={prev}
                   className={`w-5 cursor-pointer mr-2 ${
-                    currentSlide == 0 ? "invisible" : "inline-block"
+                    currentSlide == 0 ? 'invisible' : 'inline-block'
                   }`}
                   src="left.png"
                   alt="Prev service"
@@ -84,7 +84,7 @@ export default function Service(props) {
                   autoPlay={false}
                   showStatus={false}
                   swipeable={isMobile ? false : true}
-                  width={isMobile ? "375px" : "900px"}
+                  width={isMobile ? '375px' : '900px'}
                   selectedItem={currentSlide}
                   transitionTime={isMobile ? 1 : 300}
                 >
@@ -96,8 +96,8 @@ export default function Service(props) {
                   onClick={next}
                   className={`w-5 cursor-pointer ml-2 ${
                     currentSlide == props.service.length - 1
-                      ? "invisible"
-                      : "inline-block"
+                      ? 'invisible'
+                      : 'inline-block'
                   }`}
                   src="right.png"
                   alt="Next service"
