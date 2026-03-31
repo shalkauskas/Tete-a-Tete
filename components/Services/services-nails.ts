@@ -1,4 +1,6 @@
-const servicesNails = [
+import { ServiceGroup } from '../../types';
+
+const servicesNails: ServiceGroup[] = [
   [
     {
       title: "",

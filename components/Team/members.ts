@@ -1,4 +1,6 @@
-const members = [
+import { TeamMember } from '../../types';
+
+const members: TeamMember[] = [
   {
     id: 1,
     name: "Katya Bababekov",
@@ -23,7 +25,7 @@ const members = [
     name: "Mary B Talbot",
     title: "Senior stylist and colorist",
     description:
-      "Mary has creative approach to hair color, cut & style. Performs both men’s and women’s haircuts.",
+      "Mary has creative approach to hair color, cut & style. Performs both men's and women's haircuts.",
     photo:
       "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/mary.jpg",
     link: "https://www.instagram.com/stories/highlights/17854588970224602/",
@@ -52,7 +54,7 @@ const members = [
     name: "Jackie Jordan",
     title: "Stylist",
     description:
-      "Passionate for doing balayage and highlights. Hair extensions & non-toxic hair relaxer. Finds personal approach and listens to her clients’ needs.",
+      "Passionate for doing balayage and highlights. Hair extensions & non-toxic hair relaxer. Finds personal approach and listens to her clients' needs.",
     photo:
       "https://res.cloudinary.com/dyj6lkekg/image/upload/c_crop,g_auto,h_500,w_600/tete/Jackie.png",
     link: "https://instagram.com/hairbyjackiejordan?igshid=YmMyMTA2M2Y=",

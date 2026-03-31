@@ -1,4 +1,6 @@
-const servicesWaxing = [
+import { ServiceGroup } from '../../types';
+
+const servicesWaxing: ServiceGroup[] = [
   [
     {
       title: "Face waxing & tinting",

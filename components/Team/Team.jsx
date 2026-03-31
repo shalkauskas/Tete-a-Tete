@@ -3,7 +3,7 @@ import SectionTitle from "../../components/SectionTitle";
 import TeamMember from "./TeamMember";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import members from "./members.js";
+import members from "./members";
 export default function Team() {
   // carousel controls
   const [currentSlide, setCurrentSlide] = useState(1);

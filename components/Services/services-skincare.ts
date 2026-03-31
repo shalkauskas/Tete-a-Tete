@@ -1,4 +1,6 @@
-const servicesSkincare = [
+import { ServiceGroup } from '../../types';
+
+const servicesSkincare: ServiceGroup[] = [
   [
     {
       title: "Anti-aging+",

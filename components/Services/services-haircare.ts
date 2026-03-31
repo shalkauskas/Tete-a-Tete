@@ -1,4 +1,6 @@
-const servicesHaircare = [
+import { ServiceGroup } from '../../types';
+
+const servicesHaircare: ServiceGroup[] = [
   [
     {
       title: 'Haircuts & styling',
@@ -7,12 +9,12 @@ const servicesHaircare = [
     },
     {
       id: 10,
-      service: 'Women’s haircut, shampoo & blowdry',
+      service: "Women's haircut, shampoo & blowdry",
       price: '$90 & Up'
     },
     {
       id: 11,
-      service: 'Men’s haircut, shampoo & blowdry',
+      service: "Men's haircut, shampoo & blowdry",
       price: '$65 & Up'
     },
     {
