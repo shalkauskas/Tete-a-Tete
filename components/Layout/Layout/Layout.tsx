@@ -1,22 +1,20 @@
-import React from "react";
-import Head from "next/head";
-import Header from "./Header";
-import Footer from "./Footer";
-import useDocumentScrollThrottled from "../Hooks/useDocumentScrollThrottled";
-import BookingMobile from "./BookingMobile";
-import Booking from "./Booking";
-export default function Layout({ children, props }) {
-  const [footerFixed, setFooterFixed] = React.useState(true);
+import React from 'react';
+import Head from 'next/head';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import BookingMobile from '../BookingMobile/BookingMobile';
+import Booking from '../Booking/Booking';
+import styles from './styles.module.css';
+
+type Props = {
+  children: React.ReactNode;
+};
+
+export default function Layout({ children }: Props) {
   const [showBooking, setShowBooking] = React.useState(false);
 
-  useDocumentScrollThrottled((callbackData) => {
-    const { currentScrollTop } = callbackData;
-    const footerHeight =
-      document.documentElement.scrollHeight - document.body.clientHeight - 154;
-    setFooterFixed(currentScrollTop < footerHeight);
-  });
   return (
-    <div className="overflow-y-hidden overflow-x-hidden relative">
+    <div className={styles.wrapper}>
       <Head>
         <title>Tete-a-Tete Salon | Newton</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -74,19 +72,16 @@ export default function Layout({ children, props }) {
         <meta property="og:site_name" content="Tete-a-Tete salon" />
         <meta
           property="og:description"
-          content="Whether you’re here to maintain your look or receive a beauty transformation, you can do it all Tête-à-Tête."
+          content="Whether you're here to maintain your look or receive a beauty transformation, you can do it all Tête-à-Tête."
         />
         <meta property="og:image" content="/android-chrome-512x512.png" />
       </Head>
       <Header onClick={() => setShowBooking(true)} />
-      <BookingMobile
-        onClick={() => setShowBooking(true)}
-        position={footerFixed}
-      />
       {showBooking && (
         <Booking showBooking={showBooking} setShowBooking={setShowBooking} />
       )}
       {children}
+      <BookingMobile onClick={() => setShowBooking(true)} />
       <Footer />
     </div>
   );

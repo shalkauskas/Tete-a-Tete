@@ -1,4 +1,4 @@
-import Layout from "../components/Layout/Layout";
+import Layout from "../components/Layout/Layout/Layout";
 import haircare from "../components/Services/services-haircare";
 import Service from "../components/Services/Service";
 

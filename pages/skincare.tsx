@@ -1,4 +1,4 @@
-import Layout from "../components/Layout/Layout";
+import Layout from "../components/Layout/Layout/Layout";
 import skincare from "../components/Services/services-skincare";
 import Service from "../components/Services/Service";
 

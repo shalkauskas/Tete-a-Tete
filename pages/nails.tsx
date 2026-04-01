@@ -1,4 +1,4 @@
-import Layout from "../components/Layout/Layout";
+import Layout from "../components/Layout/Layout/Layout";
 import nails from "../components/Services/services-nails";
 import Service from "../components/Services/Service";
 

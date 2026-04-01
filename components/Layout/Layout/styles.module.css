@@ -1,0 +1,4 @@
+.wrapper {
+  overflow-x: clip;
+  position: relative;
+}
