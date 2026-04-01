@@ -1,14 +1,14 @@
-import Image from "next/image";
-import Backdrop from "../Backdrop";
-import React from "react";
-import Button from "../Button";
+import Image from 'next/image';
+import Backdrop from '../Backdrop';
+import React from 'react';
+import Button from '../ui/Button/Button';
 export default function BookingMobile(props) {
   return (
     <div
       className={`${
-        props.position ? "fixed" : "absolute"
+        props.position ? 'fixed' : 'absolute'
       } flex justify-center py-2 text-color booking inset-x-0 z-10 border-t-2`}
-      style={{ bottom: props.position ? 0 : "9.625rem" }}
+      style={{ bottom: props.position ? 0 : '9.625rem' }}
     >
       <Button onClick={() => props.onClick(true)}>Book an Appointment</Button>
       <style jsx>{`

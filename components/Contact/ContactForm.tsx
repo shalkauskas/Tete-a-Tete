@@ -3,7 +3,7 @@ import SectionTitle from '../SectionTitle';
 import emailjs from 'emailjs-com';
 import ContactFormResponse from './ContactFormResponse';
 import { useForm } from '../Hooks/useForm';
-import Button from '../Button';
+import Button from '../ui/Button/Button';
 export default function ContactForm() {
   const [showResponse, setShowResponse] = React.useState({
     display: false,

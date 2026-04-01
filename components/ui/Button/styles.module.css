@@ -1,0 +1,14 @@
+.button {
+  display: block;
+  background-color: #895b4a;
+  border-radius: 1rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  padding: 0.5rem 2.5rem;
+}
+
+.button:hover {
+  opacity: 0.75;
+}

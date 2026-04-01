@@ -1,30 +1,30 @@
-import Image from "next/image";
-import Button from "../Button";
+import Image from 'next/image';
+import Button from '../ui/Button/Button';
 
 export default function Hairdreams(props) {
   return (
     <div
-      style={{ background: "#EDE6DD", maxWidth: "75.25rem" }}
+      style={{ background: '#EDE6DD', maxWidth: '75.25rem' }}
       className="mx-auto mt-6 rounded shadow-lg grid xl:grid-cols-3 grid-cols-2"
     >
       <div className="flex rounded-l overflow-hidden h-full col-span-2">
         <Image
           width={600}
           height={800}
-          loading={"eager"}
+          loading={'eager'}
           priority={true}
           src={
-            "https://res.cloudinary.com/dyj6lkekg/image/upload/v1711816297/tete/hairdreams1.jpg"
+            'https://res.cloudinary.com/dyj6lkekg/image/upload/v1711816297/tete/hairdreams1.jpg'
           }
           alt="Hairdreams"
         />
         <Image
           width={600}
           height={800}
-          loading={"eager"}
+          loading={'eager'}
           priority={true}
           src={
-            "https://res.cloudinary.com/dyj6lkekg/image/upload/v1711816297/tete/hairdreams2.jpg"
+            'https://res.cloudinary.com/dyj6lkekg/image/upload/v1711816297/tete/hairdreams2.jpg'
           }
           alt="Hairdreams"
         />
