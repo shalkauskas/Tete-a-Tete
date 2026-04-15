@@ -1,99 +1,57 @@
+import styles from './HandyInfo.module.css';
+
+const infoItems = [
+  {
+    image: 'blowdry',
+    alt: 'Schedule blowdry',
+    text: 'Schedule blowdry along with your color appoitment.',
+  },
+  {
+    image: 'baby',
+    alt: 'Children',
+    text: 'Kids must be under adult supervision at all times.',
+  },
+  {
+    image: 'phone-contact',
+    alt: 'Contact',
+    text: 'To schedule, change or cancel your appointmet please call us at 617-559-0660.',
+  },
+  {
+    image: 'schedule',
+    alt: 'Schedule',
+    text: 'Cancellations less than 24 hours in advance may result in a fee.',
+  },
+  {
+    image: 'payment',
+    alt: 'Payment',
+    text: (
+      <>
+        We accept all major credit cards.
+        <br />
+        (regretfully gratuity cannot be charged to the credit card).
+      </>
+    ),
+  },
+];
+
 export default function HandyInfo() {
   return (
-    <div
-      className="w-1/4 ml-auto slide-query"
-      style={{ background: "#F1E9E8" }}
-    >
-      <div className="max-w-90 mx-auto">
-        <h2 className="text-center font-bold text-black mt-10 mb-8">
-          Handy info
-        </h2>
-        {/* Blowdry */}
-        <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
-          <picture className="w-10 h-10 mx-auto inline">
-            <source type="image/webp" srcSet="blowdry.webp" />
-            <source type="image/png" srcSet="blowdry.png" />
-            <img src="blowdry.png" alt="Schedule blowdry" />
-          </picture>
-          <div className="col-span-4">
-            <p className="inline">
-              Schedule blowdry along with your color appoitment.
-            </p>
-          </div>
-        </div>
-        {/* Kids */}
-        <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
-          <picture className="w-8 h-8 mx-auto inline">
-            <source type="image/webp" srcSet="baby.webp" />
-            <source type="image/png" srcSet="baby.png" />
-            <img src="baby.png" alt="Children" />
-          </picture>
-          <div className="col-span-4">
-            <p className="inline">
-              Kids must be under adult supervision at all times.
-            </p>
-          </div>
-        </div>
-        <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
-          <picture className="w-8 h-8 mx-auto inline my-auto">
-            <source type="image/webp" srcSet="phone-contact.webp" />
-            <source type="image/png" srcSet="phone-contact.png" />
-            <img src="phone-contact.png" alt="Contact" />
-          </picture>
-          {/* Contact */}
-          <div className="col-span-4">
-            <p className="inline">
-              To schedule, change or cancel your appointmet please call us at
-              617-559-0660.
-            </p>
-          </div>
-        </div>
-        <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
-          <picture className="w-8 mx-auto inline my-auto">
-            <source type="image/webp" srcSet="schedule.webp" />
-            <source type="image/png" srcSet="schedule.png" />
-            <img src="schedule.png" alt="Schedule" />
-          </picture>
-          {/* Cancellations */}
-          <div className="col-span-4">
-            <p className="inline">
-              Cancellations less than 24 hours in advance may result in a fee.
-            </p>
-          </div>
-        </div>
-        {/* Payment */}
-        <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
-          <picture className="w-10 h-10 mx-auto inline">
-            <source type="image/webp" srcSet="payment.webp" />
-            <source type="image/png" srcSet="payment.png" />
-            <img src="payment.png" alt="Payment" />
-          </picture>
-          <div className="col-span-4">
-            <p className="inline">
-              We accept all major credit cards.
-              <br />
-              (regretfully gratuity cannot be charged to the credit card).
-            </p>
-          </div>
+    <div className={styles.container}>
+      <div className={styles.innerContainer}>
+        <h2 className={styles.title}>Handy info</h2>
+        <div className={styles.grid}>
+          {infoItems.map((item) => (
+            <>
+              <picture className={styles.icon}>
+                <source type="image/webp" srcSet={`${item.image}.webp`} />
+                <source type="image/png" srcSet={`${item.image}.png`} />
+                <img src={`${item.image}.png`} alt={item.alt} />
+              </picture>
+              <p className={styles.text}>{item.text}</p>
+            </>
+          ))}
         </div>
       </div>
-      <style jsx>{`
-        p {
-          font-size: 15px;
-          color: black;
-        }
-        .slide-query {
-          height: 600px;
-        }
-        @media (max-width: 1521px) {
-          .slide-query {
-            margin-right: auto;
-            width: auto;
-            height: auto;
-            padding-bottom: 2rem;
-          }
-        }
-      `}</style>
     </div>
   );
 }

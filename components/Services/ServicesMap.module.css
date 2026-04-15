@@ -1,0 +1,209 @@
+.container {
+  display: flex;
+  background: #ede6dd;
+  height: 600px;
+}
+
+.containerMobile {
+  flex-direction: column;
+  height: auto;
+}
+
+.imageContainer {
+  display: flex;
+}
+
+.navContainer {
+  margin-top: 1.5rem;
+  width: 10rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.navContainerVisible {
+  display: inline-block;
+}
+
+.navContainerHidden {
+  display: none;
+}
+
+.descriptionContainer {
+  width: 100%;
+}
+
+.descriptionMobile {
+  margin: 2rem 0;
+}
+
+.descriptionDesktop {
+  margin: auto 0;
+}
+
+.serviceItem {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  margin-bottom: 1rem;
+}
+
+.serviceItemGrid {
+  grid-auto-flow: column;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.serviceItemRow {
+  grid-auto-flow: row;
+}
+
+.serviceName {
+  color: black;
+  font-size: 16px;
+  text-align: left;
+  margin-right: auto;
+}
+
+.serviceNameGrid {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.serviceNameClickable {
+  color: #895b4a;
+  cursor: pointer;
+}
+
+.serviceNameClickable:hover {
+  opacity: 0.75;
+}
+
+.servicePrice {
+  font-size: 16px;
+}
+
+.servicePriceGrid {
+  grid-column-end: 7;
+  grid-column: span 2 / span 2;
+  margin-left: auto;
+}
+
+.servicePriceRow {
+  margin-right: auto;
+}
+
+/* Info popup */
+.infoPopup {
+  position: absolute;
+  background: white;
+  z-index: 20;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.infoPopupHidden {
+  display: none;
+}
+
+.infoPopupVisible {
+  display: flex;
+}
+
+.infoPopupDesktop {
+  flex-direction: row;
+  max-width: 50%;
+  padding: 2.5rem;
+  top: 20%;
+  right: 1%;
+  border-radius: 0;
+}
+
+.infoPopupMobile {
+  flex-direction: column;
+  max-width: 90%;
+  padding: 2.25rem;
+  top: 40%;
+  right: 4%;
+  border-radius: 0;
+}
+
+.infoPopupVideo {
+  padding: 0;
+  border-radius: 8px;
+}
+
+.videoContainer {
+  top: 30%;
+  right: 2%;
+  z-index: 30;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.infoIcon {
+  width: 36px;
+  height: 36px;
+}
+
+.infoIconDesktop {
+  margin-right: 1.5rem;
+  margin-bottom: auto;
+}
+
+.infoIconMobile {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.75rem;
+}
+
+.infoText {
+  color: black;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .infoText {
+    text-align: left;
+  }
+}
+
+/* Skincare logo */
+.skincareLogo {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.skincareLogoMobile {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.skincareLogoVisible {
+  display: block;
+}
+
+.skincareLogoHidden {
+  display: none;
+}
+
+.skincareText {
+  margin-bottom: 0.75rem;
+  margin-top: auto;
+}
+
+.skincareImage {
+  width: 60px;
+  height: 60px;
+}
+
+/* Bottom position class (from styled-jsx) */
+.bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 13%;
+}

@@ -2,29 +2,31 @@ import Service from './ServiceMenuItem';
 import SectionTitle from '../SectionTitle';
 import Link from 'next/link';
 import Hairdreams from './Hairdreams';
+import styles from './ServiceMenu.module.css';
+
 export default function Services() {
   return (
-    <div className="mx-auto">
+    <div className={styles.container}>
       <SectionTitle title={'Our Services'} />
-      <div className="grid lg:grid-rows-2 grid-rows-1 lg:grid-flow-col justify-center gap-6">
+      <div className={styles.grid}>
         <Link href="/haircare" passHref>
           <a>
-            <Service service={'Hair care'} background={'haircare'} />
+            <Service background={'haircare'}>Hair care</Service>
           </a>
         </Link>
         <Link href="/skincare" passHref>
           <a>
-            <Service service={'Skin care'} background={'skincare'} />
+            <Service background={'skincare'}>Skin care</Service>
           </a>
         </Link>
         <Link href="/nails" passHref>
           <a>
-            <Service service={'Nails'} background={'nails'} />
+            <Service background={'nails'}>Nails</Service>
           </a>
         </Link>
         <Link href="/waxing" passHref>
           <a>
-            <Service service={'Waxing'} background={'waxing'} />
+            <Service background={'waxing'}>Waxing</Service>
           </a>
         </Link>
       </div>
