@@ -3,7 +3,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import Image from 'next/image';
 export default function WelcomeCarousel() {
-  const createCarouselItemImage = (index, options = {}) => (
+  const createCarouselItemImage = (index: number) => (
     <div key={index} style={{ width: 'max-content', height: '400px' }}>
       <Image
         src={`https://res.cloudinary.com/dyj6lkekg/image/upload/tete/carousel_${index}.jpg`}
@@ -20,7 +20,7 @@ export default function WelcomeCarousel() {
 
   // handle media query
   const [isMobile, setIsMobile] = React.useState(false);
-  function mqChange(mq) {
+  function mqChange(mq: MediaQueryList | MediaQueryListEvent) {
     setIsMobile(mq.matches);
   }
   React.useEffect(() => {

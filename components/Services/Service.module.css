@@ -1,0 +1,99 @@
+.container {
+  padding-top: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navButtons {
+  margin-bottom: 3rem;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.slideContainer {
+  margin-left: auto;
+}
+
+.carouselWrapper {
+  display: flex;
+}
+
+.navArrowContainer {
+  display: inline-block;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: max-content;
+}
+
+.navArrowContainerHidden {
+  display: none;
+}
+
+.carouselContainer {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navArrow {
+  width: 1.25rem;
+  cursor: pointer;
+}
+
+.navArrowLeft {
+  margin-right: 0.5rem;
+}
+
+.navArrowRight {
+  margin-left: 0.5rem;
+}
+
+.navArrowInvisible {
+  visibility: hidden;
+}
+
+.navArrowVisible {
+  display: inline-block;
+}
+
+@media (max-width: 1521px) {
+  .slideContainer {
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 1052px) {
+  .navButtons {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+  }
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .slideContainer {
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .navButtons {
+    margin-left: 8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navButtons {
+    margin-left: 6rem;
+  }
+}
