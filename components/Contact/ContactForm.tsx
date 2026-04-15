@@ -5,7 +5,10 @@ import ContactFormResponse from './ContactFormResponse';
 import { useForm } from '../Hooks/useForm';
 import Button from '../ui/Button/Button';
 export default function ContactForm() {
-  const [showResponse, setShowResponse] = React.useState({
+  const [showResponse, setShowResponse] = React.useState<{
+    display: boolean;
+    code: number | null;
+  }>({
     display: false,
     code: null
   });
@@ -15,14 +18,14 @@ export default function ContactForm() {
     phone: '',
     message: ''
   });
-  function sendEmail(e) {
+  function sendEmail(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     emailjs
       .sendForm(
         'default_service',
-        process.env.NEXT_PUBLIC_templateid,
-        e.target,
-        process.env.NEXT_PUBLIC_userid
+        process.env.NEXT_PUBLIC_templateid as string,
+        e.target as HTMLFormElement,
+        process.env.NEXT_PUBLIC_userid as string
       )
       .then(
         result => {
@@ -35,7 +38,7 @@ export default function ContactForm() {
         }
       );
   }
-  const handleSubmit = code => {
+  const handleSubmit = (code: number) => {
     setShowResponse(() => ({ display: true, code: code }));
     reset();
   };
@@ -113,7 +116,7 @@ export default function ContactForm() {
               id="message"
               name="message"
               required
-              rows="8"
+              rows={8}
               value={values.message}
               onChange={handleChange}
             />

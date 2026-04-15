@@ -1,7 +1,12 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
-export default function SectionTitle(props) {
-  const router = useRouter();
+
+interface SectionTitleProps {
+  title: string;
+  showLink?: boolean;
+  isMobile?: boolean;
+}
+
+export default function SectionTitle(props: SectionTitleProps) {
   return (
     <div className="relative">
       <h1 className="font-bold text-center text-color text-2xl pt-10 mb-5 mt-7">

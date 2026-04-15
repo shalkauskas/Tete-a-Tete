@@ -1,4 +1,10 @@
-export default function Backdrop(props) {
+interface BackdropProps {
+  toggle: boolean;
+  blur: boolean;
+  onClick: () => void;
+}
+
+export default function Backdrop(props: BackdropProps) {
   return (
     <div
       style={{

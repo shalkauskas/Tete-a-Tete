@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 3rem auto;
+  gap: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    margin: 0 1rem;
+    flex-direction: column;
+  }
+}
