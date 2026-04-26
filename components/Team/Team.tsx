@@ -4,6 +4,7 @@ import TeamMember from './TeamMember';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import members from './members';
+import styles from './Team.module.css';
 export default function Team() {
   // carousel controls
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -60,11 +61,11 @@ export default function Team() {
   const mobileSize = () => (isMobile ? false : true);
   const mobileWidth = () => (isMobile ? '250px' : '823px');
   return (
-    <div className="container mx-auto">
+    <div className={styles.container}>
       <SectionTitle title={'Meet our team'} />
-      <div className="flex flex-wrap flex-row justify-center relative team mx-auto">
-        <div className="w-11/12 header-color sm:w-3/4 md:w-2/4 lg:w-2/4 xl:w-80 mb-6">
-          <p className="mt-4">
+      <div className={styles.teamWrapper}>
+        <div className={styles.descriptionWrapper}>
+          <p className={styles.description}>
             We&apos;ve been serving the Newton area since 1999 and have a
             pristine reputation for our highly trained stylists who continually
             upgrade their skills. By using the very best products on the market
@@ -75,20 +76,20 @@ export default function Team() {
           </p>
         </div>
 
-        <div className="flex mr-auto ml-auto">
-          <div className="inline-block my-auto min-w-content">
+        <div className={styles.carouselWrapper}>
+          <div className={`${styles.navArrowContainer} ${styles.minWidthContent}`}>
             <picture>
               <source type="image/webp" srcSet="left.webp" />
               <source type="image/png" srcSet="left.png" />
               <img
                 onClick={prev}
-                className="w-5 cursor-pointer mr-2 inline-block"
+                className={`${styles.navArrow} ${styles.navArrowLeft}`}
                 src="left.png"
                 alt="Previous team member"
-              ></img>
+              />
             </picture>
           </div>
-          <div className="inline-block">
+          <div className={styles.carouselContainer}>
             <Carousel
               showThumbs={false}
               showArrows={false}
@@ -106,35 +107,20 @@ export default function Team() {
             </Carousel>
           </div>
 
-          <div className="inline-block my-auto min-w-content">
+          <div className={`${styles.navArrowContainer} ${styles.minWidthContent}`}>
             <picture>
               <source type="image/webp" srcSet="right.webp" />
               <source type="image/png" srcSet="right.png" />
               <img
                 onClick={next}
-                className="w-5 cursor-pointer ml-2 inline-block"
+                className={`${styles.navArrow} ${styles.navArrowRight}`}
                 src="right.png"
                 alt="Next team member"
-              ></img>
+              />
             </picture>
           </div>
         </div>
       </div>
-      <style jsx>{`
-        @media screen and (max-width: 1400px) {
-          .team {
-            max-width: 90%;
-          }
-        }
-        @media screen and (max-width: 400px) {
-          .team {
-            max-width: 100%;
-          }
-        }
-        .min-w-content {
-          min-width: fit-content;
-        }
-      `}</style>
     </div>
   );
 }
