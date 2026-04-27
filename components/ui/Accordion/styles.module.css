@@ -1,0 +1,58 @@
+.header {
+  display: block;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.header:focus {
+  outline: none;
+}
+
+.arrow {
+  display: inline-block;
+  width: 1.5rem;
+  margin-left: 1rem;
+  transition: transform 0.3s;
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+.content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.contentOpen {
+  grid-template-rows: 1fr;
+}
+
+.contentInner {
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .header {
+    cursor: default;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .content {
+    grid-template-rows: 1fr;
+  }
+
+  .contentInner {
+    overflow: visible;
+  }
+}
