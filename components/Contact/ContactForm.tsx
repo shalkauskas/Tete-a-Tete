@@ -1,9 +1,10 @@
 import React from 'react';
 import SectionTitle from '../SectionTitle';
 import emailjs from 'emailjs-com';
-import ContactFormResponse from './ContactFormResponse';
+import { ContactFormResponse } from './ContactFormResponse';
 import { useForm } from '../Hooks/useForm';
 import Button from '../ui/Button/Button';
+import styles from './ContactForm.module.css';
 export default function ContactForm() {
   const [showResponse, setShowResponse] = React.useState<{
     display: boolean;
@@ -44,26 +45,26 @@ export default function ContactForm() {
   };
   const responseCode = showResponse.code;
   return (
-    <div className="container mx-auto max-w-sm">
+    <div className={styles.container}>
       <SectionTitle title={'Get in touch'} />
 
-      <div className="mx-auto lg:w-1/2 sm:w-3/4 w-11/12">
-        <p className="italic text-gray-500 text-sm mb-4">
+      <div className={styles.formWrapper}>
+        <p className={styles.note}>
           Please do not change or cancel appointments over email. To modify your
           appointment call salon directly at 617-559-0660
         </p>
         <form
           action="sumbit"
-          className="mx-auto inline-block text-left w-full flex flex-col gap-4 pb-24"
+          className={styles.form}
           autoComplete="on"
           onSubmit={sendEmail}
         >
-          <div className="w-full">
-            <label className="font-bold" htmlFor="name">
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="name">
               Name
             </label>
             <input
-              className="w-full py-1 px-4"
+              className={styles.input}
               type="text"
               id="name"
               name="name"
@@ -74,12 +75,12 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="w-full">
-            <label className="font-bold" htmlFor="email">
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="email">
               Email address
             </label>
             <input
-              className="w-full py-1 px-4"
+              className={styles.input}
               type="text"
               id="email"
               name="email"
@@ -90,13 +91,13 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="w-full">
-            <label className="font-bold" htmlFor="phone">
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="phone">
               Phone number
             </label>
 
             <input
-              className="w-full py-1 px-4"
+              className={styles.input}
               type="text"
               id="phone"
               placeholder="***-***-****"
@@ -106,13 +107,12 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="w-full">
-            <label className="font-bold" htmlFor="message">
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="message">
               Message
             </label>
             <textarea
-              className="w-full py-1 px-4"
-              type="text"
+              className={styles.input}
               id="message"
               name="message"
               required
@@ -121,7 +121,7 @@ export default function ContactForm() {
               onChange={handleChange}
             />
           </div>
-          <Button type="submit" className="px-24 mx-auto">
+          <Button type="submit" className={styles.submitButton}>
             Send
           </Button>
         </form>
@@ -131,20 +131,6 @@ export default function ContactForm() {
         responseCode={responseCode}
         showResponse={showResponse.display}
       />
-      <style jsx>{`
-        input,
-        textarea {
-          background: rgba(229, 229, 229, 0.5);
-          vertical-align: middle;
-          display: inline-block;
-        }
-        label:after {
-          content: '*';
-          color: red;
-          font-size: 0.8rem;
-          vertical-align: top;
-        }
-      `}</style>
     </div>
   );
 }

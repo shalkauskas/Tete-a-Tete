@@ -1,25 +1,24 @@
 import Backdrop from '../Backdrop';
-const ContactFormResponse = params => {
-  const openResponse = params.showResponse ? 'block' : 'hidden';
+import styles from './ContactFormResponse.module.css';
+type Props = {
+  showResponse: boolean;
+  setShowResponse: (arg0: { display: boolean; code: number | null }) => void;
+  responseCode: number | null;
+};
+export const ContactFormResponse = (props: Props) => {
   return (
     <div
-      className={`${openResponse} absolute w-full flex justify-center py-2  bottom-0 left-0 h-full`}
+      className={`${styles.overlay} ${props.showResponse ? styles.shown : styles.hidden}`}
     >
-      <div
-        className="text-center z-50 lg:w-1/2 sm:w-3/4 w-11/12 absolute inset-x-2/4 rounded-lg xl:p-24 sm:p-16 py-10 px-4"
-        style={{ backgroundColor: '#F0EAE7', bottom: '8%' }}
-      >
-        <div className="px-10 sm:px-2">
-          <h2
-            className="sm:text-xl font-bold mb-4"
-            style={{ color: 'rgba(77, 73, 73, 1)' }}
-          >
-            {params.responseCode === 200
+      <div className={styles.dialog}>
+        <div className={styles.body}>
+          <h2 className={styles.title}>
+            {props.responseCode === 200
               ? 'Thank you for contacting Tete-A-Tete!'
               : 'Ooops! Something went wrong!'}
           </h2>
           <p>
-            {params.responseCode === 200
+            {props.responseCode === 200
               ? 'We will get back to you shortly. If you are willing to book, change or cancel the appointment, please call us at (617) 559‑0660.'
               : 'If you are willing to book, change or cancel the appointment, please call us at (617) 559‑0660.'}
           </p>
@@ -29,24 +28,22 @@ const ContactFormResponse = params => {
             <img
               src="/contact-confirmation.png"
               alt="Phone"
-              className="w-24 mx-auto mt-6"
+              className={styles.image}
             />
           </picture>
         </div>
         <span
-          className="absolute cursor-pointer right-0 text-3xl leading-none"
-          onClick={() => params.setShowResponse(false)}
-          style={{ top: '-6px' }}
+          className={styles.close}
+          onClick={() => props.setShowResponse({ display: false, code: null })}
         >
           &times;
         </span>
       </div>
       <Backdrop
-        toggle={openResponse}
-        onClick={() => params.setShowResponse(false)}
+        toggle={props.showResponse}
+        onClick={() => props.setShowResponse({ display: false, code: null })}
         blur={true}
       />
     </div>
   );
 };
-export default ContactFormResponse;

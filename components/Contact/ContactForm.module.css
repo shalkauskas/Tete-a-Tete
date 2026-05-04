@@ -1,0 +1,86 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.formWrapper {
+  width: 91.666667%;
+  margin: 0 auto;
+}
+
+.note {
+  font-style: italic;
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.form {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 1rem;
+  padding-bottom: 6rem;
+}
+
+.field {
+  width: 100%;
+}
+
+.label {
+  font-weight: 700;
+}
+
+.label::after {
+  content: '*';
+  color: red;
+  font-size: 0.8rem;
+  vertical-align: top;
+}
+
+.input {
+  width: 100%;
+  padding: 0.25rem 1rem;
+  background: rgba(229, 229, 229, 0.5);
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.submitButton {
+  padding: 0 6rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+
+  .formWrapper {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+
+  .formWrapper {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}

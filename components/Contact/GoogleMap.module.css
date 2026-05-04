@@ -1,0 +1,36 @@
+.wrapper {
+  width: 100%;
+  margin-left: auto;
+}
+
+.layout {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0;
+  gap: 2rem;
+}
+
+.infoBox {
+  background: white;
+}
+
+.infoTitle {
+  font-size: 1.5rem;
+  color: #895B4A;
+}
+
+.directionsLink {
+  display: contents;
+}
+
+.directionsButton {
+  margin-left: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: max-content;
+  }
+}

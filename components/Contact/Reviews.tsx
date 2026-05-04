@@ -1,5 +1,6 @@
 import ReviewsItem from "./ReviewsItem";
 import React from "react";
+import styles from "./Reviews.module.css";
 export default function Reviews(props) {
   const placeid = process.env.NEXT_PUBLIC_placeid;
   const placesAPIkey = process.env.NEXT_PUBLIC_placesAPIkey;
@@ -24,10 +25,7 @@ export default function Reviews(props) {
   const [reviews, setReviews] = React.useState([]);
 
   return (
-    <div
-      style={{ height: "calc(100% - 180px)" }}
-      className={`fixed bottom-0 left-0 bg-white 2xl:w-1/4 lg:w-1/3 sm:w-1/2 w-3/4 p-5 z-20 shadow-inner border overflow-y-scroll`}
-    >
+    <div className={styles.reviews}>
       <div>
         {reviews.length < 1 ? (
           <div className={"loader"} />
@@ -39,12 +37,12 @@ export default function Reviews(props) {
             ))
         )}
 
-        <div className="text-center">
+        <div className={styles.moreLink}>
           <a
             href="https://maps.google.com/?cid=13262548078072798292"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline text-blue-600 text-sm"
+            className={styles.moreLinkAnchor}
           >
             More reviews
           </a>

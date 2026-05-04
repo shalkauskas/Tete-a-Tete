@@ -1,13 +1,14 @@
 import React from "react";
+import styles from "./ReviewsItem.module.css";
 export default function ReviewsItem(props) {
   const { item, index } = props;
   const [expand, setExpand] = React.useState(false);
   const expandButton = (
-    <span className={`${item.text.length > 150 ? "inline-block" : "hidden"}`}>
+    <span className={item.text.length > 150 ? styles.expandWrap : styles.expandWrapHidden}>
       {expand ? "" : "..."}
       <a
         onClick={() => setExpand((prevState) => !prevState)}
-        className={`ml-2 text-blue-600 cursor-pointer underline`}
+        className={styles.expandLink}
       >
         {`Read ${expand ? "less" : "more"}`}
       </a>
@@ -15,33 +16,33 @@ export default function ReviewsItem(props) {
   );
   const text = item.text.substring(0, expand ? 4000 : 150);
   return (
-    <div className="flex mb-4 flex-row" key={index}>
-      <div className="flex-shrink-0">
+    <div className={styles.item} key={index}>
+      <div className={styles.imageWrapper}>
         <img
           width="50px"
           src={item.profile_photo_url}
-          className="mr-4 mt-2"
+          className={styles.profileImage}
           loading="lazy"
         />
       </div>
       <div>
         <a target="_blank" rel="noopener noreferrer" href={item.author_url}>
-          <h2 className="text-blue-500 font-bold text-sm">
+          <h2 className={styles.authorName}>
             {item.author_name}
           </h2>
         </a>
-        <span className="text-gray-500 text-xs align-text-top">
+        <span className={styles.timestamp}>
           {item.relative_time_description}
         </span>
-        <div className="">
+        <div>
           <img
             width="100px"
             height="20px"
             src="stars.png"
-            className="mr-3"
+            className={styles.stars}
             loading="lazy"
           />
-          <p style={{ fontSize: "14px" }} className="leading-snug">
+          <p className={styles.text}>
             {text}
             {expandButton}
           </p>
