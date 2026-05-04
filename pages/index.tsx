@@ -7,7 +7,6 @@ import Contact from '../components/Contact/Contact';
 import ContactForm from '../components/Contact/ContactForm';
 import Layout from '../components/Layout/Layout/Layout';
 import ScrollButton from '../components/ScrollButton';
-import smoothscroll from 'smoothscroll-polyfill';
 import { useRouter } from 'next/router';
 import Giftcard from '@/components/Layout/Giftcard/Giftcard';
 import styles from './index.module.css';
@@ -39,12 +38,7 @@ export default function Home() {
     }
   }, [id]);
   const scroll = tag => {
-    smoothscroll.polyfill();
-    tag.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest'
-    });
+    tag.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (

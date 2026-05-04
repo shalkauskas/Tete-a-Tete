@@ -1,6 +1,5 @@
 import React from 'react';
 import useDocumentScrollThrottled from './Hooks/useDocumentScrollThrottled';
-import smoothscroll from 'smoothscroll-polyfill';
 import styles from './ScrollButton.module.css';
 export default function ScrollButton() {
   const [showScroll, setShowScroll] = React.useState(false);
@@ -12,7 +11,6 @@ export default function ScrollButton() {
     setMoveScroll(currentScrollTop > bottom);
   });
   const scrollTop = () => {
-    smoothscroll.polyfill();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   return (
