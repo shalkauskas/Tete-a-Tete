@@ -19,7 +19,7 @@ interface ServicesMapProps {
   showSkinCare: boolean;
   showMobile: boolean;
   mapNav: React.ReactNode;
-  renderNav: string;
+  renderNav: boolean;
 }
 
 interface InfoNoteProps {
@@ -163,8 +163,8 @@ export default function ServicesMap(props: ServicesMapProps) {
         />
         {/* rendering navigation for services */}
         <div
-          className={`${props.renderNav} ${styles.navContainer} ${
-            props.showMobile
+          className={`${styles.navContainer} ${
+            props.renderNav && props.showMobile
               ? styles.navContainerVisible
               : styles.navContainerHidden
           }`}

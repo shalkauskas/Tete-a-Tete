@@ -67,7 +67,7 @@ export default function Service(props: ServiceProps) {
       showSkinCare={props.title === 'Skin care'}
       showMobile={isMobile}
       mapNav={mapNavButtons}
-      renderNav={props.service.length <= 1 ? 'hidden' : 'block'}
+      renderNav={props.service.length > 1}
     />
   ));
 
