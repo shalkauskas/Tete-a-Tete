@@ -10,6 +10,7 @@ import ScrollButton from '../components/ScrollButton';
 import smoothscroll from 'smoothscroll-polyfill';
 import { useRouter } from 'next/router';
 import Giftcard from '@/components/Layout/Giftcard/Giftcard';
+import styles from './index.module.css';
 
 export default function Home() {
   const router = useRouter();
@@ -49,34 +50,25 @@ export default function Home() {
   return (
     <Layout>
       <WelcomeCarousel />
-      <div className="content relative">
-        <div className="relative">
+      <div className={styles.content}>
+        <div className={styles.section}>
           <div
             ref={servicesRef}
-            className="absolute"
-            style={{ top: '-170px' }}
+            className={styles.scrollAnchor}
             id="services"
           />
           <Services />
         </div>
-        <div className="relative">
-          <div ref={teamRef} className="absolute" style={{ top: '-170px' }} />
+        <div className={styles.section}>
+          <div ref={teamRef} className={styles.scrollAnchor} />
           <Team />
         </div>
-        <div className="relative">
-          <div
-            ref={productsRef}
-            className="absolute"
-            style={{ top: '-170px' }}
-          />
+        <div className={styles.section}>
+          <div ref={productsRef} className={styles.scrollAnchor} />
           <Products />
         </div>
-        <div className="relative">
-          <div
-            ref={contactRef}
-            className="absolute"
-            style={{ top: '-170px' }}
-          />
+        <div className={styles.section}>
+          <div ref={contactRef} className={styles.scrollAnchor} />
           <Contact />
         </div>
         <ContactForm />

@@ -1,0 +1,21 @@
+.container {
+  max-width: 1350px;
+  margin: 12rem auto 1.5rem;
+}
+
+.slide {
+  width: max-content;
+  height: 400px;
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+  }
+}

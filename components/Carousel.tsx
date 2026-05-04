@@ -2,9 +2,10 @@ import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import Image from 'next/image';
+import styles from './Carousel.module.css';
 export default function WelcomeCarousel() {
   const createCarouselItemImage = (index: number) => (
-    <div key={index} style={{ width: 'max-content', height: '400px' }}>
+    <div key={index} className={styles.slide}>
       <Image
         src={`https://res.cloudinary.com/dyj6lkekg/image/upload/tete/carousel_${index}.jpg`}
         width={562}
@@ -40,7 +41,7 @@ export default function WelcomeCarousel() {
     }
   };
   return (
-    <div className="mx-auto	mb-6 mt-48">
+    <div className={styles.container}>
       <Carousel
         showThumbs={false}
         infiniteLoop={true}
@@ -53,21 +54,6 @@ export default function WelcomeCarousel() {
       >
         {baseChildren.props.children}
       </Carousel>
-      <style jsx>{`
-        div {
-          max-width: 1350px;
-        }
-        @media screen and (max-width: 1400px) {
-          div {
-            max-width: 90%;
-          }
-        }
-        @media screen and (max-width: 1024px) {
-          div {
-            max-width: 100%;
-          }
-        }
-      `}</style>
     </div>
   );
 }

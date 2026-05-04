@@ -1,56 +1,37 @@
-import Link from "next/link";
+import Link from 'next/link';
+import styles from './SectionTitle.module.css';
 
 interface SectionTitleProps {
   title: string;
   showLink?: boolean;
-  isMobile?: boolean;
 }
 
 export default function SectionTitle(props: SectionTitleProps) {
   return (
-    <div className="relative">
-      <h1 className="font-bold text-center text-color text-2xl pt-10 mb-5 mt-7">
-        {props.title}
-      </h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>{props.title}</h1>
       {/* conditional rendering of "Back to services button" */}
       <Link
         passHref={true}
         scroll={false}
         href={{
-          pathname: "/",
-          query: { id: "services" },
+          pathname: '/',
+          query: { id: 'services' }
         }}
       >
         <a
-          style={{ fontSize: "1rem" }}
-          className={`text-color font-light italic text underline inline-block absolute bottom-0 cursor-pointer ${
-            props.showLink ? "inline-block" : "hidden"
+          className={`${styles.link} ${
+            props.showLink ? styles.shown : styles.hidden
           }`}
         >
           <img
             src="left.png"
-            className="w-3 inline-block mr-2"
+            className={styles.icon}
             alt="Go back to services"
           />
-          <span>Back to services</span>
+          <span className={styles.label}>Back to services</span>
         </a>
       </Link>
-      <style jsx>
-        {`
-          @media (max-width: 415px) {
-            span {
-              display: none;
-            }
-            img {
-              margin-left: 25%;
-              margin-bottom: 0.5rem;
-            }
-            a {
-              width: 100%;
-            }
-          }
-        `}
-      </style>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import useDocumentScrollThrottled from './Hooks/useDocumentScrollThrottled';
 import smoothscroll from 'smoothscroll-polyfill';
+import styles from './ScrollButton.module.css';
 export default function ScrollButton() {
   const [showScroll, setShowScroll] = React.useState(false);
   const [moveScroll, setMoveScroll] = React.useState(false);
@@ -22,47 +23,13 @@ export default function ScrollButton() {
         <img
           src="scrollToTop.png"
           alt="Scroll to top"
-          className={`${moveScroll ? 'moveDown' : 'moveUp'} scrollTop`}
+          className={`${styles.scrollTop} ${
+            moveScroll ? styles.moveDown : styles.moveUp
+          }`}
           onClick={scrollTop}
-          style={{
-            height: 40,
-            width: 40,
-            display: showScroll ? 'flex' : 'none'
-          }}
+          style={{ display: showScroll ? 'flex' : 'none' }}
         />
       </picture>
-      <style jsx>{`
-        .scrollTop {
-          position: fixed;
-          bottom: 60px;
-          z-index: 1000;
-          cursor: pointer;
-          animation: fadeIn 0.3s;
-          transition: opacity 0.4s;
-          opacity: 0.5;
-          right: 10px;
-        }
-        .moveUp {
-          transition: transform 0.3s linear;
-          transform: translateY(30px);
-        }
-        .moveDown {
-          transition: transform 0.3s linear;
-          transform: translateY(-110px);
-        }
-        .scrollTop:hover {
-          opacity: 1;
-        }
-
-        @keyframes fadeIn {
-          0% {
-            opacity: 0;
-          }
-          100% {
-            opacity: 0.5;
-          }
-        }
-      `}</style>
     </div>
   );
 }
