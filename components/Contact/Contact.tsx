@@ -3,24 +3,25 @@ import SectionTitle from '../SectionTitle';
 import Map from './GoogleMap';
 import Reviews from './Reviews';
 import Backdrop from '../Backdrop';
+import styles from './Contact.module.css';
 export default function Contact() {
   const [openReview, setOpenReview] = React.useState(false);
   return (
-    <div className="container mx-auto md:max-w-90">
+    <div className={styles.container}>
       <SectionTitle title={'Contact'} />
       {/* contact section grid*/}
-      <div className="pt-6 grid grid-row-2 grid-flow-row gap-4 sm:grid-flow-row md:grid-flow-col-row lg:grid-flow-col-dense xl:grid-flow-col md:justify-items-center">
+      <div className={styles.grid}>
         {/* left side info grid */}
-        <div className="map text-left w-screen md:w-full lg:w-full xl:w-full sm:w-3/4 grid grid-row-2 grid-flow-row gap-4 mx-auto">
+        <div className={styles.info}>
           {/* location */}
-          <div className="grid grid-flow-col grid-cols-5">
-            <picture className="w-10 h-10 inline mx-auto">
+          <div className={styles.row}>
+            <picture className={styles.iconWrapper}>
               <source type="image/webp" srcSet="location.webp" />
               <source type="image/png" srcSet="location.png" />
               <img src="location.png" alt="Location" />
             </picture>
-            <div className="col-span-4">
-              <p className="inline">
+            <div className={styles.detail}>
+              <p className={styles.inlineText}>
                 <b>Tête‑à‑Tête Salon </b>
                 <br />
                 765 Beacon Street, Newton Centre, MA 02459
@@ -28,24 +29,24 @@ export default function Contact() {
             </div>
           </div>
           {/* phone */}
-          <div className="grid grid-flow-col grid-cols-5">
-            <picture className="w-10 mx-auto inline">
+          <div className={styles.row}>
+            <picture className={styles.iconWrapper}>
               <source type="image/webp" srcSet="phone-contact.webp" />
               <source type="image/png" srcSet="phone-contact.png" />
               <img src="phone-contact.png" alt="Phone" />
             </picture>
-            <div className="col-span-4">
-              <p className="inline">(617) 559‑0660</p>
+            <div className={styles.detail}>
+              <p className={styles.inlineText}>(617) 559‑0660</p>
             </div>
           </div>
           {/* hours */}
-          <div className="grid grid-flow-col grid-cols-5">
-            <picture className="w-10 mx-auto inline">
-              <img src="clock-regular.svg" alt="Hours" className="icon" />
+          <div className={styles.row}>
+            <picture className={styles.iconWrapper}>
+              <img src="clock-regular.svg" alt="Hours" className={styles.icon} />
             </picture>
-            <div className="col-span-4 leading-relaxed">
-              <p className="font-bold">Hours of Operation:</p>
-              <p className="pt-3">
+            <div className={styles.detailHours}>
+              <p className={styles.bold}>Hours of Operation:</p>
+              <p className={styles.hoursList}>
                 Monday: 9am - 5pm <br />
                 Tuesday: 9am - 5pm <br />
                 Wednesday: 9am - 5pm <br />
@@ -57,9 +58,9 @@ export default function Contact() {
             </div>
           </div>
           {/* social media and direction button */}
-          <div className="grid grid-flow-col grid-cols-5">
-            <span className="md:block hidden"></span>
-            <div className="md:col-span-4 col-span-5">
+          <div className={styles.row}>
+            <span className={styles.spacer}></span>
+            <div className={styles.social}>
               <picture>
                 <source type="image/webp" srcSet="google.webp" />
                 <source type="image/png" srcSet="google.png" />
@@ -67,7 +68,7 @@ export default function Contact() {
                   onClick={() => setOpenReview(prevState => !prevState)}
                   src="google.png"
                   alt="Google rating"
-                  className="w-48 mx-auto md:mr-12 mr-5 ml-2 md:ml-0 inline my-4 hover:opacity-75 cursor-pointer"
+                  className={styles.googleImage}
                 />
               </picture>
               {openReview && (
@@ -85,7 +86,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.instagram.com/teteateteccg/"
-                className="contents"
+                className={styles.socialLink}
               >
                 <picture>
                   <source type="image/webp" srcSet="instagram-contact.webp" />
@@ -93,7 +94,7 @@ export default function Contact() {
                   <img
                     src="instagram-contact.png"
                     alt="Instagram"
-                    className="w-10 h-10 mx-auto inline mr-5 my-auto hover:opacity-75"
+                    className={styles.socialIcon}
                   />
                 </picture>
               </a>
@@ -101,7 +102,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.facebook.com/TeteATeteSalon"
-                className="contents"
+                className={styles.socialLink}
               >
                 <picture>
                   <source type="image/webp" srcSet="facebook.webp" />
@@ -109,7 +110,7 @@ export default function Contact() {
                   <img
                     src="facebook.png"
                     alt="Facebook"
-                    className="w-10 h-10 mx-auto inline my-auto mr-2 hover:opacity-75"
+                    className={styles.socialIconLast}
                   />
                 </picture>
               </a>
@@ -117,24 +118,10 @@ export default function Contact() {
           </div>
         </div>
         {/* map */}
-        <div className="w-screen md:w-full map md:max-w-full sm:max-w-3/4 sm:mx-auto text-center sm:max-w-90">
+        <div className={styles.mapColumn}>
           <Map />
         </div>
       </div>
-      <style jsx>{`
-        .icon {
-          filter: invert(40%) sepia(12%) saturate(1409%) hue-rotate(330deg)
-            brightness(92%) contrast(94%);
-        }
-        @media screen and (max-width: 500px) {
-          .map {
-            width: 100vw;
-          }
-          .contact {
-            max-width: 100%;
-          }
-        }
-      `}</style>
     </div>
   );
 }
