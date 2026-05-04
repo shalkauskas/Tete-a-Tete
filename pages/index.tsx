@@ -1,12 +1,12 @@
 import React from 'react';
-import WelcomeCarousel from '../components/Carousel';
+import WelcomeCarousel from '../components/ui/Carousel/Carousel';
 import Services from '../components/Services/ServiceMenu';
 import Team from '../components/Team/Team';
 import Products from '../components/Products';
 import Contact from '../components/Contact/Contact';
 import ContactForm from '../components/Contact/ContactForm';
 import Layout from '../components/Layout/Layout/Layout';
-import ScrollButton from '../components/ScrollButton';
+import ScrollButton from '../components/ui/ScrollButton/ScrollButton';
 import { useRouter } from 'next/router';
 import Giftcard from '@/components/Layout/Giftcard/Giftcard';
 import styles from './index.module.css';

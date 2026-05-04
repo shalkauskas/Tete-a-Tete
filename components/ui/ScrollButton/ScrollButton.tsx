@@ -1,5 +1,5 @@
 import React from 'react';
-import useDocumentScrollThrottled from './Hooks/useDocumentScrollThrottled';
+import useDocumentScrollThrottled from '../../../hooks/useDocumentScrollThrottled';
 import styles from './ScrollButton.module.css';
 export default function ScrollButton() {
   const [showScroll, setShowScroll] = React.useState(false);

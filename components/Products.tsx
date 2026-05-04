@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import SectionTitle from './SectionTitle';
+import SectionTitle from './ui/SectionTitle/SectionTitle';
 import Accordion from './ui/Accordion/Accordion';
 import styles from './Products.module.css';
 

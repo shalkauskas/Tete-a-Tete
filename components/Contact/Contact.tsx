@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionTitle from '../SectionTitle';
+import SectionTitle from '../ui/SectionTitle/SectionTitle';
 import Map from './GoogleMap';
 import Reviews from './Reviews';
 import Backdrop from '../Backdrop';
@@ -42,7 +42,11 @@ export default function Contact() {
           {/* hours */}
           <div className={styles.row}>
             <picture className={styles.iconWrapper}>
-              <img src="clock-regular.svg" alt="Hours" className={styles.icon} />
+              <img
+                src="clock-regular.svg"
+                alt="Hours"
+                className={styles.icon}
+              />
             </picture>
             <div className={styles.detailHours}>
               <p className={styles.bold}>Hours of Operation:</p>

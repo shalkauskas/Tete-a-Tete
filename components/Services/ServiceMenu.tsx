@@ -1,5 +1,5 @@
 import Service from './ServiceMenuItem';
-import SectionTitle from '../SectionTitle';
+import SectionTitle from '../ui/SectionTitle/SectionTitle';
 import Link from 'next/link';
 import Hairdreams from './Hairdreams';
 import styles from './ServiceMenu.module.css';

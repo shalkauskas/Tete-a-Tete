@@ -1,6 +1,6 @@
 import React from 'react';
 import Phone from '../Phone/Phone';
-import useDocumentScrollThrottled from '../../Hooks/useDocumentScrollThrottled';
+import useDocumentScrollThrottled from '../../../hooks/useDocumentScrollThrottled';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import styles from './styles.module.css';

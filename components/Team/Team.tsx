@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import SectionTitle from '../SectionTitle';
+import SectionTitle from '../ui/SectionTitle/SectionTitle';
 import TeamMember from './TeamMember';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import members from './members';
 import styles from './Team.module.css';
+import members from 'constants/members';
 export default function Team() {
   // carousel controls
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -77,7 +77,9 @@ export default function Team() {
         </div>
 
         <div className={styles.carouselWrapper}>
-          <div className={`${styles.navArrowContainer} ${styles.minWidthContent}`}>
+          <div
+            className={`${styles.navArrowContainer} ${styles.minWidthContent}`}
+          >
             <picture>
               <source type="image/webp" srcSet="left.webp" />
               <source type="image/png" srcSet="left.png" />
@@ -107,7 +109,9 @@ export default function Team() {
             </Carousel>
           </div>
 
-          <div className={`${styles.navArrowContainer} ${styles.minWidthContent}`}>
+          <div
+            className={`${styles.navArrowContainer} ${styles.minWidthContent}`}
+          >
             <picture>
               <source type="image/webp" srcSet="right.webp" />
               <source type="image/png" srcSet="right.png" />

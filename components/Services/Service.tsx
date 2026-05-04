@@ -1,4 +1,4 @@
-import SectionTitle from '../SectionTitle';
+import SectionTitle from '../ui/SectionTitle/SectionTitle';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import ServicesMap from './ServicesMap';

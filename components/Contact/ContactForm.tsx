@@ -1,8 +1,8 @@
 import React from 'react';
-import SectionTitle from '../SectionTitle';
+import SectionTitle from '../ui/SectionTitle/SectionTitle';
 import emailjs from 'emailjs-com';
 import { ContactFormResponse } from './ContactFormResponse';
-import { useForm } from '../Hooks/useForm';
+import { useForm } from '../../hooks/useForm';
 import Button from '../ui/Button/Button';
 import styles from './ContactForm.module.css';
 export default function ContactForm() {
