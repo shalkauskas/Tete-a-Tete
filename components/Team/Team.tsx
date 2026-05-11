@@ -1,65 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SectionTitle from '../ui/SectionTitle/SectionTitle';
+import IconButton from '../ui/IconButton/IconButton';
+import ChevronLeft from '../ui/icons/ChevronLeft';
+import ChevronRight from '../ui/icons/ChevronRight';
 import TeamMember from './TeamMember';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 import styles from './Team.module.css';
 import members from 'constants/members';
+
+const SLIDES_PER_VIEW = 3;
+const SLIDE_WIDTH = 272;
+
 export default function Team() {
-  // carousel controls
-  const [currentSlide, setCurrentSlide] = useState(1);
-  const lastSlide = members.length - 1;
+  const totalPages = Math.max(1, Math.ceil(members.length / SLIDES_PER_VIEW));
+  const maxStartIndex = Math.max(0, members.length - SLIDES_PER_VIEW);
+  const [page, setPage] = useState(0);
 
-  const next = () => {
-    if (currentSlide >= lastSlide - 1 && !isMobile) {
-      setCurrentSlide(1);
-    } else if (currentSlide >= lastSlide && isMobile) {
-      setCurrentSlide(0);
-    } else {
-      isMobile
-        ? setCurrentSlide(currentSlide + 1)
-        : setCurrentSlide(currentSlide + 3);
-    }
-  };
-  const prev = () => {
-    if (currentSlide === 1 && !isMobile) {
-      setCurrentSlide(lastSlide);
-    } else if (currentSlide === 0 && isMobile) {
-      setCurrentSlide(lastSlide);
-    } else {
-      isMobile
-        ? setCurrentSlide(currentSlide - 1)
-        : setCurrentSlide(currentSlide - 3);
-    }
-  };
-  // members
-  const mapMembers = members.map(member => (
-    <TeamMember
-      key={member.id}
-      name={member.name}
-      title={member.title}
-      description={member.description}
-      photo={member.photo}
-      link={member.link}
-    />
-  ));
-  // responsive carousel
-  const [isMobile, setIsMobile] = useState(false);
-  function mqChange(mq) {
-    setIsMobile(mq.matches);
-    mq.matches ? setCurrentSlide(0) : setCurrentSlide(1);
-  }
-  useEffect(() => {
-    const mq = window.matchMedia('screen and (max-width: 960px)');
-    mq.addListener(mqChange);
-    mqChange(mq);
+  const next = () => setPage(p => (p + 1) % totalPages);
+  const prev = () => setPage(p => (p - 1 + totalPages) % totalPages);
 
-    return () => {
-      mq.removeListener(mqChange);
-    };
-  }, []);
-  const mobileSize = () => (isMobile ? false : true);
-  const mobileWidth = () => (isMobile ? '250px' : '823px');
+  const startIndex = Math.min(page * SLIDES_PER_VIEW, maxStartIndex);
+  const trackOffset = startIndex * SLIDE_WIDTH;
+
   return (
     <div className={styles.container}>
       <SectionTitle title={'Meet our team'} />
@@ -77,52 +38,41 @@ export default function Team() {
         </div>
 
         <div className={styles.carouselWrapper}>
-          <div
-            className={`${styles.navArrowContainer} ${styles.minWidthContent}`}
+          <IconButton
+            onClick={prev}
+            ariaLabel="Previous team member"
+            className={`${styles.navArrow} ${styles.navArrowLeft}`}
           >
-            <picture>
-              <source type="image/webp" srcSet="left.webp" />
-              <source type="image/png" srcSet="left.png" />
-              <img
-                onClick={prev}
-                className={`${styles.navArrow} ${styles.navArrowLeft}`}
-                src="left.png"
-                alt="Previous team member"
-              />
-            </picture>
-          </div>
+            <ChevronLeft />
+          </IconButton>
           <div className={styles.carouselContainer}>
-            <Carousel
-              showThumbs={false}
-              showArrows={false}
-              infiniteLoop={false}
-              showIndicators={false}
-              autoPlay={false}
-              showStatus={false}
-              swipeable={true}
-              centerMode={mobileSize()}
-              centerSlidePercentage={33}
-              width={mobileWidth()}
-              selectedItem={currentSlide}
+            <div
+              className={styles.track}
+              style={
+                {
+                  '--track-offset': `-${trackOffset}px`
+                } as React.CSSProperties
+              }
             >
-              {mapMembers}
-            </Carousel>
+              {members.map(member => (
+                <TeamMember
+                  key={member.id}
+                  name={member.name}
+                  title={member.title}
+                  description={member.description}
+                  photo={member.photo}
+                  link={member.link}
+                />
+              ))}
+            </div>
           </div>
-
-          <div
-            className={`${styles.navArrowContainer} ${styles.minWidthContent}`}
+          <IconButton
+            onClick={next}
+            ariaLabel="Next team member"
+            className={`${styles.navArrow} ${styles.navArrowRight}`}
           >
-            <picture>
-              <source type="image/webp" srcSet="right.webp" />
-              <source type="image/png" srcSet="right.png" />
-              <img
-                onClick={next}
-                className={`${styles.navArrow} ${styles.navArrowRight}`}
-                src="right.png"
-                alt="Next team member"
-              />
-            </picture>
-          </div>
+            <ChevronRight />
+          </IconButton>
         </div>
       </div>
     </div>

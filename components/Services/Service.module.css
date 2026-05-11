@@ -20,13 +20,7 @@
 
 .carouselWrapper {
   display: flex;
-}
-
-.navArrowContainer {
-  display: inline-block;
-  margin-top: auto;
-  margin-bottom: auto;
-  width: max-content;
+  align-items: center;
 }
 
 .navArrowContainerHidden {
@@ -37,11 +31,30 @@
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  flex-direction: row;
+  will-change: transform;
+  user-select: none;
+  transition: transform 300ms ease;
+}
+
+@media (max-width: 1080px) {
+  .track {
+    transition: none;
+  }
+}
+
+.slide {
+  flex: 0 0 auto;
 }
 
 .navArrow {
   width: 1.25rem;
-  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .navArrowLeft {
@@ -54,10 +67,6 @@
 
 .navArrowInvisible {
   visibility: hidden;
-}
-
-.navArrowVisible {
-  display: inline-block;
 }
 
 @media (max-width: 1521px) {

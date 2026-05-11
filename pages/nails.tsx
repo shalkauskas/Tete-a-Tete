@@ -1,11 +1,11 @@
-import Layout from "../components/Layout/Layout/Layout";
-import nails from "../components/Services/services-nails";
-import Service from "../components/Services/Service";
+import servicesNails from 'constants/services/nails';
+import Layout from '../components/Layout/Layout/Layout';
+import Service from '../components/Services/Service';
 
 export default function Nails() {
   return (
     <Layout>
-      <Service service={nails} title="Nails" />
+      <Service service={servicesNails} title="Nails" />
     </Layout>
   );
 }

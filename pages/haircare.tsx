@@ -1,11 +1,11 @@
-import Layout from "../components/Layout/Layout/Layout";
-import haircare from "../components/Services/services-haircare";
-import Service from "../components/Services/Service";
+import servicesHaircare from 'constants/services/haircare';
+import Layout from '../components/Layout/Layout/Layout';
+import Service from '../components/Services/Service';
 
 export default function Haircare() {
   return (
     <Layout>
-      <Service service={haircare} title="Hair care" />
+      <Service service={servicesHaircare} title="Hair care" />
     </Layout>
   );
 }

@@ -22,28 +22,34 @@
   margin-top: 1rem;
 }
 
-.minWidthContent {
-  min-width: fit-content;
-}
-
 .carouselWrapper {
   display: flex;
   margin: 0 auto;
-}
-
-.navArrowContainer {
-  display: inline-block;
-  margin-top: auto;
-  margin-bottom: auto;
+  align-items: center;
 }
 
 .carouselContainer {
   display: inline-block;
+  overflow: hidden;
+  width: 768px;
+}
+
+.track {
+  display: flex;
+  flex-direction: row;
+  transition: transform 350ms ease;
+  will-change: transform;
+  user-select: none;
+  transform: translateX(var(--track-offset, 0));
+}
+
+.track > * {
+  flex-shrink: 0;
 }
 
 .navArrow {
   width: 1.25rem;
-  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .navArrowLeft {
@@ -52,6 +58,35 @@
 
 .navArrowRight {
   margin-left: 0.5rem;
+}
+
+@media screen and (max-width: 960px) {
+  .navArrow {
+    display: none;
+  }
+
+  .carouselContainer {
+    width: 272px;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carouselContainer::-webkit-scrollbar {
+    display: none;
+  }
+
+  .track {
+    transform: none;
+    transition: none;
+  }
+
+  .track > * {
+    scroll-snap-align: start;
+  }
 }
 
 @media screen and (min-width: 401px) {

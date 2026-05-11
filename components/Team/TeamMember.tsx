@@ -3,14 +3,14 @@ import styles from './TeamMember.module.css';
 
 type Props = {
   photo: string;
-  link: string;
+  link?: string;
   name: string;
   title: string;
   description: string;
 };
 export default function TeamMember(props: Props) {
   return (
-    <div key="slide1" className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.imageWrapper}>
         <Image
           src={props.photo}

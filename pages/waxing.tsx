@@ -1,10 +1,10 @@
-import Layout from "../components/Layout/Layout/Layout";
-import waxing from "../components/Services/services-waxing";
-import Service from "../components/Services/Service";
+import servicesWaxing from 'constants/services/waxing';
+import Layout from '../components/Layout/Layout/Layout';
+import Service from '../components/Services/Service';
 export default function Waxing() {
   return (
     <Layout>
-      <Service service={waxing} title="Hair care" />
+      <Service service={servicesWaxing} title="Hair care" />
     </Layout>
   );
 }

@@ -1,6 +1,7 @@
 import SectionTitle from '../ui/SectionTitle/SectionTitle';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
+import IconButton from '../ui/IconButton/IconButton';
+import ChevronLeft from '../ui/icons/ChevronLeft';
+import ChevronRight from '../ui/icons/ChevronRight';
 import ServicesMap from './ServicesMap';
 import HandyInfo from './HandyInfo';
 import Buttons from '../Buttons';
@@ -23,6 +24,10 @@ interface ServiceProps {
   service: ServiceItem[][];
 }
 
+const VIEWPORT_DESKTOP = 900;
+const VIEWPORT_MOBILE = 375;
+const SWIPE_THRESHOLD = 50;
+
 export default function Service(props: ServiceProps) {
   const [isMobile, setIsMobile] = React.useState(false);
 
@@ -41,13 +46,32 @@ export default function Service(props: ServiceProps) {
   }, []);
 
   const [currentSlide, setCurrentSlide] = React.useState(0);
+  const lastSlide = props.service.length - 1;
   const changeSlide = (index: number) => {
     setCurrentSlide(index);
   };
-  const next = () => setCurrentSlide(currentSlide + 1);
-  const prev = () => setCurrentSlide(currentSlide - 1);
+  const next = () => {
+    if (currentSlide < lastSlide) setCurrentSlide(currentSlide + 1);
+  };
+  const prev = () => {
+    if (currentSlide > 0) setCurrentSlide(currentSlide - 1);
+  };
+
+  const dragStartX = React.useRef<number | null>(null);
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    dragStartX.current = e.clientX;
+    e.currentTarget.setPointerCapture(e.pointerId);
+  };
+  const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (dragStartX.current === null) return;
+    const deltaX = e.clientX - dragStartX.current;
+    if (deltaX <= -SWIPE_THRESHOLD) next();
+    else if (deltaX >= SWIPE_THRESHOLD) prev();
+    dragStartX.current = null;
+  };
 
   const shouldShowNav = props.service.length > 1 && !isMobile;
+  const slideWidth = isMobile ? VIEWPORT_MOBILE : VIEWPORT_DESKTOP;
 
   const mapNavButtons = props.service.map((item, index) => (
     <NavMap
@@ -61,14 +85,15 @@ export default function Service(props: ServiceProps) {
   ));
 
   const mapServices = props.service.map((item, index) => (
-    <ServicesMap
-      key={index}
-      list={item}
-      showSkinCare={props.title === 'Skin care'}
-      showMobile={isMobile}
-      mapNav={mapNavButtons}
-      renderNav={props.service.length > 1}
-    />
+    <div className={styles.slide} key={index} style={{ width: slideWidth }}>
+      <ServicesMap
+        list={item}
+        showSkinCare={props.title === 'Skin care'}
+        showMobile={isMobile}
+        mapNav={mapNavButtons}
+        renderNav={props.service.length > 1}
+      />
+    </div>
   ));
 
   return (
@@ -85,54 +110,43 @@ export default function Service(props: ServiceProps) {
         <div className={styles.contentWrapper}>
           <div className={styles.slideContainer}>
             <div className={styles.carouselWrapper}>
-              <div
-                className={`${styles.navArrowContainer} ${
-                  shouldShowNav ? '' : styles.navArrowContainerHidden
-                }`}
-              >
-                <img
+              {shouldShowNav && (
+                <IconButton
                   onClick={prev}
+                  ariaLabel="Previous service"
+                  icon={<ChevronLeft />}
+                  disabled={currentSlide === 0}
                   className={`${styles.navArrow} ${styles.navArrowLeft} ${
-                    currentSlide === 0
-                      ? styles.navArrowInvisible
-                      : styles.navArrowVisible
+                    currentSlide === 0 ? styles.navArrowInvisible : ''
                   }`}
-                  src="left.png"
-                  alt="Prev service"
                 />
-              </div>
-              <div className={styles.carouselContainer}>
-                <Carousel
-                  showThumbs={false}
-                  infiniteLoop={false}
-                  showArrows={false}
-                  showIndicators={false}
-                  autoPlay={false}
-                  showStatus={false}
-                  swipeable={isMobile ? false : true}
-                  width={isMobile ? '375px' : '900px'}
-                  selectedItem={currentSlide}
-                  transitionTime={isMobile ? 1 : 300}
+              )}
+              <div
+                className={styles.carouselContainer}
+                style={{ width: slideWidth }}
+                onPointerDown={isMobile ? undefined : handlePointerDown}
+                onPointerUp={isMobile ? undefined : handlePointerUp}
+              >
+                <div
+                  className={styles.track}
+                  style={{
+                    transform: `translateX(${-currentSlide * slideWidth}px)`
+                  }}
                 >
                   {mapServices}
-                </Carousel>
+                </div>
               </div>
-              <div
-                className={`${styles.navArrowContainer} ${
-                  shouldShowNav ? '' : styles.navArrowContainerHidden
-                }`}
-              >
-                <img
+              {shouldShowNav && (
+                <IconButton
                   onClick={next}
+                  ariaLabel="Next service"
+                  icon={<ChevronRight />}
+                  disabled={currentSlide === lastSlide}
                   className={`${styles.navArrow} ${styles.navArrowRight} ${
-                    currentSlide === props.service.length - 1
-                      ? styles.navArrowInvisible
-                      : styles.navArrowVisible
+                    currentSlide === lastSlide ? styles.navArrowInvisible : ''
                   }`}
-                  src="right.png"
-                  alt="Next service"
                 />
-              </div>
+              )}
             </div>
             {isMobile ? (
               <p className={styles.text}>
