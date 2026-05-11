@@ -7,7 +7,7 @@ import styles from './ServiceMenu.module.css';
 export default function Services() {
   return (
     <div className={styles.container}>
-      <SectionTitle title={'Our Services'} />
+      <SectionTitle>Our Services</SectionTitle>
       <div className={styles.grid}>
         <Link href="/haircare" passHref>
           <a>

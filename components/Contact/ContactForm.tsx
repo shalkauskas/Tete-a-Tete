@@ -46,7 +46,7 @@ export default function ContactForm() {
   const responseCode = showResponse.code;
   return (
     <div className={styles.container}>
-      <SectionTitle title={'Get in touch'} />
+      <SectionTitle>Get in touch</SectionTitle>
 
       <div className={styles.formWrapper}>
         <p className={styles.note}>

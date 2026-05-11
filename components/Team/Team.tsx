@@ -23,7 +23,7 @@ export default function Team() {
 
   return (
     <div className={styles.container}>
-      <SectionTitle title={'Meet our team'} />
+      <SectionTitle>Meet our team</SectionTitle>
       <div className={styles.teamWrapper}>
         <div className={styles.descriptionWrapper}>
           <p className={styles.description}>

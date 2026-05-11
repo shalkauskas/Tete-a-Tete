@@ -8,7 +8,7 @@ export default function Contact() {
   const [openReview, setOpenReview] = React.useState(false);
   return (
     <div className={styles.container}>
-      <SectionTitle title={'Contact'} />
+      <SectionTitle>Contact</SectionTitle>
       {/* contact section grid*/}
       <div className={styles.grid}>
         {/* left side info grid */}

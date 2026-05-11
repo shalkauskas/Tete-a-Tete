@@ -8,6 +8,7 @@ import Buttons from '../Buttons';
 import NavMap from './ServicesNavMap';
 import React from 'react';
 import styles from './Service.module.css';
+import Link from 'next/link';
 
 interface ServiceItem {
   id: string;
@@ -97,67 +98,82 @@ export default function Service(props: ServiceProps) {
   ));
 
   return (
-    <div>
-      <div className={styles.container}>
-        <SectionTitle title={props.title} showLink={true} isMobile={isMobile} />
-        <div
-          className={`${styles.navButtons} ${
-            shouldShowNav ? '' : styles.navArrowContainerHidden
-          }`}
+    <div className={styles.container}>
+      <div className={styles.titleContainer}>
+        <Link
+          passHref={true}
+          scroll={false}
+          href={{
+            pathname: '/',
+            query: { id: 'services' }
+          }}
         >
-          {mapNavButtons}
-        </div>
-        <div className={styles.contentWrapper}>
-          <div className={styles.slideContainer}>
-            <div className={styles.carouselWrapper}>
-              {shouldShowNav && (
-                <IconButton
-                  onClick={prev}
-                  ariaLabel="Previous service"
-                  icon={<ChevronLeft />}
-                  disabled={currentSlide === 0}
-                  className={`${styles.navArrow} ${styles.navArrowLeft} ${
-                    currentSlide === 0 ? styles.navArrowInvisible : ''
-                  }`}
-                />
-              )}
-              <div
-                className={styles.carouselContainer}
-                style={{ width: slideWidth }}
-                onPointerDown={isMobile ? undefined : handlePointerDown}
-                onPointerUp={isMobile ? undefined : handlePointerUp}
+          <a className={styles.link}>
+            <ChevronLeft />
+            <span className={styles.label}>Back to services</span>
+          </a>
+        </Link>
+        <SectionTitle>{props.title}</SectionTitle>
+      </div>
+      <div
+        className={`${styles.navButtons} ${
+          shouldShowNav ? '' : styles.navArrowContainerHidden
+        }`}
+      >
+        {mapNavButtons}
+      </div>
+      <div className={styles.contentWrapper}>
+        <div className={styles.slideContainer}>
+          <div className={styles.carouselWrapper}>
+            {shouldShowNav && (
+              <IconButton
+                onClick={prev}
+                ariaLabel="Previous service"
+                disabled={currentSlide === 0}
+                className={`${styles.navArrow} ${styles.navArrowLeft} ${
+                  currentSlide === 0 ? styles.navArrowInvisible : ''
+                }`}
               >
-                <div
-                  className={styles.track}
-                  style={{
-                    transform: `translateX(${-currentSlide * slideWidth}px)`
-                  }}
-                >
-                  {mapServices}
-                </div>
+                <ChevronLeft />
+              </IconButton>
+            )}
+            <div
+              className={styles.carouselContainer}
+              style={{ width: slideWidth }}
+              onPointerDown={isMobile ? undefined : handlePointerDown}
+              onPointerUp={isMobile ? undefined : handlePointerUp}
+            >
+              <div
+                className={styles.track}
+                style={{
+                  transform: `translateX(${-currentSlide * slideWidth}px)`
+                }}
+              >
+                {mapServices}
               </div>
-              {shouldShowNav && (
-                <IconButton
-                  onClick={next}
-                  ariaLabel="Next service"
-                  icon={<ChevronRight />}
-                  disabled={currentSlide === lastSlide}
-                  className={`${styles.navArrow} ${styles.navArrowRight} ${
-                    currentSlide === lastSlide ? styles.navArrowInvisible : ''
-                  }`}
-                />
-              )}
             </div>
-            {isMobile ? (
-              <p className={styles.text}>
-                Refer a friend and get $15 gift certificate!
-              </p>
-            ) : (
-              <Buttons />
+            {shouldShowNav && (
+              <IconButton
+                onClick={next}
+                ariaLabel="Next service"
+                disabled={currentSlide === lastSlide}
+                className={`${styles.navArrow} ${styles.navArrowRight} ${
+                  currentSlide === lastSlide ? styles.navArrowInvisible : ''
+                }`}
+              >
+                <ChevronRight />
+              </IconButton>
             )}
           </div>
-          <HandyInfo />
+          {isMobile ? (
+            <p className={styles.text}>
+              Refer a friend and get $15 gift certificate!
+            </p>
+          ) : (
+            <Buttons />
+          )}
         </div>
+        <HandyInfo />
       </div>
     </div>
   );

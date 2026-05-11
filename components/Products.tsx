@@ -6,7 +6,7 @@ import styles from './Products.module.css';
 export default function Products() {
   return (
     <div className={styles.container}>
-      <SectionTitle title="High-quality products" />
+      <SectionTitle>High-quality products</SectionTitle>
       <div className={styles.wrapper}>
         <div className={styles.item}>
           <Accordion
