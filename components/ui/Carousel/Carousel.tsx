@@ -51,7 +51,9 @@ export default function WelcomeCarousel() {
     return () => window.cancelAnimationFrame(id);
   }, [isAnimating]);
 
-  const handleTransitionEnd = (event: React.TransitionEvent<HTMLDivElement>) => {
+  const handleTransitionEnd = (
+    event: React.TransitionEvent<HTMLDivElement>
+  ) => {
     if (event.propertyName !== 'transform') return;
     if (activeIndex > LAST_REAL) {
       setIsAnimating(false);
@@ -70,7 +72,6 @@ export default function WelcomeCarousel() {
   return (
     <div className={styles.container}>
       <div
-        className={styles.viewport}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -92,7 +93,7 @@ export default function WelcomeCarousel() {
               <Image
                 src={`https://res.cloudinary.com/dyj6lkekg/image/upload/tete/carousel_${slide.id}.jpg`}
                 width={562}
-                height={400}
+                height={500}
                 layout="responsive"
                 alt="Carousel welcome image"
                 quality={75}

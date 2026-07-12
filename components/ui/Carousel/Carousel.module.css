@@ -3,10 +3,6 @@
   margin: 12rem auto 1.5rem;
 }
 
-.viewport {
-  overflow: hidden;
-}
-
 .track {
   display: flex;
   align-items: center;
