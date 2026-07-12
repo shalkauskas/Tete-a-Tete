@@ -1,6 +1,5 @@
 import Buttons from '../../Buttons';
 import Image from 'next/image';
-import Backdrop from '../../Backdrop';
 import InfoIcon from '../../ui/icons/InfoIcon';
 import React from 'react';
 import styles from './ServiceCard.module.css';
@@ -23,20 +22,9 @@ export default function ServiceCard({
 }: Props) {
   const [activeId, setActiveId] = React.useState<number | null>(null);
 
-  const activeItem = items.find(item => item.id === activeId) ?? null;
-  const isPopupVisible = activeItem !== null;
-
   const toggleInfo = (id: number) => {
     setActiveId(prev => (prev === id ? null : id));
   };
-  const closeInfo = () => setActiveId(null);
-
-  const popupClasses = [
-    styles.infoPopup,
-    activeItem?.isVideo ? styles.infoPopupVideo : ''
-  ]
-    .filter(Boolean)
-    .join(' ');
 
   return (
     <div className={styles.container}>
@@ -63,6 +51,10 @@ export default function ServiceCard({
           const nameClasses = `${styles.serviceName} ${
             showSkinCare ? '' : styles.serviceNameGrid
           } ${hasInfo ? styles.serviceNameClickable : ''}`;
+          const isActive = item.id === activeId;
+          const popupClasses = `${styles.infoPopup} ${
+            item.isVideo ? styles.infoPopupVideo : ''
+          }`;
           return (
             <div
               key={item.id}
@@ -90,30 +82,30 @@ export default function ServiceCard({
               >
                 {item.price}
               </p>
+              {isActive && (
+                <button
+                  type="button"
+                  className={popupClasses}
+                  aria-label="Close info"
+                  onClick={() => toggleInfo(item.id)}
+                >
+                  {item.isVideo ? (
+                    <span className={styles.videoContainer}>
+                      <video width={180} autoPlay muted loop playsInline>
+                        <source src="/airtouch.mp4" type="video/mp4" />
+                      </video>
+                    </span>
+                  ) : (
+                    <>
+                      <InfoIcon className={styles.infoIcon} />
+                      <span className={styles.infoText}>{item.info}</span>
+                    </>
+                  )}
+                </button>
+              )}
             </div>
           );
         })}
-        {isPopupVisible && (
-          <button
-            type="button"
-            className={popupClasses}
-            aria-label="Close info"
-            onClick={closeInfo}
-          >
-            {activeItem.isVideo ? (
-              <span className={styles.videoContainer}>
-                <video width={180} autoPlay muted loop playsInline>
-                  <source src="/airtouch.mp4" type="video/mp4" />
-                </video>
-              </span>
-            ) : (
-              <>
-                <InfoIcon className={styles.infoIcon} />
-                <span className={styles.infoText}>{activeItem.info}</span>
-              </>
-            )}
-          </button>
-        )}
         {showSkinCare && (
           <div className={styles.skincareLogo}>
             <p className={styles.skincareText}>
@@ -137,7 +129,6 @@ export default function ServiceCard({
           Refer a friend and get $15 gift certificate!
         </p>
       </div>
-      <Backdrop toggle={isPopupVisible} onClick={closeInfo} blur={false} />
     </div>
   );
 }

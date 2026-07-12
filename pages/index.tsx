@@ -14,10 +14,10 @@ import styles from './index.module.css';
 export default function Home() {
   const router = useRouter();
   // refs
-  const servicesRef = React.useRef(null),
-    teamRef = React.useRef(null),
-    productsRef = React.useRef(null),
-    contactRef = React.useRef(null);
+  const servicesRef = React.useRef<HTMLDivElement>(null),
+    teamRef = React.useRef<HTMLDivElement>(null),
+    productsRef = React.useRef<HTMLDivElement>(null),
+    contactRef = React.useRef<HTMLDivElement>(null);
   const { id } = router.query;
   React.useEffect(() => {
     if (id === 'services') {
@@ -36,9 +36,11 @@ export default function Home() {
       scroll(contactRef);
       router.replace('/', undefined, { shallow: true });
     }
-  }, [id]);
-  const scroll = tag => {
-    tag.current.scrollIntoView({ behavior: 'smooth' });
+  }, [id, router]);
+  const scroll = (tag: React.RefObject<HTMLDivElement | null>) => {
+    if (tag.current) {
+      tag.current.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (

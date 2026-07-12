@@ -52,7 +52,6 @@ export default function Service(props: ServiceProps) {
   const dragStartX = React.useRef<number | null>(null);
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     dragStartX.current = e.clientX;
-    e.currentTarget.setPointerCapture(e.pointerId);
   };
   const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
     if (dragStartX.current === null) return;
