@@ -5,8 +5,8 @@ import Button from './ui/Button/Button';
 export default function Buttons() {
   return (
     <div className={styles.container}>
-      {/* TODO: make size prop: small */}
       <Button
+        size="small"
         className={styles.button}
         onClick={() =>
           globalThis.window.open(
@@ -27,7 +27,7 @@ export default function Buttons() {
         }}
       >
         <a>
-          <Button variant="secondary" fullWidth>
+          <Button variant="secondary" fullWidth size="small">
             See other services
           </Button>
         </a>

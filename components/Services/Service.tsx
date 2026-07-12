@@ -2,27 +2,18 @@ import SectionTitle from '../ui/SectionTitle/SectionTitle';
 import IconButton from '../ui/IconButton/IconButton';
 import ChevronLeft from '../ui/icons/ChevronLeft';
 import ChevronRight from '../ui/icons/ChevronRight';
-import ServicesMap from './ServicesMap';
+import ServiceCard from './ServiceCard/ServiceCard';
 import HandyInfo from './HandyInfo';
 import Buttons from '../Buttons';
 import NavMap from './ServicesNavMap';
 import React from 'react';
 import styles from './Service.module.css';
 import Link from 'next/link';
-
-interface ServiceItem {
-  id: string;
-  service: string;
-  price: string;
-  info?: string;
-  isVideo?: boolean;
-  image: string;
-  title?: string;
-}
+import type { ServiceGroup } from '../../types';
 
 interface ServiceProps {
   title: string;
-  service: ServiceItem[][];
+  service: ServiceGroup[];
 }
 
 const VIEWPORT_DESKTOP = 900;
@@ -85,18 +76,6 @@ export default function Service(props: ServiceProps) {
     />
   ));
 
-  const mapServices = props.service.map((item, index) => (
-    <div className={styles.slide} key={index} style={{ width: slideWidth }}>
-      <ServicesMap
-        list={item}
-        showSkinCare={props.title === 'Skin care'}
-        showMobile={isMobile}
-        mapNav={mapNavButtons}
-        renderNav={props.service.length > 1}
-      />
-    </div>
-  ));
-
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>
@@ -149,7 +128,25 @@ export default function Service(props: ServiceProps) {
                   transform: `translateX(${-currentSlide * slideWidth}px)`
                 }}
               >
-                {mapServices}
+                {props.service.map((item, index) => {
+                  const [category, ...items] = item;
+                  return (
+                    <div
+                      className={styles.slide}
+                      key={index}
+                      style={{ width: slideWidth }}
+                    >
+                      <ServiceCard
+                        category={category}
+                        items={items}
+                        showSkinCare={props.title === 'Skin care'}
+                        showMobile={isMobile}
+                        mapNav={mapNavButtons}
+                        renderNav={props.service.length > 1}
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </div>
             {shouldShowNav && (

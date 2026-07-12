@@ -6,6 +6,7 @@ type Props = {
   className?: string;
   children?: React.ReactNode;
   fullWidth?: boolean;
+  size?: 'small' | 'medium';
   variant?: 'primary' | 'secondary';
 };
 
@@ -15,12 +16,14 @@ export default function Button({
   className,
   children,
   // TODO: refactor full width
+  size = 'medium',
   fullWidth,
   variant = 'primary'
 }: Props) {
   return (
     <button
       style={{
+        padding: size === 'small' ? '0.5rem 0.75rem' : '0.5rem 2.5rem',
         width: fullWidth ? '100%' : 'auto'
       }}
       onClick={onClick}
