@@ -40,72 +40,72 @@ export default function ServiceCard({
             priority={true}
           />
         </div>
-        {renderNav && (
-          <div className={styles.navContainer}>{mapNav}</div>
-        )}
+        {renderNav && <div className={styles.navContainer}>{mapNav}</div>}
       </div>
 
       <div className={styles.descriptionContainer}>
-        {items.map(item => {
-          const hasInfo = item.info !== undefined;
-          const nameClasses = `${styles.serviceName} ${
-            showSkinCare ? '' : styles.serviceNameGrid
-          } ${hasInfo ? styles.serviceNameClickable : ''}`;
-          const isActive = item.id === activeId;
-          const popupClasses = `${styles.infoPopup} ${
-            item.isVideo ? styles.infoPopupVideo : ''
-          }`;
-          return (
-            <div
-              key={item.id}
-              className={`${styles.serviceItem} ${
-                showSkinCare ? styles.serviceItemRow : styles.serviceItemGrid
-              }`}
-            >
-              {hasInfo ? (
-                <button
-                  type="button"
-                  onClick={() => toggleInfo(item.id)}
-                  className={nameClasses}
-                >
-                  {item.service}
-                </button>
-              ) : (
-                <p className={nameClasses}>{item.service}</p>
-              )}
-              <p
-                className={`${styles.servicePrice} ${
-                  showSkinCare
-                    ? styles.servicePriceRow
-                    : styles.servicePriceGrid
+        <div className={styles.serviceList}>
+          {items.map(item => {
+            const hasInfo = item.info !== undefined;
+            const nameClasses = `${styles.serviceName} ${
+              showSkinCare ? '' : styles.serviceNameGrid
+            } ${hasInfo ? styles.serviceNameClickable : ''}`;
+            const isActive = item.id === activeId;
+            const popupClasses = `${styles.infoPopup} ${
+              item.isVideo ? styles.infoPopupVideo : ''
+            }`;
+            return (
+              <div
+                key={item.id}
+                className={`${styles.serviceItem} ${
+                  showSkinCare ? styles.serviceItemRow : styles.serviceItemGrid
                 }`}
               >
-                {item.price}
-              </p>
-              {isActive && (
-                <button
-                  type="button"
-                  className={popupClasses}
-                  aria-label="Close info"
-                  onClick={() => toggleInfo(item.id)}
+                {hasInfo ? (
+                  <button
+                    type="button"
+                    onClick={() => toggleInfo(item.id)}
+                    className={nameClasses}
+                  >
+                    {item.service}
+                  </button>
+                ) : (
+                  <p className={nameClasses}>{item.service}</p>
+                )}
+                <p
+                  className={`${styles.servicePrice} ${
+                    showSkinCare
+                      ? styles.servicePriceRow
+                      : styles.servicePriceGrid
+                  }`}
                 >
-                  {item.isVideo ? (
-                    <span className={styles.videoContainer}>
-                      <video width={180} autoPlay muted loop playsInline>
-                        <source src="/airtouch.mp4" type="video/mp4" />
-                      </video>
-                    </span>
-                  ) : (
-                    <>
-                      <InfoIcon className={styles.infoIcon} />
-                      <span className={styles.infoText}>{item.info}</span>
-                    </>
-                  )}
-                </button>
-              )}
-            </div>
-          );
-        })}
+                  {item.price}
+                </p>
+                {isActive && (
+                  <button
+                    type="button"
+                    className={popupClasses}
+                    aria-label="Close info"
+                    onClick={() => toggleInfo(item.id)}
+                  >
+                    {item.isVideo ? (
+                      <span className={styles.videoContainer}>
+                        <video width={180} autoPlay muted loop playsInline>
+                          <source src="/airtouch.mp4" type="video/mp4" />
+                        </video>
+                      </span>
+                    ) : (
+                      <>
+                        <InfoIcon className={styles.infoIcon} />
+                        <span className={styles.infoText}>{item.info}</span>
+                      </>
+                    )}
+                  </button>
+                )}
+              </div>
+            );
+          })}
+        </div>
         {showSkinCare && (
           <div className={styles.skincareLogo}>
             <p className={styles.skincareText}>
