@@ -5,14 +5,9 @@
   width: 272px;
 }
 
-.imageWrapper {
-  margin-left: -20px;
-}
-
 .name {
   font-size: 16px;
   line-height: 40px;
-  color: #4c4949;
   font-weight: 700;
   font-style: italic;
 }
@@ -25,7 +20,6 @@
 .title {
   font-size: 16px;
   margin-top: 0.5rem;
-  color: #4c4949;
   font-style: italic;
   font-weight: 600;
 }
@@ -38,6 +32,5 @@
 .description {
   font-size: 16px;
   margin-top: 0.75rem;
-  color: #4c4949;
   font-style: italic;
 }

@@ -18,7 +18,6 @@
 
 .descriptionWrapper {
   width: 91.666667%;
-  color: #4c4949;
   margin-bottom: 1.5rem;
 }
 
@@ -30,12 +29,13 @@
   display: flex;
   margin: 0 auto;
   align-items: center;
+  gap: 8px;
 }
 
 .carouselContainer {
   display: inline-block;
   overflow: hidden;
-  width: 768px;
+  width: 776px;
 }
 
 .track {

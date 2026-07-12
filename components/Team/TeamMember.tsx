@@ -11,16 +11,15 @@ type Props = {
 export default function TeamMember(props: Props) {
   return (
     <div className={styles.container}>
-      <div className={styles.imageWrapper}>
-        <Image
-          src={props.photo}
-          alt="Team member"
-          quality={75}
-          width={223}
-          height={250}
-          loading={'eager'}
-        />
-      </div>
+      <Image
+        src={props.photo}
+        alt="Team member"
+        quality={75}
+        width={232}
+        height={250}
+        loading={'eager'}
+      />
+
       <div className={styles.titleContainer}>
         <p className={styles.name}>{props.name}</p>
         {props.link && (
