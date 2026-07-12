@@ -55,6 +55,12 @@
   }
 }
 
+.link div {
+  @media (min-width: 1080px) {
+    display: none;
+  }
+}
+
 .link svg {
   height: 26px;
 }
