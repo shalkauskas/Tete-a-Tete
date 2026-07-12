@@ -32,3 +32,4 @@ yarn-error.log*
 .vercel
 .claude/** 
 tsconfig.tsbuildinfo
+tasks

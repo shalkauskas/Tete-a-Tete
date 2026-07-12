@@ -1,7 +1,6 @@
 .container {
   padding-top: 10rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .titleContainer {
@@ -11,6 +10,29 @@
   justify-content: center;
   margin-top: 4.25rem;
   margin-bottom: 1.25rem;
+  gap: 1rem;
+
+  @media (max-width: 1080px) {
+    margin-top: 1.25rem;
+  }
+}
+
+.titleContainer > div {
+  @media (max-width: 1080px) {
+    display: none;
+  }
+}
+
+.label {
+  @media (max-width: 1080px) {
+    display: none;
+  }
+}
+
+.text {
+  font-weight: 700;
+  padding: 1rem 0;
+  text-align: center;
 }
 
 .link {
@@ -25,6 +47,12 @@
   font-size: 1rem;
   text-decoration: underline;
   cursor: pointer;
+
+  @media (max-width: 1080px) {
+    position: static;
+    text-decoration: none;
+    font-style: normal;
+  }
 }
 
 .link svg {

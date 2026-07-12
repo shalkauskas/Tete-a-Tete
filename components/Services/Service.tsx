@@ -90,6 +90,7 @@ export default function Service(props: ServiceProps) {
           <a className={styles.link}>
             <ChevronLeft />
             <span className={styles.label}>Back to services</span>
+            <SectionTitle>{props.title}</SectionTitle>
           </a>
         </Link>
         <SectionTitle>{props.title}</SectionTitle>
@@ -140,7 +141,6 @@ export default function Service(props: ServiceProps) {
                         category={category}
                         items={items}
                         showSkinCare={props.title === 'Skin care'}
-                        showMobile={isMobile}
                         mapNav={mapNavButtons}
                         renderNav={props.service.length > 1}
                       />
