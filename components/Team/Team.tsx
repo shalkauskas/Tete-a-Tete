@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import SectionTitle from '../ui/SectionTitle/SectionTitle';
 import IconButton from '../ui/IconButton/IconButton';
 import ChevronLeft from '../ui/icons/ChevronLeft';
@@ -14,9 +14,45 @@ export default function Team() {
   const totalPages = Math.max(1, Math.ceil(members.length / SLIDES_PER_VIEW));
   const maxStartIndex = Math.max(0, members.length - SLIDES_PER_VIEW);
   const [page, setPage] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const next = () => setPage(p => (p + 1) % totalPages);
-  const prev = () => setPage(p => (p - 1 + totalPages) % totalPages);
+  useEffect(() => {
+    const mq = window.matchMedia('screen and (max-width: 960px)');
+    const onChange = (e: MediaQueryList | MediaQueryListEvent) =>
+      setIsMobile(e.matches);
+    mq.addEventListener('change', onChange);
+    onChange(mq);
+
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+
+  const next = () => {
+    if (isMobile) {
+      const el = containerRef.current;
+      if (!el) return;
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+      el.scrollTo({
+        left: atEnd ? 0 : el.scrollLeft + SLIDE_WIDTH,
+        behavior: 'smooth'
+      });
+    } else {
+      setPage(p => (p + 1) % totalPages);
+    }
+  };
+  const prev = () => {
+    if (isMobile) {
+      const el = containerRef.current;
+      if (!el) return;
+      const atStart = el.scrollLeft <= 1;
+      el.scrollTo({
+        left: atStart ? el.scrollWidth : el.scrollLeft - SLIDE_WIDTH,
+        behavior: 'smooth'
+      });
+    } else {
+      setPage(p => (p - 1 + totalPages) % totalPages);
+    }
+  };
 
   const startIndex = Math.min(page * SLIDES_PER_VIEW, maxStartIndex);
   const trackOffset = startIndex * SLIDE_WIDTH;
@@ -45,7 +81,7 @@ export default function Team() {
           >
             <ChevronLeft />
           </IconButton>
-          <div className={styles.carouselContainer}>
+          <div className={styles.carouselContainer} ref={containerRef}>
             <div
               className={styles.track}
               style={
