@@ -3,9 +3,19 @@
   margin: 12rem auto 1.5rem;
 }
 
+.viewport {
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  transition: transform 500ms ease;
+  will-change: transform;
+}
+
 .slide {
-  width: max-content;
-  height: 400px;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 1400px) {
