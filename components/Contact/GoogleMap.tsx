@@ -9,7 +9,7 @@ import Button from '../ui/Button/Button';
 import styles from './GoogleMap.module.css';
 const containerStyle = {
   maxWidth: '669px',
-  width: '100vw',
+  width: '100%',
   height: '431px'
 };
 

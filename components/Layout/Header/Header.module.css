@@ -2,7 +2,7 @@
   position: fixed;
   z-index: 30;
   top: 0;
-  width: 100vw;
+  width: 100%;
 }
 
 .nav {
@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: #706d6c;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .navFull {
@@ -136,6 +136,11 @@
   font-size: 1.125rem;
   line-height: 1.375;
   color: white;
+  border-bottom: 1px solid white;
+}
+
+.navList li:has(+ .bookingItemWrapper) .navItem {
+  border-bottom: 0;
 }
 
 .navItem:hover {
@@ -212,7 +217,7 @@
   }
 
   .navMenu {
-    padding: 30px 0;
+    padding-bottom: 1rem;
     position: absolute;
     width: 70%;
     top: 100%;
@@ -222,7 +227,7 @@
   }
 
   .navItem {
-    padding-left: 4.75rem;
+    justify-content: center;
   }
 
   .hr {

@@ -26,7 +26,7 @@
 
 @media screen and (max-width: 550px) {
   .serviceBox {
-    width: 100vw;
+    width: 100%;
     height: auto;
     aspect-ratio: 36.875 / 27.25;
   }
