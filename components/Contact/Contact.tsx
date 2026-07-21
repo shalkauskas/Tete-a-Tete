@@ -21,11 +21,8 @@ export default function Contact() {
               <img src="location.png" alt="Location" />
             </picture>
             <div className={styles.detail}>
-              <p className={styles.inlineText}>
-                <b>Tête‑à‑Tête Salon </b>
-                <br />
-                765 Beacon Street, Newton Centre, MA 02459
-              </p>
+              <p className={styles.textBold}>Tête‑à‑Tête Salon</p>
+              <p>765 Beacon Street, Newton Centre, MA 02459</p>
             </div>
           </div>
           {/* phone */}
@@ -36,7 +33,7 @@ export default function Contact() {
               <img src="phone-contact.png" alt="Phone" />
             </picture>
             <div className={styles.detail}>
-              <p className={styles.inlineText}>(617) 559‑0660</p>
+              <p>(617) 559‑0660</p>
             </div>
           </div>
           {/* hours */}

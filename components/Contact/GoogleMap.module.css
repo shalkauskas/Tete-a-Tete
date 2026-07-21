@@ -18,15 +18,12 @@
 
 .infoTitle {
   font-size: 1.5rem;
-  color: #895B4A;
+  color: #895b4a;
 }
 
 .directionsLink {
-  display: contents;
-}
-
-.directionsButton {
-  margin-left: auto;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (min-width: 768px) {

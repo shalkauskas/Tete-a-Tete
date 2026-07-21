@@ -11,8 +11,8 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 0;
   background-color: #706d6c;
+  overflow-x: hidden;
 }
 
 .navFull {
@@ -26,13 +26,12 @@
 }
 
 .container {
-  container: initial;
   padding: 0 1rem;
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .logoWrapper {

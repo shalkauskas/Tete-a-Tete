@@ -1,6 +1,6 @@
 import Backdrop from '../../Backdrop';
 import React from 'react';
-import styles from './styles.module.css';
+import styles from './Booking.module.css';
 
 type Props = {
   showBooking: boolean;

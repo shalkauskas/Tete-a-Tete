@@ -54,13 +54,11 @@ export default function ServiceCard({
             const popupClasses = `${styles.infoPopup} ${
               item.isVideo ? styles.infoPopupVideo : ''
             }`;
+            const itemClasses = `${styles.serviceItem} ${
+              showSkinCare ? styles.serviceItemRow : ''
+            }`;
             return (
-              <div
-                key={item.id}
-                className={`${styles.serviceItem} ${
-                  showSkinCare ? styles.serviceItemRow : styles.serviceItemGrid
-                }`}
-              >
+              <div key={item.id} className={itemClasses}>
                 {hasInfo ? (
                   <button
                     type="button"

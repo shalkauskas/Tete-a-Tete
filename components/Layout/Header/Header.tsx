@@ -3,9 +3,13 @@ import Phone from '../Phone/Phone';
 import useDocumentScrollThrottled from '../../../hooks/useDocumentScrollThrottled';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import styles from './styles.module.css';
+import styles from './Header.module.css';
 
-export default function Header(props) {
+export default function Header({
+  onClick
+}: {
+  onClick: (arg0: boolean) => void;
+}) {
   const router = useRouter();
   const [navbarOpen, setNavbarOpen] = React.useState(false);
 
@@ -137,10 +141,7 @@ export default function Header(props) {
                 </Link>
               </li>
               <li className={styles.bookingItemWrapper}>
-                <a
-                  onClick={() => props.onClick(true)}
-                  className={styles.bookingItem}
-                >
+                <a onClick={() => onClick(true)} className={styles.bookingItem}>
                   Book Appointment
                 </a>
               </li>
