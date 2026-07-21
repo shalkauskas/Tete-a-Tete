@@ -1,6 +1,10 @@
 import React from "react";
+import { GoogleReview } from "../../types";
 import styles from "./ReviewsItem.module.css";
-export default function ReviewsItem(props) {
+export default function ReviewsItem(props: {
+  item: GoogleReview;
+  index: number;
+}) {
   const { item, index } = props;
   const [expand, setExpand] = React.useState(false);
   const expandButton = (

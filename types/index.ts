@@ -13,6 +13,14 @@ export interface ServiceCategory {
 
 export type ServiceGroup = [ServiceCategory, ...ServiceItem[]];
 
+export interface GoogleReview {
+  text: string;
+  profile_photo_url: string;
+  author_url: string;
+  author_name: string;
+  relative_time_description: string;
+}
+
 export interface TeamMember {
   id: number;
   name: string;

@@ -1,7 +1,8 @@
 import ReviewsItem from "./ReviewsItem";
 import React from "react";
+import { GoogleReview } from "../../types";
 import styles from "./Reviews.module.css";
-export default function Reviews(props) {
+export default function Reviews() {
   const placeid = process.env.NEXT_PUBLIC_placeid;
   const placesAPIkey = process.env.NEXT_PUBLIC_placesAPIkey;
   const url = `https://cors-anywhere-is.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeid}&key=${placesAPIkey}&language=en`;
@@ -22,7 +23,7 @@ export default function Reviews(props) {
     };
   }, []);
 
-  const [reviews, setReviews] = React.useState([]);
+  const [reviews, setReviews] = React.useState<GoogleReview[]>([]);
 
   return (
     <div className={styles.reviews}>

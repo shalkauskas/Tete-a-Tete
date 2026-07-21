@@ -18,13 +18,13 @@ const center = {
   lng: -71.192118
 };
 export default function Map() {
-  const [map, setMap] = React.useState(null);
-  const onUnmount = React.useCallback(function callback(map) {
+  const [, setMap] = React.useState(null);
+  const onUnmount = React.useCallback(function callback() {
     setMap(null);
   }, []);
   return (
     <div className={styles.wrapper}>
-      <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_googleMapsApiKey}>
+      <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_googleMapsApiKey ?? ''}>
         <div className={styles.layout}>
           <GoogleMap
             mapContainerStyle={containerStyle}
