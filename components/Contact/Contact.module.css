@@ -26,7 +26,7 @@
 .row {
   display: flex;
   padding: 0.5rem;
-  gap: 0.25rem;
+  gap: 0.5rem;
 }
 
 .iconWrapper {
@@ -61,11 +61,6 @@
 
 .hoursList {
   padding-top: 0.75rem;
-}
-
-.spacer {
-  display: none;
-  flex: 0 0 20%;
 }
 
 .social {

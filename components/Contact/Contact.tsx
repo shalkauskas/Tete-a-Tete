@@ -60,7 +60,6 @@ export default function Contact() {
           </div>
           {/* social media and direction button */}
           <div className={styles.row}>
-            <span className={styles.spacer}></span>
             <div className={styles.social}>
               <picture>
                 <source type="image/webp" srcSet="google.webp" />

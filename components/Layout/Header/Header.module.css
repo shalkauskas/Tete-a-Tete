@@ -108,7 +108,7 @@
 }
 
 .navMenu {
-  justify-content: center;
+  justify-content: flex-end;
   flex-grow: 1;
   align-items: center;
   background-color: #716c6c;
@@ -164,6 +164,15 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+    max-width: 1280px;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+
   .logoWrapper {
     width: auto;
     position: static;
@@ -185,12 +194,12 @@
 
   .navList {
     flex-direction: row;
-    margin-left: auto;
   }
 
   .navItem {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    border-bottom: 0;
   }
 
   .textLogo {
@@ -203,6 +212,7 @@
   .navItem {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    border-bottom: 0;
   }
 
   .textLogo {
@@ -217,6 +227,7 @@
   }
 
   .navMenu {
+    justify-content: center;
     padding-bottom: 1rem;
     position: absolute;
     width: 70%;
