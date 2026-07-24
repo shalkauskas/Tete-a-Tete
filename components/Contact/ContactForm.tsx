@@ -19,8 +19,17 @@ export default function ContactForm() {
     phone: '',
     message: ''
   });
+  const loadTime = React.useRef(Date.now());
   function sendEmail(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
+    const honeypot = form.elements.namedItem('company') as HTMLInputElement | null;
+    if (honeypot?.value) {
+      return;
+    }
+    if (Date.now() - loadTime.current < 3000) {
+      return;
+    }
     emailjs
       .sendForm(
         'default_service',
@@ -59,6 +68,14 @@ export default function ContactForm() {
           autoComplete="on"
           onSubmit={sendEmail}
         >
+          <input
+            type="text"
+            name="company"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: 'absolute', left: '-5000px' }}
+          />
           <div className={styles.field}>
             <label className={styles.label} htmlFor="name">
               Name
