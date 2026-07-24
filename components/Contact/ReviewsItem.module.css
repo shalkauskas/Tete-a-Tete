@@ -25,7 +25,19 @@
 }
 
 .stars {
+  display: inline-flex;
   margin-right: 0.75rem;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.starFilled {
+  color: #fbbc04;
+}
+
+.starEmpty {
+  color: #dadce0;
 }
 
 .text {

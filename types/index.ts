@@ -19,6 +19,13 @@ export interface GoogleReview {
   author_url: string;
   author_name: string;
   relative_time_description: string;
+  rating: number;
+}
+
+export interface GooglePlaceDetails {
+  rating: number;
+  total: number;
+  reviews: GoogleReview[];
 }
 
 export interface TeamMember {

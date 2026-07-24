@@ -39,13 +39,20 @@ export default function ReviewsItem(props: {
           {item.relative_time_description}
         </span>
         <div>
-          <img
-            width="100px"
-            height="20px"
-            src="stars.png"
+          <span
             className={styles.stars}
-            loading="lazy"
-          />
+            role="img"
+            aria-label={`${item.rating} out of 5 stars`}
+          >
+            {[1, 2, 3, 4, 5].map((star) => (
+              <span
+                key={star}
+                className={star <= item.rating ? styles.starFilled : styles.starEmpty}
+              >
+                ★
+              </span>
+            ))}
+          </span>
           <p className={styles.text}>
             {text}
             {expandButton}

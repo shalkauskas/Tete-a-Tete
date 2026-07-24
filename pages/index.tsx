@@ -9,9 +9,16 @@ import Layout from '../components/Layout/Layout/Layout';
 import ScrollButton from '../components/ui/ScrollButton/ScrollButton';
 import { useRouter } from 'next/router';
 import Giftcard from '@/components/Layout/Giftcard/Giftcard';
+import { GooglePlaceDetails } from '../types';
+import { fetchGooglePlaceDetails } from '../lib/googleReviews';
 import styles from './index.module.css';
 
-export default function Home() {
+export async function getStaticProps() {
+  const place = await fetchGooglePlaceDetails();
+  return { props: { place }, revalidate: 86400 };
+}
+
+export default function Home({ place }: { place: GooglePlaceDetails }) {
   const router = useRouter();
   // refs
   const servicesRef = React.useRef<HTMLDivElement>(null),
@@ -69,7 +76,7 @@ export default function Home() {
         </div>
         <div className={styles.section}>
           <div ref={contactRef} className={styles.scrollAnchor} />
-          <Contact />
+          <Contact place={place} />
         </div>
         <ContactForm />
       </div>

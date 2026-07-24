@@ -2,34 +2,12 @@ import ReviewsItem from "./ReviewsItem";
 import React from "react";
 import { GoogleReview } from "../../types";
 import styles from "./Reviews.module.css";
-export default function Reviews() {
-  const placeid = process.env.NEXT_PUBLIC_placeid;
-  const placesAPIkey = process.env.NEXT_PUBLIC_placesAPIkey;
-  const url = `https://cors-anywhere-is.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeid}&key=${placesAPIkey}&language=en`;
-
-  React.useEffect(() => {
-    let isActive = true;
-    fetch(url)
-      .then((result) => result.json())
-      .then((result) => {
-        if (isActive) {
-          const data = result.result;
-          setReviews(data.reviews);
-        }
-      })
-      .catch((error) => console.log(error.message));
-    return () => {
-      isActive = false;
-    };
-  }, []);
-
-  const [reviews, setReviews] = React.useState<GoogleReview[]>([]);
-
+export default function Reviews({ reviews }: { reviews: GoogleReview[] }) {
   return (
     <div className={styles.reviews}>
       <div>
         {reviews.length < 1 ? (
-          <div className={"loader"} />
+          <p className={styles.empty}>Reviews are currently unavailable.</p>
         ) : (
           reviews
             .slice(0, 4)

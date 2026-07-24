@@ -3,8 +3,10 @@ import SectionTitle from '../ui/SectionTitle/SectionTitle';
 import Map from './GoogleMap';
 import Reviews from './Reviews';
 import Backdrop from '../Backdrop';
+import GoogleRatingBadge from './GoogleRatingBadge';
+import { GooglePlaceDetails } from '../../types';
 import styles from './Contact.module.css';
-export default function Contact() {
+export default function Contact({ place }: { place: GooglePlaceDetails }) {
   const [openReview, setOpenReview] = React.useState(false);
   return (
     <div className={styles.container}>
@@ -61,19 +63,14 @@ export default function Contact() {
           {/* social media and direction button */}
           <div className={styles.row}>
             <div className={styles.social}>
-              <picture>
-                <source type="image/webp" srcSet="google.webp" />
-                <source type="image/png" srcSet="google.png" />
-                <img
-                  onClick={() => setOpenReview(prevState => !prevState)}
-                  src="google.png"
-                  alt="Google rating"
-                  className={styles.googleImage}
-                />
-              </picture>
+              <GoogleRatingBadge
+                rating={place.rating}
+                total={place.total}
+                onClick={() => setOpenReview(prevState => !prevState)}
+              />
               {openReview && (
                 <>
-                  <Reviews />
+                  <Reviews reviews={place.reviews} />
                   <Backdrop
                     toggle={openReview}
                     onClick={() => setOpenReview(prevState => !prevState)}
