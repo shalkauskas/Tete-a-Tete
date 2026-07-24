@@ -120,7 +120,7 @@ export default function HairdreamsLanding() {
           <h1 className={styles.heroTitle}>
             Fuller, longer, natural-looking hair — starting today
           </h1>
-          <p className={styles.heroText}>
+          <p>
             If your hair has become thinner or you have always wished for more
             length and volume, Hairdreams is a gentle, proven solution. Book
             your <strong>free, no-obligation consultation</strong> with Katya
@@ -134,9 +134,6 @@ export default function HairdreamsLanding() {
           >
             <Button>Book a free consultation</Button>
           </a>
-          <p className={styles.heroNote}>
-            No pressure. Just honest advice from a certified specialist.
-          </p>
         </div>
         <div className={styles.heroImage}>
           <Image

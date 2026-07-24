@@ -53,16 +53,6 @@
   color: #4c4949;
 }
 
-.heroText {
-  font-size: 1.05rem;
-}
-
-.heroNote {
-  font-style: italic;
-  color: #767676;
-  font-size: 0.95rem;
-}
-
 .heroImage {
   position: relative;
   min-height: 30rem;
