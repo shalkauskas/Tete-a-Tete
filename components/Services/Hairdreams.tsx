@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import Button from '../ui/Button/Button';
 import styles from './Hairdreams.module.css';
 
@@ -49,17 +50,11 @@ export default function Hairdreams() {
           your appointment for free consultation!
         </p>
 
-        <Button
-          className={styles.buttonWrapper}
-          onClick={() =>
-            globalThis.window.open(
-              'https://www.hairdreamsusa.com/en/',
-              '_blank'
-            )
-          }
-        >
-          Learn more
-        </Button>
+        <Link href="/hairdreams" passHref>
+          <a className={styles.buttonWrapper}>
+            <Button>Learn more</Button>
+          </a>
+        </Link>
       </div>
     </div>
   );

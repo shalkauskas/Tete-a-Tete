@@ -19,6 +19,7 @@ export default function Layout({ children }: Props) {
         <title>Tete-a-Tete Salon | Newton</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
+          key="description"
           name="description"
           content="Tete-a-Tete hair salon in Newton, MA, 02459"
         />

@@ -41,6 +41,8 @@
 }
 
 .buttonWrapper {
+  display: block;
+  width: fit-content;
   margin: 1rem auto;
 }
 
