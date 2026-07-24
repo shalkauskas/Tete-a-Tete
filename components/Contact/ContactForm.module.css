@@ -7,6 +7,12 @@
   gap: 1.25rem;
 }
 
+.captchaError {
+  margin-top: 0.5rem;
+  color: #dc2626;
+  font-size: 0.875rem;
+}
+
 .formWrapper {
   width: 91.666667%;
   margin: 0 auto;

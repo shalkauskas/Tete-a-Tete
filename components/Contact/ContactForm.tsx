@@ -1,4 +1,5 @@
 import React from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import SectionTitle from '../ui/SectionTitle/SectionTitle';
 import emailjs from 'emailjs-com';
 import { ContactFormResponse } from './ContactFormResponse';
@@ -13,6 +14,8 @@ export default function ContactForm() {
     display: false,
     code: null
   });
+  const [captchaError, setCaptchaError] = React.useState(false);
+  const recaptchaRef = React.useRef<ReCAPTCHA>(null);
   const { values, handleChange, reset } = useForm({
     name: '',
     email: '',
@@ -30,26 +33,29 @@ export default function ContactForm() {
     if (Date.now() - loadTime.current < 3000) {
       return;
     }
+    if (!recaptchaRef.current?.getValue()) {
+      setCaptchaError(true);
+      return;
+    }
     emailjs
       .sendForm(
         'default_service',
         process.env.NEXT_PUBLIC_templateid as string,
-        e.target as HTMLFormElement,
+        form,
         process.env.NEXT_PUBLIC_userid as string
       )
       .then(
-        result => {
-          // console.log(result.text);
+        () => {
           handleSubmit(200);
         },
-        error => {
-          // console.log(error.text);
+        () => {
           handleSubmit(404);
         }
       );
   }
   const handleSubmit = (code: number) => {
     setShowResponse(() => ({ display: true, code: code }));
+    recaptchaRef.current?.reset();
     reset();
   };
   const responseCode = showResponse.code;
@@ -137,6 +143,18 @@ export default function ContactForm() {
               value={values.message}
               onChange={handleChange}
             />
+          </div>
+          <div className={styles.field}>
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={process.env.NEXT_PUBLIC_recaptchaSiteKey as string}
+              onChange={() => setCaptchaError(false)}
+            />
+            {captchaError && (
+              <p className={styles.captchaError}>
+                Please confirm you are not a robot.
+              </p>
+            )}
           </div>
           <Button type="submit" className={styles.submitButton}>
             Send
