@@ -4,7 +4,11 @@ import Service from '../components/Services/Service';
 
 export default function Nails() {
   return (
-    <Layout>
+    <Layout
+      title="Nail Services | Tête-à-Tête Salon, Newton MA"
+      description="Manicures, pedicures and nail care at Tête-à-Tête Salon in Newton Centre, MA."
+      canonicalPath="/nails"
+    >
       <Service service={servicesNails} title="Nails" />
     </Layout>
   );

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://teteatetesalon.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://teteatetesalon.com/haircare</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://teteatetesalon.com/hairdreams</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://teteatetesalon.com/nails</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://teteatetesalon.com/skincare</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://teteatetesalon.com/waxing</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>

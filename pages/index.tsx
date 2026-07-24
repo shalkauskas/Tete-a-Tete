@@ -44,7 +44,11 @@ export default function Home() {
   };
 
   return (
-    <Layout>
+    <Layout
+      title="Tête-à-Tête Salon | Hair, Color & Beauty in Newton, MA"
+      description="Tête-à-Tête is a full-service hair and beauty salon in Newton Centre, MA — expert cuts, color, balayage, Hairdreams extensions, nails, skin care and waxing."
+      canonicalPath="/"
+    >
       <WelcomeCarousel />
       <div className={styles.content}>
         <div className={styles.section}>

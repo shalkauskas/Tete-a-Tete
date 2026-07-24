@@ -4,7 +4,11 @@ import Service from '../components/Services/Service';
 
 export default function Skincare() {
   return (
-    <Layout>
+    <Layout
+      title="Skin Care & Facials | Tête-à-Tête Salon, Newton MA"
+      description="Facials, skin treatments and body care at Tête-à-Tête Salon in Newton Centre, MA."
+      canonicalPath="/skincare"
+    >
       <Service service={servicesSkincare} title="Skin care" />
     </Layout>
   );
