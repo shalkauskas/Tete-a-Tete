@@ -118,13 +118,18 @@ export default function HairdreamsLanding() {
         <div className={styles.heroContent}>
           <p className={styles.eyebrow}>Hairdreams by Katya</p>
           <h1 className={styles.heroTitle}>
-            Fuller, longer, natural-looking hair — starting today
+            Hairdreams Hair Extensions in Newton, MA
           </h1>
+          <p className={styles.heroSubtitle}>
+            Fuller, longer, natural-looking hair — starting today
+          </p>
           <p>
             If your hair has become thinner or you have always wished for more
-            length and volume, Hairdreams is a gentle, proven solution. Book
-            your <strong>free, no-obligation consultation</strong> with Katya
-            and find out what is possible for your hair.
+            length and volume, Hairdreams is a gentle, proven solution. Katya
+            welcomes clients from Newton and across Greater Boston and
+            Massachusetts. Book your{' '}
+            <strong>free, no-obligation consultation</strong> and find out what
+            is possible for your hair.
           </p>
           <a
             href={BOOKING_URL}
@@ -141,7 +146,7 @@ export default function HairdreamsLanding() {
             objectFit="cover"
             priority
             src={HERO_IMAGE}
-            alt="Hairdreams result at Tête-à-Tête"
+            alt="Hairdreams hair extensions result at Tête-à-Tête Salon in Newton, MA"
           />
         </div>
       </section>
@@ -161,6 +166,11 @@ export default function HairdreamsLanding() {
             natural strands close to the roots without glue, heat, or chemicals.
             The result blends invisibly with your own hair and feels completely
             like your own.
+          </p>
+          <p>
+            Tête-à-Tête is a certified Hairdreams salon in Newton, MA, welcoming
+            clients from Brookline, Wellesley, Chestnut Hill, and throughout the
+            Greater Boston area.
           </p>
         </div>
       </section>
@@ -211,7 +221,7 @@ export default function HairdreamsLanding() {
               width={600}
               height={800}
               src={BEFORE_IMAGE}
-              alt="Hair before Hairdreams"
+              alt="Hair before Hairdreams extensions at Tête-à-Tête Salon in Newton, MA"
             />
             <figcaption className={styles.baCaption}>Before</figcaption>
           </figure>
@@ -220,7 +230,7 @@ export default function HairdreamsLanding() {
               width={600}
               height={800}
               src={AFTER_IMAGE}
-              alt="Hair after Hairdreams"
+              alt="Hair after Hairdreams extensions at Tête-à-Tête Salon in Newton, MA"
             />
             <figcaption className={styles.baCaption}>After</figcaption>
           </figure>
@@ -240,7 +250,7 @@ export default function HairdreamsLanding() {
               width={600}
               height={740}
               src={KATYA_IMAGE}
-              alt="Katya Bababekov, Hairdreams specialist"
+              alt="Katya Bababekov, certified Hairdreams specialist at Tête-à-Tête Salon in Newton, MA"
             />
           </div>
           <div className={styles.specialistInfo}>
