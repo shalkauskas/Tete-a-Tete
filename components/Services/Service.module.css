@@ -1,0 +1,169 @@
+.container {
+  padding-top: 10rem;
+  margin: 0 auto;
+}
+
+.titleContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4.25rem;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+
+  @media (max-width: 1080px) {
+    margin-top: 1.25rem;
+  }
+}
+
+.titleContainer > div {
+  @media (max-width: 1080px) {
+    display: none;
+  }
+}
+
+.label {
+  @media (max-width: 1080px) {
+    display: none;
+  }
+}
+
+.text {
+  font-weight: 700;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.link {
+  position: absolute;
+  left: 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #895b4a;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1rem;
+  text-decoration: underline;
+  cursor: pointer;
+
+  @media (max-width: 1080px) {
+    position: static;
+    text-decoration: none;
+    font-style: normal;
+  }
+}
+
+.link div {
+  @media (min-width: 1080px) {
+    display: none;
+  }
+}
+
+.link svg {
+  height: 26px;
+}
+
+.navButtons {
+  margin-bottom: 3rem;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.slideContainer {
+  margin-left: auto;
+}
+
+.carouselWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.navArrowContainerHidden {
+  display: none;
+}
+
+.carouselContainer {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  flex-direction: row;
+  will-change: transform;
+  user-select: none;
+  transition: transform 300ms ease;
+}
+
+@media (max-width: 1080px) {
+  .track {
+    transition: none;
+  }
+}
+
+.slide {
+  flex: 0 0 auto;
+}
+
+.navArrow {
+  width: 1.25rem;
+  flex-shrink: 0;
+}
+
+.navArrowLeft {
+  margin-right: 0.5rem;
+}
+
+.navArrowRight {
+  margin-left: 0.5rem;
+}
+
+.navArrowInvisible {
+  visibility: hidden;
+}
+
+@media (max-width: 1521px) {
+  .slideContainer {
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 1052px) {
+  .navButtons {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+  }
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .slideContainer {
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .navButtons {
+    margin-left: 8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navButtons {
+    margin-left: 6rem;
+  }
+}

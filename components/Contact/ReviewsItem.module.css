@@ -1,0 +1,61 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+
+.imageWrapper {
+  flex-shrink: 0;
+}
+
+.profileImage {
+  margin: 0.5rem 1rem 0 0;
+}
+
+.authorName {
+  color: #3b82f6;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.timestamp {
+  color: #6b7280;
+  font-size: 0.75rem;
+  vertical-align: text-top;
+}
+
+.stars {
+  display: inline-flex;
+  margin-right: 0.75rem;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.starFilled {
+  color: #fbbc04;
+}
+
+.starEmpty {
+  color: #dadce0;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 1.375;
+}
+
+.expandWrap {
+  display: inline-block;
+}
+
+.expandWrapHidden {
+  display: none;
+}
+
+.expandLink {
+  margin-left: 0.5rem;
+  color: #2563eb;
+  cursor: pointer;
+  text-decoration: underline;
+}

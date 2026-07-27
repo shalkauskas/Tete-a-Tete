@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 3rem auto;
+  gap: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 1rem;
+    white-space: nowrap;
+  }
+}

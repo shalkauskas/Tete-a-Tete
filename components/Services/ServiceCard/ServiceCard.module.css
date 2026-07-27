@@ -1,0 +1,224 @@
+.container {
+  display: flex;
+  background: #ede6dd;
+  height: 600px;
+}
+
+.imageContainer {
+  display: flex;
+}
+
+.image {
+  position: relative;
+  height: 600px;
+  aspect-ratio: 670 / 1250;
+}
+
+.imageWide {
+  position: relative;
+  height: 600px;
+  aspect-ratio: 820 / 1250;
+}
+
+.navContainer {
+  margin-top: 1.5rem;
+  width: 10rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  display: none;
+}
+
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  width: 100%;
+}
+
+.serviceList {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+.serviceItem {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.serviceItemRow {
+  flex-direction: column;
+}
+
+.serviceName {
+  color: black;
+  font: inherit;
+  font-size: 16px;
+  text-align: left;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.serviceNameGrid {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.serviceNameClickable {
+  color: #895b4a;
+  cursor: pointer;
+}
+
+.serviceNameClickable:hover {
+  opacity: 0.75;
+}
+
+.serviceNameClickable:focus-visible {
+  outline: 2px solid #895b4a;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.servicePrice {
+  font-size: 16px;
+}
+
+/* Info popup */
+.infoPopup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.5rem;
+  background: white;
+  z-index: 20;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+  appearance: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  cursor: pointer;
+  flex-direction: row;
+  width: max-content;
+  max-width: 320px;
+  padding: 1.5rem;
+}
+
+.infoPopup:focus-visible {
+  outline: 2px solid #895b4a;
+  outline-offset: 2px;
+}
+
+.infoPopupVideo {
+  padding: 0;
+  border-radius: 8px;
+}
+
+.videoContainer {
+  top: 30%;
+  right: 2%;
+  z-index: 30;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.infoIcon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  margin-right: 1.5rem;
+  margin-bottom: auto;
+}
+
+.infoText {
+  color: black;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .infoText {
+    text-align: left;
+  }
+}
+
+/* Skincare logo */
+.skincareLogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.skincareText {
+  margin-bottom: 0.75rem;
+  margin-top: auto;
+}
+
+.skincareImage {
+  width: 60px;
+  height: 60px;
+}
+
+.mobileButtons {
+  display: none;
+}
+
+.referText {
+  display: block;
+  font-weight: 700;
+  text-align: center;
+  margin-top: auto;
+}
+
+@media (max-width: 1080px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .navContainer {
+    display: inline-block;
+  }
+
+  .descriptionContainer {
+    padding: 2rem 0.5rem;
+  }
+
+  .infoPopup {
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+
+  .infoIcon {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.75rem;
+  }
+
+  .image {
+    height: auto;
+    width: 190px;
+  }
+
+  .imageWide {
+    height: auto;
+    width: 210px;
+  }
+
+  .mobileButtons {
+    display: block;
+    margin-top: 2rem;
+  }
+
+  .referText {
+    display: none;
+  }
+}

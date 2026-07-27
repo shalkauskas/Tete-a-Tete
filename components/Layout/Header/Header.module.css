@@ -1,0 +1,254 @@
+.wrapper {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  width: 100%;
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #706d6c;
+  overflow-x: clip;
+}
+
+.navFull {
+  height: 137px;
+  transition: all 0.5s;
+}
+
+.navSmall {
+  height: 86px;
+  transition: all 0.5s;
+}
+
+.container {
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logoWrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoLink {
+  cursor: pointer;
+}
+
+.logo {
+  width: 238px;
+  height: 136px;
+  transition: all 0.7s cubic-bezier(0.01, 0.81, 1, 1.26);
+}
+
+.logo:hover {
+  opacity: 0.75;
+}
+
+.logoHidden {
+  width: 0;
+  transition: all 0.7s cubic-bezier(0.01, 0.81, 1, 1.26);
+}
+
+.logoHidden:hover {
+  opacity: 0.75;
+}
+
+.textLogo {
+  font-family: 'News Cycle', sans-serif;
+  transition: all 0.7s cubic-bezier(0.01, 0.81, 1, 1.26);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 1.625;
+  display: inline-block;
+  margin-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  white-space: nowrap;
+  color: white;
+}
+
+.textLogoHidden {
+  display: none;
+  transition: all 0.7s cubic-bezier(0.01, 0.81, 1, 1.26);
+}
+
+.hamburger {
+  color: white;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.25rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  background: transparent;
+  display: block;
+  outline: none;
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+.hamburgerIcon {
+  color: #c4c4c4;
+  font-size: 3rem;
+}
+
+.navMenu {
+  justify-content: flex-end;
+  flex-grow: 1;
+  align-items: center;
+  background-color: #716c6c;
+}
+
+.navMenuOpen {
+  display: flex;
+}
+
+.navMenuClosed {
+  display: none;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.navItem {
+  cursor: pointer;
+  padding: 1rem 0.75rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  line-height: 1.375;
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.navList li:has(+ .bookingItemWrapper) .navItem {
+  border-bottom: 0;
+}
+
+.navItem:hover {
+  opacity: 0.75;
+}
+
+.hr {
+  display: none;
+}
+
+.bookingItem {
+  composes: navItem;
+  background-color: #f0eae7;
+  font-weight: 600;
+  border-radius: 1rem;
+  margin-left: 0.5rem;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+  color: inherit;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+    max-width: 1280px;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+
+  .logoWrapper {
+    width: auto;
+    position: static;
+    display: block;
+    justify-content: flex-start;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .navMenu {
+    display: flex;
+  }
+
+  .navMenuClosed {
+    display: flex;
+  }
+
+  .navList {
+    flex-direction: row;
+  }
+
+  .navItem {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 0;
+  }
+
+  .textLogo {
+    font-size: 2.25rem;
+    line-height: 1;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .navItem {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 0;
+  }
+
+  .textLogo {
+    font-size: 2.25rem;
+    line-height: 1;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .bookingItemWrapper {
+    display: none;
+  }
+
+  .navMenu {
+    justify-content: center;
+    padding-bottom: 1rem;
+    position: absolute;
+    width: 70%;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    right: 50%;
+  }
+
+  .navItem {
+    justify-content: center;
+  }
+
+  .hr {
+    width: 250px;
+    display: block;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .textLogo {
+    font-size: 2.25rem;
+  }
+}

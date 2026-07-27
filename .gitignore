@@ -30,3 +30,6 @@ yarn-error.log*
 .env.production.local
 .env
 .vercel
+.claude/** 
+tsconfig.tsbuildinfo
+tasks

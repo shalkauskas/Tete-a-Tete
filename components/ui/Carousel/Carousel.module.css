@@ -1,0 +1,27 @@
+.container {
+  max-width: 1350px;
+  margin: 12rem auto 1.5rem;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  transition: transform 500ms ease;
+  will-change: transform;
+}
+
+.slide {
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+  }
+}

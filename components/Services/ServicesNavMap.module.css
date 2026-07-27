@@ -1,0 +1,39 @@
+.navButton {
+  color: black;
+  text-align: left;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.navButton:focus {
+  outline: none;
+}
+
+.navButtonMobile {
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.navButtonDesktop {
+  margin-left: 2rem;
+}
+
+.active {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.arrow {
+  width: 14px;
+  vertical-align: middle;
+  margin-right: 0.75rem;
+}
+
+.arrowVisible {
+  display: inline-block;
+}
+
+.arrowHidden {
+  display: none;
+}

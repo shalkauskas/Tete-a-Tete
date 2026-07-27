@@ -1,0 +1,22 @@
+.giftcard {
+  background-color: white;
+  border-radius: 0.75rem;
+  top: 300px;
+  position: fixed;
+  right: 0;
+}
+
+.image {
+  width: 2.5rem;
+  display: none;
+}
+
+.image:hover {
+  opacity: 0.75;
+}
+
+@media screen and (min-width: 1024px) {
+  .image {
+    display: block;
+  }
+}

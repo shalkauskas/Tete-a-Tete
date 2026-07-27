@@ -1,0 +1,89 @@
+.overlay {
+  justify-content: center;
+  display: flex;
+  position: fixed;
+  z-index: 50;
+  left: 0;
+  right: 0;
+  top: 10%;
+}
+
+.modal {
+  position: absolute;
+  z-index: 50;
+  background-color: white;
+  container: initial;
+  top: 0;
+  max-width: 1024px;
+
+  @media screen and (max-width: 800px) {
+    margin: 6rem auto;
+  }
+}
+
+.header {
+  padding: 1rem 2rem;
+  border-bottom: 2px solid #e5e7eb;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.closeBtn {
+  cursor: pointer;
+  font-size: 1.875rem;
+}
+
+.content {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding: 1.5rem 2rem;
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.list {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.bookingFooter {
+  border-top: 2px solid #e5e7eb;
+}
+
+.bookLink {
+  display: contents;
+}
+
+.bookButton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #895b4a;
+  border-radius: 1rem;
+  padding: 0.8rem 3rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.bookButton:hover {
+  opacity: 0.75;
+}
