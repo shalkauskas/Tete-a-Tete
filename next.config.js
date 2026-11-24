@@ -1,8 +1,6 @@
 module.exports = {
   images: {
-    domains: ["res.cloudinary.com"],
-  },
-  experimental: {
-    newNextLinkBehavior: true,
+    remotePatterns: [{ protocol: "https", hostname: "res.cloudinary.com" }],
+    qualities: [50, 75],
   },
 };

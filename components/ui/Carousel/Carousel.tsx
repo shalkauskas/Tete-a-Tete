@@ -94,7 +94,7 @@ export default function WelcomeCarousel() {
                 src={`https://res.cloudinary.com/dyj6lkekg/image/upload/tete/carousel_${slide.id}.jpg`}
                 width={562}
                 height={500}
-                layout="responsive"
+                style={{ width: '100%', height: 'auto' }}
                 alt="Carousel welcome image"
                 quality={75}
                 priority={true}

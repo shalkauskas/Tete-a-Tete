@@ -142,8 +142,9 @@ export default function HairdreamsLanding() {
         </div>
         <div className={styles.heroImage}>
           <Image
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
+            sizes="(max-width: 1080px) 100vw, 560px"
             priority
             src={HERO_IMAGE}
             alt="Hairdreams hair extensions result at Tête-à-Tête Salon in Newton, MA"
