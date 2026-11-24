@@ -26,6 +26,11 @@ export default function Home({ place }: { place: GooglePlaceDetails }) {
     productsRef = React.useRef<HTMLDivElement>(null),
     contactRef = React.useRef<HTMLDivElement>(null);
   const { id } = router.query;
+  const scroll = (tag: React.RefObject<HTMLDivElement | null>) => {
+    if (tag.current) {
+      tag.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   React.useEffect(() => {
     if (id === 'services') {
       scroll(servicesRef);
@@ -44,11 +49,6 @@ export default function Home({ place }: { place: GooglePlaceDetails }) {
       router.replace('/', undefined, { shallow: true });
     }
   }, [id, router]);
-  const scroll = (tag: React.RefObject<HTMLDivElement | null>) => {
-    if (tag.current) {
-      tag.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <Layout
