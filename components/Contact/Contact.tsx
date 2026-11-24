@@ -50,10 +50,10 @@ export default function Contact({ place }: { place: GooglePlaceDetails }) {
             <div className={styles.detailHours}>
               <p className={styles.bold}>Hours of Operation:</p>
               <p className={styles.hoursList}>
-                Monday: 9am - 5pm <br />
-                Tuesday: 9am - 5pm <br />
-                Wednesday: 9am - 5pm <br />
-                Thursday: 9am - 5pm <br />
+                Monday: 9am - 4pm <br />
+                Tuesday: 9am - 8pm <br />
+                Wednesday: 9am - 4pm <br />
+                Thursday: 9am - 8pm <br />
                 Friday: 9am - 5pm <br />
                 Saturday: 9am - 5pm <br />
                 Sunday: Closed
