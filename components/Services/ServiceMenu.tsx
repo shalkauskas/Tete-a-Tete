@@ -9,25 +9,17 @@ export default function Services() {
     <div className={styles.container}>
       <SectionTitle>Our Services</SectionTitle>
       <div className={styles.grid}>
-        <Link href="/haircare" passHref>
-          <a>
-            <Service background={'haircare'}>Hair care</Service>
-          </a>
+        <Link href="/haircare">
+          <Service background={'haircare'}>Hair care</Service>
         </Link>
-        <Link href="/skincare" passHref>
-          <a>
-            <Service background={'skincare'}>Skin care</Service>
-          </a>
+        <Link href="/skincare">
+          <Service background={'skincare'}>Skin care</Service>
         </Link>
-        <Link href="/nails" passHref>
-          <a>
-            <Service background={'nails'}>Nails</Service>
-          </a>
+        <Link href="/nails">
+          <Service background={'nails'}>Nails</Service>
         </Link>
-        <Link href="/waxing" passHref>
-          <a>
-            <Service background={'waxing'}>Waxing</Service>
-          </a>
+        <Link href="/waxing">
+          <Service background={'waxing'}>Waxing</Service>
         </Link>
       </div>
       <Hairdreams />

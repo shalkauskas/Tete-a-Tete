@@ -326,8 +326,8 @@ export default function HairdreamsLanding() {
         >
           <Button>Book a free consultation</Button>
         </a>
-        <Link href="/haircare" passHref>
-          <a className={styles.backLink}>See all hair services</a>
+        <Link href="/haircare" className={styles.backLink}>
+          See all hair services
         </Link>
       </section>
     </div>

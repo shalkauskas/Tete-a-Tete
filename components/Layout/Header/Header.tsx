@@ -60,84 +60,68 @@ export default function Header({
             <ul className={styles.navList}>
               <li>
                 <Link
-                  passHref={true}
                   scroll={false}
                   href={{
                     pathname: '/',
                     query: { id: 'services' }
                   }}
+                  className={styles.navItem}
+                  onClick={() => {
+                    setNavbarOpen(false);
+                  }}
                 >
-                  <a
-                    className={styles.navItem}
-                    onClick={() => {
-                      setNavbarOpen(false);
-                    }}
-                  >
-                    Services
-                  </a>
+                  Services
                 </Link>
                 <hr className={styles.hr} />
               </li>
 
               <li>
                 <Link
-                  passHref={true}
                   scroll={false}
                   href={{
                     pathname: '/',
                     query: { id: 'team' }
                   }}
+                  className={styles.navItem}
+                  onClick={() => {
+                    setNavbarOpen(false);
+                  }}
                 >
-                  <a
-                    className={styles.navItem}
-                    onClick={() => {
-                      setNavbarOpen(false);
-                    }}
-                  >
-                    Team
-                  </a>
+                  Team
                 </Link>
                 <hr className={styles.hr} />
               </li>
 
               <li>
                 <Link
-                  passHref={true}
                   scroll={false}
                   href={{
                     pathname: '/',
                     query: { id: 'products' }
                   }}
+                  className={styles.navItem}
+                  onClick={() => {
+                    setNavbarOpen(false);
+                  }}
                 >
-                  <a
-                    className={styles.navItem}
-                    onClick={() => {
-                      setNavbarOpen(false);
-                    }}
-                  >
-                    Products
-                  </a>
+                  Products
                 </Link>
                 <hr className={styles.hr} />
               </li>
 
               <li>
                 <Link
-                  passHref={true}
                   scroll={false}
                   href={{
                     pathname: '/',
                     query: { id: 'contact' }
                   }}
+                  className={styles.navItem}
+                  onClick={() => {
+                    setNavbarOpen(false);
+                  }}
                 >
-                  <a
-                    className={styles.navItem}
-                    onClick={() => {
-                      setNavbarOpen(false);
-                    }}
-                  >
-                    Contact
-                  </a>
+                  Contact
                 </Link>
               </li>
               <li className={styles.bookingItemWrapper}>

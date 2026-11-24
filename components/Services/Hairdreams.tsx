@@ -50,10 +50,8 @@ export default function Hairdreams() {
           your appointment for free consultation!
         </p>
 
-        <Link href="/hairdreams" passHref>
-          <a className={styles.buttonWrapper}>
-            <Button>Learn more</Button>
-          </a>
+        <Link href="/hairdreams" className={styles.buttonWrapper}>
+          <Button>Learn more</Button>
         </Link>
       </div>
     </div>

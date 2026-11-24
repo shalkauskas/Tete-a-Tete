@@ -79,18 +79,16 @@ export default function Service(props: ServiceProps) {
     <div className={styles.container}>
       <div className={styles.titleContainer}>
         <Link
-          passHref={true}
           scroll={false}
           href={{
             pathname: '/',
             query: { id: 'services' }
           }}
+          className={styles.link}
         >
-          <a className={styles.link}>
-            <ChevronLeft />
-            <span className={styles.label}>Back to services</span>
-            <SectionTitle>{props.title}</SectionTitle>
-          </a>
+          <ChevronLeft />
+          <span className={styles.label}>Back to services</span>
+          <SectionTitle>{props.title}</SectionTitle>
         </Link>
         <SectionTitle>{props.title}</SectionTitle>
       </div>
