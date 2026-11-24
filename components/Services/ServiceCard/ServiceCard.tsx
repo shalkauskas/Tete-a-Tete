@@ -32,8 +32,8 @@ export default function ServiceCard({
         <div className={showSkinCare ? styles.image : styles.imageWide}>
           <Image
             src={category.image}
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
             sizes="(max-width: 1080px) 210px, 400px"
             alt="Service image"
             quality={50}

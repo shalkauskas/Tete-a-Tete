@@ -6,6 +6,11 @@ import { ContactFormResponse } from './ContactFormResponse';
 import { useForm } from '../../hooks/useForm';
 import Button from '../ui/Button/Button';
 import styles from './ContactForm.module.css';
+
+function msSince(timestamp: number) {
+  return Date.now() - timestamp;
+}
+
 export default function ContactForm() {
   const [showResponse, setShowResponse] = React.useState<{
     display: boolean;
@@ -22,7 +27,10 @@ export default function ContactForm() {
     phone: '',
     message: ''
   });
-  const loadTime = React.useRef(Date.now());
+  const loadTime = React.useRef(0);
+  React.useEffect(() => {
+    loadTime.current = Date.now();
+  }, []);
   function sendEmail(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
@@ -30,7 +38,7 @@ export default function ContactForm() {
     if (honeypot?.value) {
       return;
     }
-    if (Date.now() - loadTime.current < 3000) {
+    if (msSince(loadTime.current) < 3000) {
       return;
     }
     if (!recaptchaRef.current?.getValue()) {

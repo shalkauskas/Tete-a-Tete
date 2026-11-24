@@ -4,7 +4,9 @@ type ScrollData = { previousScrollTop: number; currentScrollTop: number };
 
 function useDocumentScrollThrottled(callback: (data: ScrollData) => void) {
   const callbackRef = useRef(callback);
-  callbackRef.current = callback;
+  useEffect(() => {
+    callbackRef.current = callback;
+  });
 
   useEffect(() => {
     let previousScrollTop = 0;

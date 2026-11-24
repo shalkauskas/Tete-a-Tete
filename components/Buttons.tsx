@@ -19,18 +19,15 @@ export default function Buttons() {
       </Button>
 
       <Link
-        passHref={true}
         scroll={false}
         href={{
           pathname: '/',
           query: { id: 'services' }
         }}
       >
-        <a>
-          <Button variant="secondary" fullWidth size="small">
-            See other services
-          </Button>
-        </a>
+        <Button variant="secondary" fullWidth size="small">
+          See other services
+        </Button>
       </Link>
     </div>
   );

@@ -142,8 +142,9 @@ export default function HairdreamsLanding() {
         </div>
         <div className={styles.heroImage}>
           <Image
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
+            sizes="(max-width: 1080px) 100vw, 560px"
             priority
             src={HERO_IMAGE}
             alt="Hairdreams hair extensions result at Tête-à-Tête Salon in Newton, MA"
@@ -326,8 +327,8 @@ export default function HairdreamsLanding() {
         >
           <Button>Book a free consultation</Button>
         </a>
-        <Link href="/haircare" passHref>
-          <a className={styles.backLink}>See all hair services</a>
+        <Link href="/haircare" className={styles.backLink}>
+          See all hair services
         </Link>
       </section>
     </div>

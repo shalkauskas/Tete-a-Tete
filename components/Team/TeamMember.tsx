@@ -14,6 +14,7 @@ export default function TeamMember(props: Props) {
       <Image
         src={props.photo}
         alt="Team member"
+        className={styles.photo}
         quality={75}
         width={232}
         height={250}

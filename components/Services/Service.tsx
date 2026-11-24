@@ -19,23 +19,20 @@ interface ServiceProps {
 const VIEWPORT_DESKTOP = 900;
 const VIEWPORT_MOBILE = 375;
 const SWIPE_THRESHOLD = 50;
+const MOBILE_QUERY = 'screen and (max-width: 1080px)';
+
+function subscribeToMobileQuery(onChange: () => void) {
+  const mq = window.matchMedia(MOBILE_QUERY);
+  mq.addEventListener('change', onChange);
+  return () => mq.removeEventListener('change', onChange);
+}
 
 export default function Service(props: ServiceProps) {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  function mqChange(mq: MediaQueryList | MediaQueryListEvent) {
-    setIsMobile(mq.matches);
-  }
-
-  React.useEffect(() => {
-    const mq = window.matchMedia('screen and (max-width: 1080px)');
-    mq.addEventListener('change', mqChange);
-    mqChange(mq);
-
-    return () => {
-      mq.removeEventListener('change', mqChange);
-    };
-  }, []);
+  const isMobile = React.useSyncExternalStore(
+    subscribeToMobileQuery,
+    () => window.matchMedia(MOBILE_QUERY).matches,
+    () => false
+  );
 
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const lastSlide = props.service.length - 1;
@@ -79,18 +76,16 @@ export default function Service(props: ServiceProps) {
     <div className={styles.container}>
       <div className={styles.titleContainer}>
         <Link
-          passHref={true}
           scroll={false}
           href={{
             pathname: '/',
             query: { id: 'services' }
           }}
+          className={styles.link}
         >
-          <a className={styles.link}>
-            <ChevronLeft />
-            <span className={styles.label}>Back to services</span>
-            <SectionTitle>{props.title}</SectionTitle>
-          </a>
+          <ChevronLeft />
+          <span className={styles.label}>Back to services</span>
+          <SectionTitle>{props.title}</SectionTitle>
         </Link>
         <SectionTitle>{props.title}</SectionTitle>
       </div>

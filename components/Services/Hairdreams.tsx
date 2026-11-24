@@ -12,6 +12,7 @@ export default function Hairdreams() {
           height={800}
           loading={'eager'}
           priority={true}
+          className={styles.image}
           src={
             'https://res.cloudinary.com/dyj6lkekg/image/upload/v1711816297/tete/hairdreams1.jpg'
           }
@@ -22,6 +23,7 @@ export default function Hairdreams() {
           height={800}
           loading={'eager'}
           priority={true}
+          className={styles.image}
           src={
             'https://res.cloudinary.com/dyj6lkekg/image/upload/v1711816297/tete/hairdreams2.jpg'
           }
@@ -50,10 +52,8 @@ export default function Hairdreams() {
           your appointment for free consultation!
         </p>
 
-        <Link href="/hairdreams" passHref>
-          <a className={styles.buttonWrapper}>
-            <Button>Learn more</Button>
-          </a>
+        <Link href="/hairdreams" className={styles.buttonWrapper}>
+          <Button>Learn more</Button>
         </Link>
       </div>
     </div>
