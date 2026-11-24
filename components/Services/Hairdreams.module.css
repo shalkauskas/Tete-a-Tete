@@ -11,6 +11,13 @@
   grid-template-columns: repeat(2, minmax(1fr, 1fr));
 }
 
+.image {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
 .imageContainer {
   display: flex;
   border-top-left-radius: 0.25rem;

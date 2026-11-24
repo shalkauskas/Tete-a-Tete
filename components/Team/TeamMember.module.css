@@ -5,6 +5,11 @@
   width: 272px;
 }
 
+.photo {
+  aspect-ratio: 232 / 250;
+  object-fit: cover;
+}
+
 .name {
   font-size: 16px;
   line-height: 40px;
