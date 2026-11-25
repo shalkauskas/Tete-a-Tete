@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import BlurImage from '../ui/BlurImage/BlurImage';
 import Link from 'next/link';
 import Button from '../ui/Button/Button';
 import styles from './Hairdreams.module.css';
@@ -7,7 +7,7 @@ export default function Hairdreams() {
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <Image
+        <BlurImage
           width={600}
           height={800}
           loading={'eager'}
@@ -18,7 +18,7 @@ export default function Hairdreams() {
           }
           alt="Hairdreams"
         />
-        <Image
+        <BlurImage
           width={600}
           height={800}
           loading={'eager'}

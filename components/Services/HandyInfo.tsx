@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import styles from './HandyInfo.module.css';
 
 const infoItems = [
@@ -41,14 +42,14 @@ export default function HandyInfo() {
         <h2 className={styles.title}>Handy info</h2>
         <div className={styles.grid}>
           {infoItems.map((item) => (
-            <>
+            <Fragment key={item.image}>
               <picture className={styles.icon}>
                 <source type="image/webp" srcSet={`${item.image}.webp`} />
                 <source type="image/png" srcSet={`${item.image}.png`} />
                 <img src={`${item.image}.png`} alt={item.alt} />
               </picture>
               <p className={styles.text}>{item.text}</p>
-            </>
+            </Fragment>
           ))}
         </div>
       </div>

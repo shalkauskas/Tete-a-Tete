@@ -1,5 +1,5 @@
 import Buttons from '../../Buttons';
-import Image from 'next/image';
+import BlurImage from '../../ui/BlurImage/BlurImage';
 import InfoIcon from '../../ui/icons/InfoIcon';
 import React from 'react';
 import styles from './ServiceCard.module.css';
@@ -30,7 +30,7 @@ export default function ServiceCard({
     <div className={styles.container}>
       <div className={styles.imageContainer}>
         <div className={showSkinCare ? styles.image : styles.imageWide}>
-          <Image
+          <BlurImage
             src={category.image}
             fill
             style={{ objectFit: 'cover' }}

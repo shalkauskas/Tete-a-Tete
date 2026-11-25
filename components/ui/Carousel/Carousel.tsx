@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import BlurImage from '../BlurImage/BlurImage';
 import styles from './Carousel.module.css';
 
 const IMAGE_IDS = [5, 3, 1, 7];
@@ -90,7 +90,7 @@ export default function WelcomeCarousel() {
               style={{ flex: `0 0 ${slidePercentage}%` }}
               aria-hidden={index < FIRST_REAL || index > LAST_REAL}
             >
-              <Image
+              <BlurImage
                 src={`https://res.cloudinary.com/dyj6lkekg/image/upload/tete/carousel_${slide.id}.jpg`}
                 width={562}
                 height={500}

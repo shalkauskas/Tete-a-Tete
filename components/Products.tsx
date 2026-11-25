@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import BlurImage from './ui/BlurImage/BlurImage';
 import SectionTitle from './ui/SectionTitle/SectionTitle';
 import Accordion from './ui/Accordion/Accordion';
 import styles from './Products.module.css';
@@ -25,7 +25,7 @@ export default function Products() {
               </>
             }
           >
-            <Image
+            <BlurImage
               src="https://res.cloudinary.com/dyj6lkekg/image/upload/tete/top-brands.png"
               alt="Top brands"
               width={604}
@@ -53,7 +53,7 @@ export default function Products() {
               </>
             }
           >
-            <Image
+            <BlurImage
               src="https://res.cloudinary.com/dyj6lkekg/image/upload/tete/green-choices.png"
               alt="Green choices"
               width={604}

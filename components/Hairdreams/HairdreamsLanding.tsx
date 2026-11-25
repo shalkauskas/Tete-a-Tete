@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import BlurImage from '../ui/BlurImage/BlurImage';
 import Link from 'next/link';
 import SectionTitle from '../ui/SectionTitle/SectionTitle';
 import Button from '../ui/Button/Button';
@@ -141,7 +141,7 @@ export default function HairdreamsLanding() {
           </a>
         </div>
         <div className={styles.heroImage}>
-          <Image
+          <BlurImage
             fill
             style={{ objectFit: 'cover' }}
             sizes="(max-width: 1080px) 100vw, 560px"
@@ -218,7 +218,7 @@ export default function HairdreamsLanding() {
         <SectionTitle>Before &amp; after</SectionTitle>
         <div className={styles.beforeAfter}>
           <figure className={styles.baFigure}>
-            <Image
+            <BlurImage
               width={600}
               height={800}
               src={BEFORE_IMAGE}
@@ -227,7 +227,7 @@ export default function HairdreamsLanding() {
             <figcaption className={styles.baCaption}>Before</figcaption>
           </figure>
           <figure className={styles.baFigure}>
-            <Image
+            <BlurImage
               width={600}
               height={800}
               src={AFTER_IMAGE}
@@ -247,7 +247,7 @@ export default function HairdreamsLanding() {
         <SectionTitle>Meet your specialist</SectionTitle>
         <div className={styles.specialist}>
           <div className={styles.specialistPhoto}>
-            <Image
+            <BlurImage
               width={600}
               height={740}
               src={KATYA_IMAGE}

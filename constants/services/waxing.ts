@@ -69,22 +69,22 @@ const servicesWaxing: ServiceGroup[] = [
       price: "$100",
     },
     {
-      id: 24,
+      id: 25,
       service: "Arm",
       price: "$50",
     },
     {
-      id: 24,
+      id: 26,
       service: "Underarm",
       price: "$30",
     },
     {
-      id: 24,
+      id: 27,
       service: "Back waxing for men",
       price: "$75",
     },
     {
-      id: 24,
+      id: 28,
       service: "Chest waxing for men",
       price: "$75",
     },

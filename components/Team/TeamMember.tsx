@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import BlurImage from '../ui/BlurImage/BlurImage';
 import styles from './TeamMember.module.css';
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 export default function TeamMember(props: Props) {
   return (
     <div className={styles.container}>
-      <Image
+      <BlurImage
         src={props.photo}
         alt="Team member"
         className={styles.photo}
