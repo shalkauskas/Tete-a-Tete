@@ -28,6 +28,11 @@ export interface GooglePlaceDetails {
   reviews: GoogleReview[];
 }
 
+export interface Testimonial {
+  author: string;
+  text: string;
+}
+
 export interface TeamMember {
   id: number;
   name: string;

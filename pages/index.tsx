@@ -3,6 +3,7 @@ import WelcomeCarousel from '../components/ui/Carousel/Carousel';
 import Services from '../components/Services/ServiceMenu';
 import Team from '../components/Team/Team';
 import Products from '../components/Products';
+import Testimonials from '../components/Testimonials/Testimonials';
 import Contact from '../components/Contact/Contact';
 import ContactForm from '../components/Contact/ContactForm';
 import Layout from '../components/Layout/Layout/Layout';
@@ -70,6 +71,7 @@ export default function Home({ place }: { place: GooglePlaceDetails }) {
           <div ref={teamRef} className={styles.scrollAnchor} />
           <Team />
         </div>
+        <Testimonials />
         <div className={styles.section}>
           <div ref={productsRef} className={styles.scrollAnchor} />
           <Products />

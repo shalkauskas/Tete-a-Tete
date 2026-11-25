@@ -1,6 +1,7 @@
 import ReviewsItem from "./ReviewsItem";
 import React from "react";
 import { GoogleReview } from "../../types";
+import { googleReviewsUrl } from "constants/links";
 import styles from "./Reviews.module.css";
 export default function Reviews({ reviews }: { reviews: GoogleReview[] }) {
   return (
@@ -18,7 +19,7 @@ export default function Reviews({ reviews }: { reviews: GoogleReview[] }) {
 
         <div className={styles.moreLink}>
           <a
-            href="https://maps.google.com/?cid=13262548078072798292"
+            href={googleReviewsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.moreLinkAnchor}
